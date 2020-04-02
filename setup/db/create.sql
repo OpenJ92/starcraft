@@ -83,6 +83,91 @@ create table replay.player
 	PRIMARY KEY (iid)
 );
 
+create table replay.info 
+(
+
+	-- factory         <class 'sc2reader.factories.sc2factory.SC2Factory'>
+	-- opt             <class 'dict'>
+	-- logger          <class 'logging.Logger'>
+	-- filename                <class 'str'>
+	-- filehash                <class 'str'>
+	-- datapack                <class 'sc2reader.data.Build'>
+	-- raw_data                <class 'dict'>
+	-- load_level              <class 'int'>
+	-- speed           <class 'str'>
+	-- type            <class 'str'>
+	-- game_type               <class 'str'>
+	-- real_type               <class 'str'>
+	-- category                <class 'str'>
+	-- is_ladder               <class 'bool'>
+	-- is_private              <class 'bool'>
+	-- map             <class 'NoneType'>
+	-- map_hash                <class 'str'>
+	-- region          <class 'str'>
+	-- events          <class 'list'>
+	-- teams           <class 'list'>
+	-- team            <class 'dict'>
+	-- player          <class 'dict'>
+	-- observer                <class 'dict'>
+	-- human           <class 'dict'>
+	-- computer                <class 'dict'>
+	-- entity          <class 'dict'>
+	-- players         <class 'list'>
+	-- observers               <class 'list'>
+	-- humans          <class 'list'>
+	-- computers               <class 'list'>
+	-- entities                <class 'list'>
+	-- attributes              <class 'collections.defaultdict'>
+	-- messages                <class 'list'>
+	-- recorder                <class 'NoneType'>
+	-- packets         <class 'list'>
+	-- objects         <class 'dict'>
+	-- active_units            <class 'dict'>
+	-- game_fps                <class 'float'>
+	-- tracker_events          <class 'list'>
+	-- game_events             <class 'list'>
+	-- registered_readers              <class 'collections.defaultdict'>
+	-- registered_datapacks            <class 'list'>
+	-- archive         <class 'mpyq.MPQArchive'>
+	-- versions                <class 'list'>
+	-- frames          <class 'int'>
+	-- build           <class 'int'>
+	-- base_build              <class 'int'>
+	-- release_string          <class 'str'>
+	-- length          <class 'sc2reader.utils.Length'>
+	-- game_length             <class 'sc2reader.utils.Length'>
+	-- real_length             <class 'sc2reader.utils.Length'>
+	-- amm             <class 'int'>
+	-- ranked          <class 'NoneType'>
+	-- competitive             <class 'int'>
+	-- practice                <class 'int'>
+	-- cooperative             <class 'int'>
+	-- battle_net              <class 'int'>
+	-- hero_duplicates_allowed         <class 'int'>
+	-- map_name                <class 'str'>
+	-- map_file                <class 'sc2reader.utils.DepotFile'>
+	-- expansion               <class 'str'>
+	-- windows_timestamp               <class 'int'>
+	-- unix_timestamp          <class 'int'>
+	-- end_time                <class 'datetime.datetime'>
+	-- time_zone               <class 'float'>
+	-- start_time              <class 'datetime.datetime'>
+	-- date            <class 'datetime.datetime'>
+	-- pings           <class 'list'>
+	-- message_events          <class 'list'>
+	-- clients         <class 'list'>
+	-- client          <class 'dict'>
+	-- winner          <class 'sc2reader.objects.Team'>
+	-- people          <class 'list'>
+	-- person          <class 'dict'>
+	-- people_hash             <class 'str'>
+	-- plugin_result           <class 'dict'>
+	-- plugins         <class 'dict'>
+	-- plugin_failures         <class 'list'>
+	-- units           <class 'set'>
+	-- unit            <class 'dict'>
+);
+
 create table replay.unit
 (
 	iid				serial,
