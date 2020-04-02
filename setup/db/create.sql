@@ -8,7 +8,7 @@ create schema events;
 
 create table datapack.unit_type
 (
-	iid				integer,
+	__id__				integer,
 	id 				integer,
 	version				varchar(100),
 	str_id 				varchar(100),
@@ -21,12 +21,12 @@ create table datapack.unit_type
 	is_building 			boolean,
 	is_worker			boolean,
 	is_army				boolean,
-	PRIMARY KEY (iid)
+	PRIMARY KEY (__id__)
 );
 
 create table datapack.ability
 (
-	iid				integer,
+	__id__				integer,
 	id				integer,
 	version				varchar(100),
  	name				varchar(100),
@@ -34,14 +34,14 @@ create table datapack.ability
  	is_build			boolean,
  	build_time			integer,
  	build_unit			integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (build_unit) REFERENCES datapack.unit_type(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (build_unit) REFERENCES datapack.unit_type(__id__)
 );
 
 create table replay.info 
 (
 
-	iid			serial,
+	__id__			serial,
 	filename                varchar(100),
 	filehash                varchar(100),
 	-- raw_data                <class 'dict'>
@@ -113,13 +113,13 @@ create table replay.info
 	-- people          <class 'list'>
 	-- person          <class 'dict'>
 	people_hash             varchar(100),
-	PRIMARY KEY (iid)
+	PRIMARY KEY (__id__)
 );
 
 
 create table replay.player
 (
-	iid				serial,
+	__id__				serial,
 	sid             		integer,
 	team_id         		integer,
 	is_human                	boolean,
@@ -142,13 +142,13 @@ create table replay.player
 	pick_race               	varchar(100),
 	play_race               	varchar(100),
 	replay_id			integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (replay_id) REFERENCES replay.info(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (replay_id) REFERENCES replay.info(__id__)
 );
 
 create table events.PlayerSetupEvent
 (
-	iid				serial,
+	__id__				serial,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
@@ -161,7 +161,7 @@ create table events.PlayerSetupEvent
 
 create table events.UpgradeCompleteEvent
 (
-	iid				serial,
+	__id__				serial,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
@@ -169,13 +169,13 @@ create table events.UpgradeCompleteEvent
 	player          		integer,
 	upgrade_type_name               varchar(100),
 	count           		integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.UnitBornEvent
 (
-	iid				serial,
+	__id__				serial,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
@@ -190,27 +190,27 @@ create table events.UnitBornEvent
 	-- -- -- unit_controller         	<class 'NoneType'>,
 	x               		integer,
 	y               		integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (unit) REFERENCES datapack.unit_type(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (unit) REFERENCES datapack.unit_type(__id__)
 	
 );
 
 create table events.ProgressEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
 	progress                	integer,
 	player          		integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.UserOptionsEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -226,13 +226,13 @@ create table events.UserOptionsEvent
 	-- -- -- starting_rally          	<class 'NoneType'>,
 	debug_pause_enabled             integer,
 	base_build_num          	integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.PlayerStatsEvent
 (
-	iid					serial,
+	__id__					serial,
 	frame           			integer,
 	second          			integer,
 	name            			varchar(100),
@@ -289,13 +289,13 @@ create table events.PlayerStatsEvent
 	ff_vespene_lost_army            	integer,
 	ff_vespene_lost_economy         	integer,
 	ff_vespene_lost_technology              integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.CameraEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -308,13 +308,13 @@ create table events.CameraEvent
 	-- -- distance                	<class 'NoneType'>,
 	-- -- pitch           		<class 'NoneType'>,
 	-- -- yaw             		<class 'NoneType'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.SelectionEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -331,13 +331,13 @@ create table events.SelectionEvent
 	-- -- new_unit_info           	<class 'list'>,
 	-- -- new_units               	<class 'list'>,
 	-- -- objects         		<class 'list'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.BasicCommandEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -357,14 +357,14 @@ create table events.BasicCommandEvent
 	-- -- ability_type_data               <class 'NoneType'>,
 	-- -- other_unit_id           	<class 'NoneType'>,
 	-- -- other_unit              	<class 'NoneType'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid),
-	FOREIGN KEY (ability) REFERENCES datapack.ability(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__),
+	FOREIGN KEY (ability) REFERENCES datapack.ability(__id__)
 );
 
 create table events.TargetPointCommandEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -388,14 +388,14 @@ create table events.TargetPointCommandEvent
 	y               		real,
 	z               		integer,
 	-- -- location                	<class 'tuple'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid),
-	FOREIGN KEY (ability) REFERENCES datapack.ability(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__),
+	FOREIGN KEY (ability) REFERENCES datapack.ability(__id__)
 );
 
 create table events.ControlGroupEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -408,13 +408,13 @@ create table events.ControlGroupEvent
 	update_type             	integer,
 	mask_type               	varchar(100),
 	-- -- mask_data               	<class 'NoneType'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.ChatEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	frame           		integer,
 	second          		integer,
@@ -425,13 +425,13 @@ create table events.ChatEvent
 	to_allies               	boolean,
 	to_observers            	boolean,
 	player          		integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.UpdateTargetPointCommandEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -455,14 +455,14 @@ create table events.UpdateTargetPointCommandEvent
 	y               		real,
 	z               		integer,
 	-- -- location                	<class 'tuple'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid),
-	FOREIGN KEY (ability) REFERENCES datapack.ability(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__),
+	FOREIGN KEY (ability) REFERENCES datapack.ability(__id__)
 );
 
 create table events.GetControlGroupEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -475,13 +475,13 @@ create table events.GetControlGroupEvent
 	update_type             	integer,
 	mask_type               	varchar(100),
 	-- -- mask_data               	<class 'NoneType'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.TargetUnitCommandEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -513,15 +513,15 @@ create table events.TargetUnitCommandEvent
 	z               		integer,
 	-- -- location                	<class 'tuple'>,
 	target          		integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid),
-	FOREIGN KEY (ability) REFERENCES datapack.ability(iid),
-	FOREIGN KEY (target) REFERENCES datapack.unit_type(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__),
+	FOREIGN KEY (ability) REFERENCES datapack.ability(__id__),
+	FOREIGN KEY (target) REFERENCES datapack.unit_type(__id__)
 );
 
 create table events.UnitInitEvent
 (
-	iid				serial,
+	__id__				serial,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
@@ -537,15 +537,15 @@ create table events.UnitInitEvent
 	x               		integer,
 	y               		integer,
 	-- -- location                	<class 'tuple'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (unit_controller) REFERENCES replay.player(iid),
-	FOREIGN KEY (unit_upkeeper) REFERENCES replay.player(iid),
-	FOREIGN KEY (unit) REFERENCES datapack.unit_type(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (unit_controller) REFERENCES replay.player(__id__),
+	FOREIGN KEY (unit_upkeeper) REFERENCES replay.player(__id__),
+	FOREIGN KEY (unit) REFERENCES datapack.unit_type(__id__)
 );
 
 create table events.SetControlGroupEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -558,13 +558,13 @@ create table events.SetControlGroupEvent
 	update_type             	integer,
 	mask_type               	varchar(100),
 	-- -- mask_data               	<class 'NoneType'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
 
 create table events.UnitDoneEvent
 (
-	iid				serial,
+	__id__				serial,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
@@ -572,14 +572,14 @@ create table events.UnitDoneEvent
 	unit_id_recycle         	integer,
 	unit_id         		integer,
 	unit            		integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (unit) REFERENCES datapack.unit_type(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (unit) REFERENCES datapack.unit_type(__id__)
 	
 );
 
 create table events.UpdateTargetUnitCommandEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -611,15 +611,15 @@ create table events.UpdateTargetUnitCommandEvent
 	z               		integer,
 	-- -- location        		<class 'tuple'>,
 	target          		integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid),
-	FOREIGN KEY (ability) REFERENCES datapack.ability(iid),
-	FOREIGN KEY (target) REFERENCES datapack.unit_type(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__),
+	FOREIGN KEY (ability) REFERENCES datapack.ability(__id__),
+	FOREIGN KEY (target) REFERENCES datapack.unit_type(__id__)
 );
 
 create table events.UnitTypeChangeEvent
 (
-	iid				serial,
+	__id__				serial,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
@@ -628,13 +628,13 @@ create table events.UnitTypeChangeEvent
 	unit_id         		integer,
 	unit            		integer,
 	unit_type_name          	varchar(100),
-	PRIMARY KEY (iid),
-	FOREIGN KEY (unit) REFERENCES datapack.unit_type(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (unit) REFERENCES datapack.unit_type(__id__)
 );
 
 create table events.UnitDiedEvent
 (
-	iid				serial,
+	__id__				serial,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
@@ -653,16 +653,16 @@ create table events.UnitDiedEvent
 	killing_unit_recycle            integer,
 	killing_unit_id         	integer,
 	killing_unit            	integer,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (killer) REFERENCES replay.player(iid),
-	FOREIGN KEY (killing_player) REFERENCES replay.player(iid),
-	FOREIGN KEY (unit) REFERENCES datapack.unit_type(iid),
-	FOREIGN KEY (killing_unit) REFERENCES datapack.unit_type(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (killer) REFERENCES replay.player(__id__),
+	FOREIGN KEY (killing_player) REFERENCES replay.player(__id__),
+	FOREIGN KEY (unit) REFERENCES datapack.unit_type(__id__),
+	FOREIGN KEY (killing_unit) REFERENCES datapack.unit_type(__id__)
 );
 
 create table events.UnitPositionsEvent
 (
-	iid				serial,
+	__id__				serial,
 	frame           		integer,
 	second          		integer,
 	name            		varchar(100),
@@ -670,12 +670,12 @@ create table events.UnitPositionsEvent
 	-- -- items           		<class 'list'>,
 	-- -- units           		<class 'dict'>,
 	-- -- positions               	<class 'list'>,
-	PRIMARY KEY (iid)
+	PRIMARY KEY (__id__)
 );
 
 create table events.PlayerLeaveEvent
 (
-	iid				serial,
+	__id__				serial,
 	pid             		integer,
 	player          		integer,
 	frame           		integer,
@@ -683,6 +683,6 @@ create table events.PlayerLeaveEvent
 	is_local                	boolean,
 	name            		varchar(100),
 	-- -- data            		<class 'dict'>,
-	PRIMARY KEY (iid),
-	FOREIGN KEY (player) REFERENCES replay.player(iid)
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
