@@ -38,60 +38,12 @@ create table datapack.ability
 	FOREIGN KEY (build_unit) REFERENCES datapack.unit_type(iid)
 );
 
-create table replay.player
-(
-	iid				serial,
-	sid             		integer,
-	-- slot_data               <class 'dict'>
-	handicap                	integer,
-	team_id         		integer,
-	is_human                	boolean,
-	is_observer             	boolean,
-	is_referee              	boolean,
-	hero_name               	varchar(100),
-	hero_skin               	varchar(100),
-	hero_mount              	varchar(100),
-	toon_handle             	varchar(100),
-	region          		varchar(100),
-	subregion               	integer,
-	toon_id         		integer,
-	-- events          <class 'list'>
-	-- messages                <class 'list'>
-	uid             		integer,
-	-- init_data               <class 'dict'>
-	clan_tag                	varchar(100),
-	name            		varchar(100),
-	combined_race_levels            integer,
-	highest_league          	integer,
-	-- recorder                <class 'NoneType'>
-	pid             		integer,
-	-- detail_data             <class 'dict'>
-	-- attribute_data          <class 'dict'>
-	result          		varchar(100),
-	-- team            <class 'sc2reader.objects.Team'>
-	pick_race               	varchar(100),
-	difficulty              	varchar(100),
-	play_race               	varchar(100),
-	commander               	varchar(100),
-	commander_level         	integer,
-	-- commander_mastery_level         <class 'list'>
-	trophy_id               	integer,
-	-- commander_mastery_talents               <class 'list'>
-	-- color           <class 'sc2reader.utils.Color'>
-	-- units           <class 'list'>
-	-- killed_units            <class 'list'>
-	PRIMARY KEY (iid)
-);
-
 create table replay.info 
 (
 
-	-- factory         <class 'sc2reader.factories.sc2factory.SC2Factory'>
-	-- opt             <class 'dict'>
-	-- logger          <class 'logging.Logger'>
+	iid			serial,
 	filename                varchar(100),
 	filehash                varchar(100),
-	-- datapack                <class 'sc2reader.data.Build'>
 	-- raw_data                <class 'dict'>
 	load_level              integer,
 	speed           varchar(100),
@@ -99,8 +51,8 @@ create table replay.info
 	game_type               varchar(100),
 	real_type               varchar(100),
 	category                varchar(100),
-	is_ladder               <class 'bool'>
-	is_private              <class 'bool'>
+	-- is_ladder               <class 'bool'>
+	-- is_private              <class 'bool'>
 	-- map             <class 'NoneType'>
 	map_hash                varchar(100),
 	region          varchar(100),
@@ -157,36 +109,41 @@ create table replay.info
 	-- message_events          <class 'list'>
 	-- clients         <class 'list'>
 	-- client          <class 'dict'>
-	winner          <class 'sc2reader.objects.Team'>
+	-- winner          <class 'sc2reader.objects.Team'>
 	-- people          <class 'list'>
 	-- person          <class 'dict'>
 	people_hash             varchar(100),
-	-- plugin_result           <class 'dict'>
-	-- plugins         <class 'dict'>
-	-- plugin_failures         <class 'list'>
-	-- units           <class 'set'>
-	-- unit            <class 'dict'>
+	PRIMARY KEY (iid)
 );
 
-create table replay.unit
+
+create table replay.player
 (
 	iid				serial,
-	owner                   	<class 'sc2reader.objects.Participant'>,
-	started_at                      integer,
-	finished_at                     integer,
-	died_at                 	<class 'NoneType'>,
-	killed_by                       <class 'NoneType'>,
-	killing_player                  <class 'NoneType'>,
-	killing_unit                    <class 'NoneType'>,
-	-- killed_units                    <class 'list'>,
-	id                      	integer,
-	_type_class                     integer,
-	-- type_history                    <class 'collections.OrderedDict'>,
-	hallucinated                    boolean,
-	flags                   	integer,
-	location                        <class 'tuple'>,
+	sid             		integer,
+	team_id         		integer,
+	is_human                	boolean,
+	is_observer             	boolean,
+	is_referee              	boolean,
+	region          		varchar(100),
+	subregion               	integer,
+	toon_id         		integer,
+	uid             		integer,
+	-- -- init_data good for scaled_rating
+	-- init_data               <class 'dict'>
+	clan_tag                	varchar(100),
+	name            		varchar(100),
+	combined_race_levels            integer,
+	highest_league          	integer,
+	pid             		integer,
+	-- -- detail_data dictionary may be useful for player ID info
+	-- detail_data             <class 'dict'>
+	result          		varchar(100),
+	pick_race               	varchar(100),
+	play_race               	varchar(100),
+	replay_id			integer,
 	PRIMARY KEY (iid),
-	FOREIGN KEY (_type_class) REFERENCES datapack.unit_type(iid)
+	FOREIGN KEY (replay_id) REFERENCES replay.info(iid)
 );
 
 create table events.PlayerSetupEvent
