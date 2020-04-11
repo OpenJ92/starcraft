@@ -6,6 +6,7 @@ create schema datapack;
 create schema replay;
 create schema events;
 
+-- +
 create table datapack.unit_type
 (
 	__id__				integer,
@@ -24,6 +25,7 @@ create table datapack.unit_type
 	PRIMARY KEY (__id__)
 );
 
+-- +
 create table datapack.ability
 (
 	__id__				integer,
@@ -38,82 +40,46 @@ create table datapack.ability
 	FOREIGN KEY (build_unit) REFERENCES datapack.unit_type(__id__)
 );
 
+-- +
 create table replay.info 
 (
 
-	__id__			serial,
-	filename                varchar(100),
-	filehash                varchar(100),
-	-- raw_data                <class 'dict'>
-	load_level              integer,
-	speed           varchar(100),
-	type            varchar(100),
-	game_type               varchar(100),
-	real_type               varchar(100),
-	category                varchar(100),
-	-- is_ladder               <class 'bool'>
-	-- is_private              <class 'bool'>
-	-- map             <class 'NoneType'>
-	map_hash                varchar(100),
-	region          varchar(100),
-	-- events          <class 'list'>
-	-- teams           <class 'list'>
-	-- team            <class 'dict'>
-	-- player          <class 'dict'>
-	-- observer                <class 'dict'>
-	-- human           <class 'dict'>
-	-- computer                <class 'dict'>
-	-- entity          <class 'dict'>
-	-- players         <class 'list'>
-	-- observers               <class 'list'>
-	-- humans          <class 'list'>
-	-- computers               <class 'list'>
-	-- entities                <class 'list'>
-	-- attributes              <class 'collections.defaultdict'>
-	-- messages                <class 'list'>
-	-- recorder                <class 'NoneType'>
-	-- packets         <class 'list'>
-	-- objects         <class 'dict'>
-	-- active_units            <class 'dict'>
-	game_fps                real,
-	-- tracker_events          <class 'list'>
-	-- game_events             <class 'list'>
-	-- registered_readers              <class 'collections.defaultdict'>
-	-- registered_datapacks            <class 'list'>
-	-- archive         <class 'mpyq.MPQArchive'>
-	-- versions                <class 'list'>
-	frames          integer,
-	build           integer,
-	base_build              integer,
-	release_string          varchar(100),
-	-- length          <class 'sc2reader.utils.Length'>
-	-- game_length             <class 'sc2reader.utils.Length'>
-	-- real_length             <class 'sc2reader.utils.Length'>
-	amm             integer,
-	-- ranked          <class 'NoneType'>
-	competitive             integer,
-	practice                integer,
-	cooperative             integer,
-	battle_net              integer,
+	__id__				serial,
+	filename                	varchar(100),
+	filehash                	varchar(100),
+	load_level              	integer,
+	speed           		varchar(100),
+	type            		varchar(100),
+	game_type               	varchar(100),
+	real_type               	varchar(100),
+	category                	varchar(100),
+	is_ladder               	boolean,
+	is_private              	boolean,
+	map_hash                	varchar(100),
+	region          		varchar(100),
+	game_fps                	real,
+	frames          		integer,
+	build           		integer,
+	base_build              	integer,
+	release_string          	varchar(100),
+	amm             		integer,
+	competitive             	integer,
+	practice                	integer,
+	cooperative             	integer,
+	battle_net              	integer,
 	hero_duplicates_allowed         integer,
-	map_name                varchar(100),
-	-- map_file                <class 'sc2reader.utils.DepotFile'>
-	expansion               varchar(100),
+	map_name                	varchar(100),
+	expansion               	varchar(100),
 	windows_timestamp               integer,
-	unix_timestamp          integer,
-	end_time                timestamp,
-	time_zone               real,
-	start_time              timestamp,
-	date            timestamp,
-	-- pings           <class 'list'>
-	-- message_events          <class 'list'>
-	-- clients         <class 'list'>
-	-- client          <class 'dict'>
-	-- winner          <class 'sc2reader.objects.Team'>
-	-- people          <class 'list'>
-	-- person          <class 'dict'>
-	people_hash             varchar(100),
-	PRIMARY KEY (__id__)
+	unix_timestamp          	integer,
+	end_time                	timestamp,
+	time_zone               	real,
+	start_time              	timestamp,
+	date            		timestamp,
+	winner         			integer 
+	people_hash             	varchar(100),
+	PRIMARY KEY (__id__),
+	FOREIGN KEY (winner) REFERENCES replay.player(__id__)
 );
 
 
@@ -186,12 +152,14 @@ create table events.UnitBornEvent
 	unit_type_name          	varchar(100),
 	control_pid             	integer,
 	upkeep_pid              	integer,
-	-- -- -- unit_upkeeper           	<class 'NoneType'>,
-	-- -- -- unit_controller         	<class 'NoneType'>,
+	unit_upkeeper           	integer,
+	unit_controller         	integer,
 	x               		integer,
 	y               		integer,
 	PRIMARY KEY (__id__),
 	FOREIGN KEY (unit) REFERENCES datapack.unit_type(__id__)
+	FOREIGN KEY (unit_upkeeper) REFERENCES replay.player(__id__)
+	FOREIGN KEY (unit_controller) REFERENCES replay.player(__id__)
 	
 );
 
@@ -204,28 +172,6 @@ create table events.ProgressEvent
 	name            		varchar(100),
 	progress                	integer,
 	player          		integer,
-	PRIMARY KEY (__id__),
-	FOREIGN KEY (player) REFERENCES replay.player(__id__)
-);
-
-create table events.UserOptionsEvent
-(
-	__id__				serial,
-	pid             		integer,
-	player          		integer,
-	frame           		integer,
-	second          		integer,
-	is_local               		boolean,
-	name            		varchar(100),
-	game_fully_downloaded           integer,
-	development_cheats_enabled      integer,
-	multiplayer_cheats_enabled      integer,
-	sync_checksumming_enabled       integer,
-	is_map_to_map_transition        integer,
-	-- -- -- use_ai_beacons          	<class 'NoneType'>,
-	-- -- -- starting_rally          	<class 'NoneType'>,
-	debug_pause_enabled             integer,
-	base_build_num          	integer,
 	PRIMARY KEY (__id__),
 	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
@@ -304,10 +250,6 @@ create table events.CameraEvent
 	name            		varchar(100),
 	x               		real,
 	y               		real,
-	-- -- location                	<class 'tuple'>,
-	-- -- distance                	<class 'NoneType'>,
-	-- -- pitch           		<class 'NoneType'>,
-	-- -- yaw             		<class 'NoneType'>,
 	PRIMARY KEY (__id__),
 	FOREIGN KEY (player) REFERENCES replay.player(__id__)
 );
