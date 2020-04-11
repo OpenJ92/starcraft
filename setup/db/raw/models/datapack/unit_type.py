@@ -15,3 +15,9 @@ class UNIT_TYPE(db.Model):
     is_building = db.Column(db.Boolean)
     is_army = db.Column(db.Boolean)
     is_worker = db.Column(db.Boolean)
+
+    @classmethod
+    def process(replay):
+        release_string = replay.release_string
+        if db.engine.execute(f"select release_string from starcraft.UNIT_TYPE where release_string = {release_string}"):
+            pass

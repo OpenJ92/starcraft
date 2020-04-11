@@ -6,5 +6,7 @@ sc2reader.engine.register_plugin(APMTracker())
 sc2reader.engine.register_plugin(ContextLoader())
 sc2reader.engine.register_plugin(GameHeartNormalizer())
 
+from setup.db.raw.config import db, app
+
 if __name__ == "__main__":
     replay = sc2reader.load_replay("example.SC2Replay", load_level=5, load_map=True)
