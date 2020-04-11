@@ -9,5 +9,5 @@ class ABILITY(db.Model):
     title = db.Column(db.Text)
     is_build = db.Column(db.Boolean)
     build_time = db.Column(db.Integer)
-    build_unit = db.Column(db.Integer, db.ForeignKey('UNIT_TYPE.id'))
+    build_unit = db.Column(db.Integer, db.ForeignKey('UNIT_TYPE.__id__'))
 
