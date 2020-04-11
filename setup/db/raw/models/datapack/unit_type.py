@@ -31,7 +31,7 @@ class UNIT_TYPE(db.Model):
     @classmethod
     def process_conditions(cls, replay):
         with open('setup/db/raw/utils/unit_type_CHECK_release_string.sql') as f:
-            string_ = f"{f.read()}".format(release_string = replay.release_string)
-            test = db.engine.execute(string_).rowcount == 0
-        return test
+            query = f"{f.read()}".format(release_string=replay.release_string)
+            condition = db.engine.execute(query).returns_rows
+        return condition
 
