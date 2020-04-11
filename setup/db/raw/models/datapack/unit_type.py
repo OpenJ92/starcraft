@@ -20,9 +20,8 @@ class UNIT_TYPE(db.Model):
     @classmethod
     def process(cls, replay):
         release_string = replay.release_string
-        test = db.engine.execute(f"select release_string from \"public\".\"UNIT_TYPE\" where release_string = \'{release_string}\'")
-        if not test.rowcount:
-            import pdb;pdb.set_trace()
+        conditions = cls.process_conditions(replay)
+        if conditions:
             objs = []
             for name, obj in replay.datapack.units.items():
                 objs.append(UNIT_TYPE(release_string = release_string, **vars(obj)))
@@ -31,5 +30,8 @@ class UNIT_TYPE(db.Model):
 
     @classmethod
     def process_conditions(cls, replay):
-        pass
+        with open('setup/db/raw/utils/unit_type_CHECK_release_string.sql') as f:
+            string_ = f"{f.read()}".format(release_string = replay.release_string)
+            test = db.engine.execute(string_).rowcount == 0
+        return test
 
