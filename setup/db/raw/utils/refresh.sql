@@ -6,3 +6,4 @@ create database starcraft;
 create schema replay;
 create schema datapack;
 create schema events;
+create schema analytics;
