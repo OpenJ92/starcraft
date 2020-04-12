@@ -9,3 +9,5 @@ class INJECT():
 
     def __construct__(self):
         UNIT_TYPE.process(self._replay)
+        ABILITY.process(self._replay)
+

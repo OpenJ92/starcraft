@@ -45,9 +45,12 @@ class UNIT_TYPE(db.Model):
 
     @classmethod
     def select_from_object(cls, obj, replay):
-        return db.session.query(UNIT_TYPE).filter(
-                                                    and_(
-                            UNIT_TYPE.id == obj.id,
-                            UNIT_TYPE.release_string == replay.release_string
-                                                        )
-                                                 )
+        ## note that this returns more than one row... There are duplicates in 
+        ## the above process function.
+        return db.session.query(UNIT_TYPE).\
+                filter(
+                        and_(
+                              UNIT_TYPE.id == obj.id,
+                              UNIT_TYPE.release_string == replay.release_string
+                            )
+                      ).first()
