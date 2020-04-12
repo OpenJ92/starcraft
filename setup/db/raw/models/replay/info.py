@@ -39,3 +39,69 @@ class INFO(db.Model):
 
     # winner = db.Column(db.Integer, db.ForeignKey('PLAYER.id'))
 
+    @classmethod
+    def process(cls, replay):
+        conditions = cls.process_condtions(replay)
+        if condtions:
+            data = {
+                        key
+                        :
+                        value 
+                        for key,value 
+                        in vars(relay).items()
+                        if key in cls.columns
+                    }
+            info = INFO(**data)
+            db.session.add_all(info)
+            db.session.commit()
+
+    @classmethod
+    def process_conditions(cls, replay):
+        with open('setup/db/raw/utils/info_CHECK_filehash.sql') as f:
+            query = f"{f.read()}".format(release_string=replay.release_string)
+            condition = db.engine.execute(query).fetchall() == []
+        return condition
+
+    @classmethod
+    def select_from_object(cls, obj):
+        pass
+
+    @classmethod
+    def get_from_object(cls, obj):
+        pass
+
+    columns = [
+                    "id",
+                    "filename",
+                    "filehash",
+                    "load_level",
+                    "speed",
+                    "type",
+                    "game_type",
+                    "real_type",
+                    "category",
+                    "is_ladder",
+                    "is_private",
+                    "map_hash",
+                    "region",
+                    "game_fps",
+                    "frames",
+                    "build",
+                    "base_build",
+                    "release_string",
+                    "amm",
+                    "competitive",
+                    "practice",
+                    "cooperative",
+                    "battle_net",
+                    "hero_duplicates_allowed",
+                    "map_name",
+                    "expansion",
+                    "windows_timestamp",
+                    "unix_timestamp",
+                    "end_time",
+                    "time_zone",
+                    "start_time",
+                    "date"
+             ]
+
