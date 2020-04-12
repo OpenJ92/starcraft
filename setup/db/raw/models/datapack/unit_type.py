@@ -1,11 +1,15 @@
+from sqlalchemy import and_
+
 from setup.db.raw.config import db 
 
 class UNIT_TYPE(db.Model):
     __tablename__ = "UNIT_TYPE"
 
     __id__ = db.Column(db.Integer, primary_key = True)
-    id = db.Column(db.Integer)
+
     release_string = db.Column(db.Text)
+
+    id = db.Column(db.Integer)
     str_id = db.Column(db.Text)
     name = db.Column(db.Text)
     title = db.Column(db.Text)
@@ -35,3 +39,15 @@ class UNIT_TYPE(db.Model):
             condition = db.engine.execute(query).returns_rows
         return condition
 
+    @classmethod
+    def get_dependancies(cls):
+        pass
+
+    @classmethod
+    def select_from_object(cls, obj, replay):
+        return db.session.query(UNIT_TYPE).filter(
+                                                    and_(
+                            UNIT_TYPE.id == obj.id,
+                            UNIT_TYPE.release_string == replay.release_string
+                                                        )
+                                                 )

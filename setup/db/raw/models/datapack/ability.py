@@ -11,3 +11,17 @@ class ABILITY(db.Model):
     build_time = db.Column(db.Integer)
     build_unit = db.Column(db.Integer, db.ForeignKey('UNIT_TYPE.__id__'))
 
+    @classmethod
+    def process(cls, replay):
+        conditions = True
+        if conditions:
+            objs = []
+            for name, obj in replay.datapack.abilities.items():
+                parents = cls.get_dependancies()
+                objs.append(ABILITY(**parents, **vars(obj)))
+
+    @classmethod
+    def get_dependancies(cls):
+        return {}
+        
+
