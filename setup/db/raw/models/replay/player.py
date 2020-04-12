@@ -2,7 +2,10 @@ from setup.db.raw.config import db
 
 class PLAYER(db.Model):
     __tablename__ = "PLAYER"
-    id = db.Column(db.Integer, primary_key = True)
+
+    __id__ = db.Column(db.Integer, primary_key = True)
+
+    id = db.Column(db.Integer)
     sid = db.Column(db.Integer)
     team_id = db.Column(db.Integer)
     is_human = db.Column(db.Boolean)
@@ -25,5 +28,8 @@ class PLAYER(db.Model):
     pick_race = db.Column(db.Text)
     play_race = db.Column(db.Text)
     replay_id = db.Column(db.Integer)
-    ## PRIMARY KEY (__id__),
-    ## FOREIGN KEY (replay_id) REFERENCES replay.info(__id__)
+
+    ## __INFO__ == replay_id
+    __INFO__ = db.Column(db.Integer, db.ForeignKey('INFO.__id__'))
+    replay = db.relationship('INFO', back_populates='players')
+

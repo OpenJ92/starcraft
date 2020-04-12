@@ -1,9 +1,12 @@
 from setup.db.raw.config import db 
 
+from setup.db.raw.replay.map import MAP
+
 class INFO(db.Model):
     __tablename__ = "INFO"
 
     __id__ = db.Column(db.Integer, primary_key = True)
+
     id = db.Column(db.Integer)
     filename = db.Column(db.Text)
     filehash = db.Column(db.Text)
@@ -37,24 +40,20 @@ class INFO(db.Model):
     start_time = db.Column(db.DateTime)
     date = db.Column(db.DateTime)
 
-    # winner = db.Column(db.Integer, db.ForeignKey('PLAYER.id'))
+    players = db.relationship('PLAYER', back_populates='replay')
+    # active_units
+    __MAP__ = db.Column(db.Integer, db.ForeignKey('REPLAY.__id__'))
+    map = db.relationship('MAP', back_populates='replays')
 
     @classmethod
     def process(cls, replay):
         conditions = cls.process_condtions(replay)
         if condtions:
-            data = {
-                        key
-                        :
-                        value 
-                        for key,value 
-                        in vars(relay).items()
-                        if key in cls.columns
-                    }
-            derived_data = {}
+            data = cls.process_raw_data(replay)
+            depend_data = cls.get_dependancies(replay) 
+            info = INFO(**data, **depend_data)
 
-            info = INFO(**data)
-            db.session.add_all(info)
+            db.session.add(info)
             db.session.commit()
 
     @classmethod
@@ -63,6 +62,26 @@ class INFO(db.Model):
             query = f"{f.read()}".format(release_string=replay.release_string)
             condition = db.engine.execute(query).fetchall() == []
         return condition
+
+    @classmethod
+    def process_raw_data(cls, replay):
+        return {
+                        key
+                        :
+                        value 
+                        for key,value 
+                        in vars(relay).items()
+                        if key in cls.columns
+                }
+
+    @classmethod
+    def get_dependancies(cls, replay):
+        N = replay.map
+        UT = None if not N else MAP.select_from_object(N)
+        return { 
+                    'map'    : UT,
+                    '__MAP__' : None if UT is None else UT.__id__ 
+                }
 
     @classmethod
     def select_from_object(cls, obj):
