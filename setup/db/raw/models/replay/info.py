@@ -1,20 +1,19 @@
 from setup.db.raw.config import db 
 
-from setup.db.raw.replay.map import MAP
+from setup.db.raw.models.replay.map import MAP
 
 class INFO(db.Model):
     __tablename__ = "INFO"
 
     __id__ = db.Column(db.Integer, primary_key = True)
 
-    id = db.Column(db.Integer)
     filename = db.Column(db.Text)
     filehash = db.Column(db.Text)
     load_level = db.Column(db.Integer)
     speed = db.Column(db.Text)
     type = db.Column(db.Text)
     game_type = db.Column(db.Text)
-    real_type = db.Column(db.Float)
+    real_type = db.Column(db.Text)
     category = db.Column(db.Text)
     is_ladder = db.Column(db.Boolean)
     is_private = db.Column(db.Boolean)
@@ -33,8 +32,8 @@ class INFO(db.Model):
     hero_duplicates_allowed = db.Column(db.Integer)
     map_name = db.Column(db.Text)
     expansion = db.Column(db.Text)
-    windows_timestamp = db.Column(db.Integer)
-    unix_timestamp = db.Column(db.Integer)
+    windows_timestamp = db.Column(db.BigInteger)
+    unix_timestamp = db.Column(db.BigInteger)
     end_time = db.Column(db.DateTime)
     time_zone = db.Column(db.Float)
     start_time = db.Column(db.DateTime)
@@ -42,13 +41,13 @@ class INFO(db.Model):
 
     players = db.relationship('PLAYER', back_populates='replay')
     # active_units
-    __MAP__ = db.Column(db.Integer, db.ForeignKey('REPLAY.__id__'))
+    __MAP__ = db.Column(db.Integer, db.ForeignKey('MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')
 
     @classmethod
     def process(cls, replay):
-        conditions = cls.process_condtions(replay)
-        if condtions:
+        conditions = cls.process_conditions(replay)
+        if conditions:
             data = cls.process_raw_data(replay)
             depend_data = cls.get_dependancies(replay) 
             info = INFO(**data, **depend_data)
@@ -59,7 +58,7 @@ class INFO(db.Model):
     @classmethod
     def process_conditions(cls, replay):
         with open('setup/db/raw/utils/info_CHECK_filehash.sql') as f:
-            query = f"{f.read()}".format(release_string=replay.release_string)
+            query = f"{f.read()}".format(filehash=replay.filehash)
             condition = db.engine.execute(query).fetchall() == []
         return condition
 
@@ -70,7 +69,7 @@ class INFO(db.Model):
                         :
                         value 
                         for key,value 
-                        in vars(relay).items()
+                        in vars(replay).items()
                         if key in cls.columns
                 }
 

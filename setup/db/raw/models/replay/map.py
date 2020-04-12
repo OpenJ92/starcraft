@@ -13,12 +13,12 @@ class MAP(db.Model):
     website = db.Column(db.Text)
     minimap = db.Column(db.LargeBinary)
 
-    replays = db.relationship('INFO', backpopulates='map')
+    replays = db.relationship('INFO', back_populates='map')
 
     @classmethod
     def process(cls, replay):
         conditions = cls.process_conditions(replay)
-        if condtions:
+        if conditions:
             data = cls.process_raw_data(replay.map)
             depend_data = {}
             Map = MAP(**data, **depend_data)
@@ -40,13 +40,13 @@ class MAP(db.Model):
                         :
                         value 
                         for key,value 
-                        in vars(relay).items()
+                        in vars(obj).items()
                         if key in cls.columns
                 }
 
     @classmethod
     def select_from_object(cls, obj):
-        return db.session.query(cls).filter(cls.filehash = obj.filehash).first()
+        return db.session.query(cls).filter(cls.filehash==obj.filehash).first()
 
     columns = {
                 "filename",
