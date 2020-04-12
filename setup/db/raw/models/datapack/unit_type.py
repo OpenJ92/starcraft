@@ -4,6 +4,7 @@ from setup.db.raw.config import db
 
 class UNIT_TYPE(db.Model):
     __tablename__ = "UNIT_TYPE"
+    __table_args__ = {"schema": "datapack"}
 
     __id__ = db.Column(db.Integer, primary_key = True)
     release_string = db.Column(db.Text)

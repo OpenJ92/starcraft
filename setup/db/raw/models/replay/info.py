@@ -4,6 +4,7 @@ from setup.db.raw.models.replay.map import MAP
 
 class INFO(db.Model):
     __tablename__ = "INFO"
+    __table_args__ = {"schema": "replay"}
 
     __id__ = db.Column(db.Integer, primary_key = True)
 
@@ -41,7 +42,7 @@ class INFO(db.Model):
 
     players = db.relationship('PLAYER', back_populates='replay')
     # active_units
-    __MAP__ = db.Column(db.Integer, db.ForeignKey('MAP.__id__'))
+    __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')
 
     @classmethod
@@ -85,10 +86,6 @@ class INFO(db.Model):
     @classmethod
     def select_from_object(cls, obj):
         return db.session.query(cls).filter(cls.filehash==obj.filehash).first()
-
-    @classmethod
-    def get_from_object(cls, obj):
-        pass
 
     columns = [
                     "id",

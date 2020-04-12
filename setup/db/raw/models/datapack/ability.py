@@ -4,6 +4,7 @@ from setup.db.raw.config import db
 
 class ABILITY(db.Model):
     __tablename__ = "ABILITY"
+    __table_args__ = {"schema": "datapack"}
 
     __id__ = db.Column(db.Integer, primary_key = True)
 
@@ -16,7 +17,7 @@ class ABILITY(db.Model):
     is_build = db.Column(db.Boolean)
     build_time = db.Column(db.Integer)
 
-    __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('UNIT_TYPE.__id__'))
+    __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))
     build_unit = db.relationship('UNIT_TYPE', back_populates='abilities')
 
     @classmethod

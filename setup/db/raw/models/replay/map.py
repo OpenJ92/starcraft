@@ -2,6 +2,7 @@ from setup.db.raw.config import db
 
 class MAP(db.Model):
     __tablename__ = "MAP"
+    __table_args__ = {"schema": "replay"}
 
     __id__ = db.Column(db.Integer, primary_key = True)
 

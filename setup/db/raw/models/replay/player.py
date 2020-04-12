@@ -2,6 +2,7 @@ from setup.db.raw.config import db
 
 class PLAYER(db.Model):
     __tablename__ = "PLAYER"
+    __table_args__ = {"schema": "replay"}
 
     __id__ = db.Column(db.Integer, primary_key = True)
 
@@ -30,6 +31,6 @@ class PLAYER(db.Model):
     replay_id = db.Column(db.Integer)
 
     ## __INFO__ == replay_id
-    __INFO__ = db.Column(db.Integer, db.ForeignKey('INFO.__id__'))
+    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))
     replay = db.relationship('INFO', back_populates='players')
 

@@ -1,7 +1,7 @@
 select
 	filehash
 from
-	"public"."INFO"
+	"replay"."INFO"
 where
 	filehash = '{filehash}'
 ;
