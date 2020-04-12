@@ -20,6 +20,7 @@ class UNIT_TYPE(db.Model):
     is_building = db.Column(db.Boolean)
     is_army = db.Column(db.Boolean)
     is_worker = db.Column(db.Boolean)
+    abilities = db.relationship('ABILITY', back_populates='build_unit')
 
     @classmethod
     def process(cls, replay):
@@ -27,7 +28,7 @@ class UNIT_TYPE(db.Model):
         conditions = cls.process_conditions(replay)
         if conditions:
             objs = []
-            for name, obj in replay.datapack.units.items():
+            for _, obj in UNIT_TYPE.get_unique(replay).items():
                 objs.append(UNIT_TYPE(release_string = release_string, **vars(obj)))
             db.session.add_all(objs)
             db.session.commit()
@@ -45,8 +46,6 @@ class UNIT_TYPE(db.Model):
 
     @classmethod
     def select_from_object(cls, obj, replay):
-        ## note that this returns more than one row... There are duplicates in 
-        ## the above process function.
         return db.session.query(UNIT_TYPE).\
                 filter(
                         and_(
@@ -54,3 +53,11 @@ class UNIT_TYPE(db.Model):
                               UNIT_TYPE.release_string == replay.release_string
                             )
                       ).first()
+
+    @classmethod
+    def get_unique(cls, replay):
+        units = {}
+        for _, unit in replay.datapack.units.items():
+            if unit.id not in units.keys():
+                units[unit.id] = unit
+        return units
