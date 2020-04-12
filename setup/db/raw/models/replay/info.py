@@ -84,7 +84,7 @@ class INFO(db.Model):
 
     @classmethod
     def select_from_object(cls, obj):
-        pass
+        return db.session.query(cls).filter(cls.filehash==obj.filehash).first()
 
     @classmethod
     def get_from_object(cls, obj):
