@@ -51,6 +51,8 @@ class INFO(db.Model):
                         in vars(relay).items()
                         if key in cls.columns
                     }
+            derived_data = {}
+
             info = INFO(**data)
             db.session.add_all(info)
             db.session.commit()
@@ -103,5 +105,5 @@ class INFO(db.Model):
                     "time_zone",
                     "start_time",
                     "date"
-             ]
+              ]
 
