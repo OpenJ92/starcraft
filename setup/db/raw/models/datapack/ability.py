@@ -5,9 +5,7 @@ class ABILITY(db.Model):
     __tablename__ = "ABILITY"
 
     __id__ = db.Column(db.Integer, primary_key = True)
-
     release_string = db.Column(db.Text)
-
     id = db.Column(db.Integer)
     version = db.Column(db.Text)
     name = db.Column(db.Text)

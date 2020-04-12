@@ -6,9 +6,7 @@ class UNIT_TYPE(db.Model):
     __tablename__ = "UNIT_TYPE"
 
     __id__ = db.Column(db.Integer, primary_key = True)
-
     release_string = db.Column(db.Text)
-
     id = db.Column(db.Integer)
     str_id = db.Column(db.Text)
     name = db.Column(db.Text)
