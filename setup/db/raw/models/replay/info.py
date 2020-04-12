@@ -50,7 +50,7 @@ class INFO(db.Model):
         conditions = cls.process_conditions(replay)
         if conditions:
             data = cls.process_raw_data(replay)
-            depend_data = cls.get_dependancies(replay) 
+            depend_data = cls.process_dependancies(replay) 
             info = INFO(**data, **depend_data)
 
             db.session.add(info)
@@ -75,13 +75,13 @@ class INFO(db.Model):
                 }
 
     @classmethod
-    def get_dependancies(cls, replay):
+    def process_dependancies(cls, replay):
         N = replay.map
         UT = None if not N else MAP.select_from_object(N)
         return { 
                     'map'    : UT,
                     '__MAP__' : None if UT is None else UT.__id__ 
-                }
+               }
 
     @classmethod
     def select_from_object(cls, obj):

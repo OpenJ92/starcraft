@@ -27,7 +27,7 @@ class ABILITY(db.Model):
         if conditions:
             objs = []
             for name, obj in replay.datapack.abilities.items():
-                parents = cls.get_dependancies(obj, replay)
+                parents = cls.process_dependancies(obj, replay)
                 data = {
                             key : value 
                             for key,value 
@@ -47,7 +47,7 @@ class ABILITY(db.Model):
         return condition
 
     @classmethod
-    def get_dependancies(cls, obj, replay):
+    def process_dependancies(cls, obj, replay):
         N = obj.build_unit
         UT = None if not N else UNIT_TYPE.select_from_object(N, replay)
         return { 
