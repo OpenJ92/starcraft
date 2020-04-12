@@ -3,7 +3,8 @@ from setup.db.raw.config import db
 class INFO(db.Model):
     __tablename__ = "INFO"
 
-    id = db.Column(db.Integer, primary_key = True)
+    __id__ = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer)
     filename = db.Column(db.Text)
     filehash = db.Column(db.Text)
     load_level = db.Column(db.Integer)
@@ -35,5 +36,6 @@ class INFO(db.Model):
     time_zone = db.Column(db.Float)
     start_time = db.Column(db.DateTime)
     date = db.Column(db.DateTime)
-    winner = db.Column(db.Integer, db.ForeignKey('PLAYER.id'))
+
+    # winner = db.Column(db.Integer, db.ForeignKey('PLAYER.id'))
 

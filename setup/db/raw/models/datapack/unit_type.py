@@ -18,6 +18,7 @@ class UNIT_TYPE(db.Model):
     is_building = db.Column(db.Boolean)
     is_army = db.Column(db.Boolean)
     is_worker = db.Column(db.Boolean)
+
     abilities = db.relationship('ABILITY', back_populates='build_unit')
 
     @classmethod
@@ -35,7 +36,7 @@ class UNIT_TYPE(db.Model):
     def process_conditions(cls, replay):
         with open('setup/db/raw/utils/unit_type_CHECK_release_string.sql') as f:
             query = f"{f.read()}".format(release_string=replay.release_string)
-            condition = db.engine.execute(query).returns_rows
+            condition = db.engine.execute(query).fetchall() == []
         return condition
 
     @classmethod
@@ -44,11 +45,11 @@ class UNIT_TYPE(db.Model):
 
     @classmethod
     def select_from_object(cls, obj, replay):
-        return db.session.query(UNIT_TYPE).\
+        return db.session.query(cls).\
                 filter(
                         and_(
-                              UNIT_TYPE.id == obj.id,
-                              UNIT_TYPE.release_string == replay.release_string
+                              cls.id == obj.id,
+                              cls.release_string == replay.release_string
                             )
                       ).first()
 
