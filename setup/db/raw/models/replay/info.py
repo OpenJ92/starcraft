@@ -41,7 +41,8 @@ class INFO(db.Model):
     date = db.Column(db.DateTime)
 
     players = db.relationship('PLAYER', back_populates='replay')
-    # active_units
+    objects = db.relationship('OBJECT', back_populates='replay')
+
     __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')
 

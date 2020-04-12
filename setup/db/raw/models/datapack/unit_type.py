@@ -21,6 +21,7 @@ class UNIT_TYPE(db.Model):
     is_worker = db.Column(db.Boolean)
 
     abilities = db.relationship('ABILITY', back_populates='build_unit')
+    objects = db.relationship('OBJECT', back_populates='unit_type')
 
     @classmethod
     def process(cls, replay):

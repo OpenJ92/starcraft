@@ -28,6 +28,9 @@ class PLAYER(db.Model):
     
     id = db.Column(db.Integer)
 
+    owned_objects = db.realtionship('OBJECT', back_populates='owner')
+    killed_objects = 
+
     __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))
     replay = db.relationship('INFO', back_populates='players')
 
