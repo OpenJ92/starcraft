@@ -45,6 +45,11 @@ class OBJECT(db.Model):
     __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))
     unit_type = db.relationship('UNIT_TYPE', back_populates='objects')
 
+    ## https://docs.sqlalchemy.org/en/13/orm/self_referential.html
+    ##      look into the above tomorrow
+    ## __KU_id__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))
+    ## killing_unit = db.relationship('OBJECT', remote_side='OBJECT.__id__')
+
     @classmethod
     def process(cls):
         pass
