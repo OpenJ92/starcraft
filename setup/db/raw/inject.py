@@ -16,3 +16,4 @@ class INJECT():
         MAP.process(self._replay)
         INFO.process(self._replay)
         PLAYER.process(self._replay)
+        OBJECT.process(self._replay)

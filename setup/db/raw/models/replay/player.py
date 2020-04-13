@@ -1,5 +1,7 @@
-from setup.db.raw.config import db 
+from collections import namedtuple
+from sqlalchemy import and_
 
+from setup.db.raw.config import db 
 from setup.db.raw.models.replay.info import INFO
 
 class PLAYER(db.Model):
@@ -64,7 +66,10 @@ class PLAYER(db.Model):
 
     @classmethod
     def process_conditions(cls, replay):
-        return True
+        with open('setup/db/raw/utils/info_CHECK_filehash.sql') as f:
+            query = f"{f.read()}".format(filehash=replay.filehash)
+            condition = db.engine.execute(query).fetchall() == []
+        return condition
 
     @classmethod
     def process_dependancies(cls, replay):
@@ -92,7 +97,16 @@ class PLAYER(db.Model):
                }
 
     @classmethod
-    def select_from_object(cls, obj):
+    def select_from_object(cls, obj, replay):
+        NULLPLAYER = namedtuple('NULLPLAYER', ('detail_data',))
+        obj = obj if obj else NULLPLAYER({'bnet':{'uid':-1}})
+        return db.session.query(cls).filter(
+                                    and_(
+                                          cls.id==obj.detail_data['bnet']['uid'],
+                                          cls.__INFO__==INFO.select_from_object(replay).__id__
+                                         )
+                                    ).one_or_none()
+                                          
         pass
 
     columns = {

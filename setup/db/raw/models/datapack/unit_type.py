@@ -54,7 +54,7 @@ class UNIT_TYPE(db.Model):
                               cls.id == obj.id,
                               cls.release_string == replay.release_string
                             )
-                      ).first()
+                      ).one_or_none()
 
     @classmethod
     def get_unique(cls, replay):
