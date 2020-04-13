@@ -58,7 +58,7 @@ class OBJECT(db.Model):
         if condtions: 
             for _, obj in relpay.objects.items():
                 data = cls.process_object(obj)
-                derived_data = cls.process_derived(obj, players)
+                derived_data = cls.process_derived(obj, players, replay)
                 objs.append(
                                 cls(
                                         **data,
@@ -96,7 +96,7 @@ class OBJECT(db.Model):
                 }
 
     @classmethod
-    def process_derived(cls, obj, players):
+    def process_derived(cls, obj, players, replay):
         return {
                     'name' : obj.name,
                     'location_x' : obj.location[0],
@@ -106,7 +106,9 @@ class OBJECT(db.Model):
                     'killing_player' : players[obj.killing_player], 
                     '__KILLED__' : players[obj.killing_player].__id__, 
                     'killed_by' : players[obj.killed_by], 
-                    '__KILLEDBY__' : players[obj.killed_by].__id__ 
+                    '__KILLEDBY__' : players[obj.killed_by].__id__,
+                    'unit_type' : UNIT.select_from_object(obj.unit_type, replay),
+                    '__UNIT_TYPE__' : UNIT.select_from_object(obj.unit_type, replay).__id__
                }
 
     @classmethod
