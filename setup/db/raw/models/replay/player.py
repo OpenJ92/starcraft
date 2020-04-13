@@ -28,8 +28,22 @@ class PLAYER(db.Model):
     
     id = db.Column(db.Integer)
 
-    owned_objects = db.realtionship('OBJECT', back_populates='owner')
-    killed_objects = 
+    owned_objects = db.relationship(
+                        'OBJECT', 
+                        primaryjoin='OBJECT.__OWNER__==PLAYER.__id__', 
+                        back_populates='owner'
+                                   )
+    killing_player_objs = db.relationship(
+                        'OBJECT', 
+                        primaryjoin='OBJECT.__KILLED__==PLAYER.__id__', 
+                        back_populates='killing_player'
+                                         )
+
+    killed_by_objs = db.relationship(
+                        'OBJECT', 
+                        primaryjoin='OBJECT.__KILLEDBY__==PLAYER.__id__', 
+                        back_populates='killed_by'
+                                    )
 
     __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))
     replay = db.relationship('INFO', back_populates='players')

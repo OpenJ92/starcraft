@@ -22,15 +22,25 @@ class OBJECT(db.Model):
     replay = db.relationship('INFO', back_populates='objects')
 
     __OWNER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
-    owner = db.relationship('PLAYER', back_populates='objects')
+    owner = db.relationship(
+                                'PLAYER', 
+                                primaryjoin=__OWNER__==PLAYER.__id__, 
+                                back_populates='owned_objects'
+                            )
 
     __KILLED__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
-    killing_player = db.relationship(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
+    killing_player = db.relationship(
+                                'PLAYER', 
+                                primaryjoin=__KILLED__==PLAYER.__id__, 
+                                back_populates='killing_player_objs'
+                                    )
 
     __KILLEDBY__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
-    killed_by = db.relationship(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
+    killed_by = db.relationship(
+                                'PLAYER', 
+                                primaryjoin=__KILLEDBY__==PLAYER.__id__, 
+                                back_populates='killed_by_objs'
+                               )
 
     __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))
     unit_type = db.relationship('UNIT_TYPE', back_populates='objects')
-
-
