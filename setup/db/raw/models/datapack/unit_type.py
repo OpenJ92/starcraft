@@ -30,6 +30,7 @@ class UNIT_TYPE(db.Model):
         if conditions:
             objs = []
             for _, obj in UNIT_TYPE.get_unique(replay).items():
+                print(obj)
                 objs.append(UNIT_TYPE(release_string = release_string, **vars(obj)))
             db.session.add_all(objs)
             db.session.commit()

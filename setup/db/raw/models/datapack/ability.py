@@ -27,6 +27,7 @@ class ABILITY(db.Model):
         if conditions:
             objs = []
             for name, obj in replay.datapack.abilities.items():
+                print(obj)
                 parents = cls.process_dependancies(obj, replay)
                 data = {
                             key : value 

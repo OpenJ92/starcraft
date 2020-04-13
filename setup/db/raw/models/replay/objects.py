@@ -14,6 +14,7 @@ class OBJECT(db.Model):
     started_at = db.Column(db.Integer)
     finished_at = db.Column(db.Integer)
     died_at = db.Column(db.Integer)
+    name = db.Column(db.Text)
 
     location_x = db.Column(db.Integer)
     location_y = db.Column(db.Integer)
@@ -46,30 +47,75 @@ class OBJECT(db.Model):
     unit_type = db.relationship('UNIT_TYPE', back_populates='objects')
 
     ## https://docs.sqlalchemy.org/en/13/orm/self_referential.html
-    ##      look into the above tomorrow
-    ## __KU_id__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))
-    ## killing_unit = db.relationship('OBJECT', remote_side='OBJECT.__id__')
+    __KU_id__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))
+    killing_unit = db.relationship('OBJECT', remote_side='OBJECT.__KU_id__')
 
     @classmethod
-    def process(cls):
-        pass
+    def process(cls, replay):
+        objs = []
+        players, replay = cls.process_dependancies(replay)
+        conditions = cls.process_condtions()
+        if condtions: 
+            for _, obj in relpay.objects.items():
+                data = cls.process_object(obj)
+                derived_data = cls.process_derived(obj, players)
+                objs.append(
+                                cls(
+                                        **data,
+                                        **derived_data,
+                                        **replay 
+                                   )
+                            )
+
 
     @classmethod
     def process_conditions(cls):
-        pass
+        return True
 
     @classmethod
-    def process_dependancies(cls):
-        pass
+    def process_dependancies(cls, replay):
+        UT = None if not replay else INFO.select_from_object(replay)
+        PLAYERS = {
+                    player
+                    :
+                    None if not player else PLAYER.select_from_object(player)
+                    for player
+                    in replay.players
+                  }
+        return PLAYERS, { 'replay' : UT, '__INFO__' : UT.__id__ }
 
     @classmethod
-    def process_object(cls):
-        pass
+    def process_object(cls, obj):
+        return {
+                        key
+                        :
+                        value 
+                        for key,value 
+                        in vars(obj).items()
+                        if key in cls.columns
+                }
 
     @classmethod
-    def process_derived(cls):
-        pass
+    def process_derived(cls, obj, players):
+        return {
+                    'name' : obj.name,
+                    'location_x' : obj.location[0],
+                    'location_y' : obj.location[1],
+                    'owner' : players[obj.owner], 
+                    '__OWNER__' : players[obj.owner].__id__,
+                    'killing_player' : players[obj.killing_player], 
+                    '__KILLED__' : players[obj.killing_player].__id__, 
+                    'killed_by' : players[obj.killed_by], 
+                    '__KILLEDBY__' : players[obj.killed_by].__id__ 
+               }
 
     @classmethod
     def select_from_object(cls):
         pass
+
+    columns = {
+                    "id",
+                    "started_at",
+                    "finished_at",
+                    "died_at"
+              }
