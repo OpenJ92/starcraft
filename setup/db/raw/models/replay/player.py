@@ -69,7 +69,7 @@ class PLAYER(db.Model):
         with open('setup/db/raw/utils/info_CHECK_filehash.sql') as f:
             query = f"{f.read()}".format(filehash=replay.filehash)
             condition = db.engine.execute(query).fetchall() == []
-        return condition
+        return True
 
     @classmethod
     def process_dependancies(cls, replay):
