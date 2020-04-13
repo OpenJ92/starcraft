@@ -44,3 +44,27 @@ class OBJECT(db.Model):
 
     __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))
     unit_type = db.relationship('UNIT_TYPE', back_populates='objects')
+
+    @classmethod
+    def process(cls):
+        pass
+
+    @classmethod
+    def process_conditions(cls):
+        pass
+
+    @classmethod
+    def process_dependancies(cls):
+        pass
+
+    @classmethod
+    def process_object(cls):
+        pass
+
+    @classmethod
+    def process_derived(cls):
+        pass
+
+    @classmethod
+    def select_from_object(cls):
+        pass
