@@ -48,6 +48,7 @@ class OBJECT(db.Model):
     unit_type = db.relationship('UNIT_TYPE', back_populates='objects')
 
     target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='target')
+    unit_born_events = db.relationship('UnitBornEvent',back_populates='unit')
 
     ## There's a chance that this information could be back_populated through
     ## a relationship to the UNIT_DIED_EVENT in the events schema.

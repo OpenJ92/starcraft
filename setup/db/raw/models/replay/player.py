@@ -62,6 +62,7 @@ class PLAYER(db.Model):
     target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='player')
     target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='player')
     upgrade_complete_events = db.relationship('UpgradeCompleteEvent',back_populates='player')
+    unit_born_events = db.relationship('UnitBornEvent',back_populates='unit_controller')
 
     @classmethod
     def process(cls, replay):
