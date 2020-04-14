@@ -17,3 +17,16 @@ from setup.db.raw.inject import INJECT
 if __name__ == "__main__":
     replay = sc2reader.load_replay("AnotherTvZ.SC2Replay",load_level=5,load_map=True)
     inject = INJECT(replay)
+
+    events = {}
+    for event in replay.events:
+        if event.name not in events.keys():
+            events[event.name] = [event]
+        else:
+            events[event.name].append(event)
+
+    def event_details(event_name, predicate = lambda e: True):
+        for event in events[event_name]:
+            if predicate(event):
+                print(vars(event))
+

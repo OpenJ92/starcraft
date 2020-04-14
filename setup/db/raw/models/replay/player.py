@@ -55,6 +55,7 @@ class PLAYER(db.Model):
     chat_events=db.relationship('ChatEvent', back_populates='player')
     camera_events = db.relationship('CameraEvent',back_populates='player')
     control_group_events = db.relationship('ControlGroupEvent',back_populates='player')
+    get_control_group_events = db.relationship('GetControlGroupEvent',back_populates='player')
 
     @classmethod
     def process(cls, replay):
