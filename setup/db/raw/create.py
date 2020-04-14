@@ -19,6 +19,7 @@ from setup.db.raw.models.events.TargetPointCommandEvent import TargetPointComman
 from setup.db.raw.models.events.TargetUnitCommandEvent import TargetUnitCommandEvent
 from setup.db.raw.models.events.UpgradeCompleteEvent import UpgradeCompleteEvent 
 from setup.db.raw.models.events.UnitBornEvent import UnitBornEvent
+from setup.db.raw.models.events.UnitDoneEvent import UnitDoneEvent
 
 from setup.db.raw.config import db 
 

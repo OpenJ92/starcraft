@@ -67,22 +67,6 @@ class UnitBornEvent(db.Model):
                }
 
     columns = {
-                    "pid",
-                    "frame",
-                    "second",
-                    "is_local",
-                    "name",
-                    "flags",
-                    "has_ability",
-                    "ability_link",
-                    "command_index",
-                    "ability_name",
-                    "ability_type",
-                    "x",
-                    "y",
-                    "z"
-            }
-    columns = {
                     "frame",
                     "second",
                     "name",

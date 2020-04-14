@@ -11,6 +11,7 @@ from setup.db.raw.models.events.TargetPointCommandEvent import TargetPointComman
 from setup.db.raw.models.events.TargetUnitCommandEvent import TargetUnitCommandEvent
 from setup.db.raw.models.events.UpgradeCompleteEvent import UpgradeCompleteEvent 
 from setup.db.raw.models.events.UnitBornEvent import UnitBornEvent
+from setup.db.raw.models.events.UnitDoneEvent import UnitDoneEvent
 
 class InjectFactory():
 
@@ -27,7 +28,8 @@ class InjectFactory():
                 TargetPointCommandEvent.__name__ : TargetPointCommandEvent,
                 TargetUnitCommandEvent.__name__ : TargetUnitCommandEvent,
                 UpgradeCompleteEvent .__name__ : UpgradeCompleteEvent,
-                UnitBornEvent.__name__ : UnitBornEvent
+                UnitBornEvent.__name__ : UnitBornEvent,
+                UnitDoneEvent.__name__ : UnitDoneEvent
              }
 
     @classmethod
