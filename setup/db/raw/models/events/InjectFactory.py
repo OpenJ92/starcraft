@@ -4,6 +4,7 @@ from setup.db.raw.models.events.CameraEvent import CameraEvent
 from setup.db.raw.models.events.ControlGroupEvent import ControlGroupEvent
 from setup.db.raw.models.events.GetControlGroupEvent import GetControlGroupEvent
 from setup.db.raw.models.events.SetControlGroupEvent import SetControlGroupEvent
+from setup.db.raw.models.events.PlayerStatsEvent import PlayerStatsEvent
 
 class InjectFactory():
 
@@ -13,7 +14,8 @@ class InjectFactory():
                 CameraEvent.__name__ : CameraEvent,
                 ControlGroupEvent.__name__ : ControlGroupEvent,
                 GetControlGroupEvent.__name__ : GetControlGroupEvent,
-                SetControlGroupEvent.__name__ : SetControlGroupEvent
+                SetControlGroupEvent.__name__ : SetControlGroupEvent,
+                PlayerStatsEvent.__name__ : PlayerStatsEvent
              }
 
     @classmethod

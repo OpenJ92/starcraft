@@ -12,6 +12,7 @@ from setup.db.raw.models.events.CameraEvent import CameraEvent
 from setup.db.raw.models.events.ControlGroupEvent import ControlGroupEvent
 from setup.db.raw.models.events.GetControlGroupEvent import GetControlGroupEvent
 from setup.db.raw.models.events.SetControlGroupEvent import SetControlGroupEvent
+from setup.db.raw.models.events.PlayerStatsEvent import PlayerStatsEvent
 
 from setup.db.raw.config import db 
 

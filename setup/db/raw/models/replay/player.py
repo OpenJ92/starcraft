@@ -57,6 +57,7 @@ class PLAYER(db.Model):
     control_group_events = db.relationship('ControlGroupEvent',back_populates='player')
     get_control_group_events = db.relationship('GetControlGroupEvent',back_populates='player')
     set_control_group_events = db.relationship('SetControlGroupEvent',back_populates='player')
+    player_stats_events = db.relationship('PlayerStatsEvent',back_populates='player')
 
     @classmethod
     def process(cls, replay):
