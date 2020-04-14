@@ -57,6 +57,7 @@ class INFO(db.Model):
     upgrade_complete_events = db.relationship('UpgradeCompleteEvent',back_populates='info')
     unit_born_events = db.relationship('UnitBornEvent',back_populates='info')
     unit_done_events = db.relationship('UnitDoneEvent',back_populates='info')
+    unit_init_events = db.relationship('UnitInitEvent',back_populates='info')
 
     __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')
