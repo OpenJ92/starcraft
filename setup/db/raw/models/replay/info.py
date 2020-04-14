@@ -50,6 +50,7 @@ class INFO(db.Model):
     get_control_group_events = db.relationship('GetControlGroupEvent',back_populates='info')
     set_control_group_events = db.relationship('SetControlGroupEvent',back_populates='info')
     player_stats_events = db.relationship('PlayerStatsEvent',back_populates='info')
+    player_leave_events = db.relationship('PlayerLeaveEvent',back_populates='info')
 
     __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')
