@@ -6,6 +6,7 @@ from setup.db.raw.models.events.GetControlGroupEvent import GetControlGroupEvent
 from setup.db.raw.models.events.SetControlGroupEvent import SetControlGroupEvent
 from setup.db.raw.models.events.PlayerStatsEvent import PlayerStatsEvent
 from setup.db.raw.models.events.PlayerLeaveEvent import PlayerLeaveEvent
+from setup.db.raw.models.events.PlayerSetupEvent import PlayerSetupEvent
 
 class InjectFactory():
 
@@ -17,7 +18,8 @@ class InjectFactory():
                 GetControlGroupEvent.__name__ : GetControlGroupEvent,
                 SetControlGroupEvent.__name__ : SetControlGroupEvent,
                 PlayerStatsEvent.__name__ : PlayerStatsEvent,
-                PlayerLeaveEvent.__name__ : PlayerLeaveEvent
+                PlayerLeaveEvent.__name__ : PlayerLeaveEvent,
+                PlayerSetupEvent.__name__ : PlayerSetupEvent
              }
 
     @classmethod
