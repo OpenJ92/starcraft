@@ -53,6 +53,7 @@ class INFO(db.Model):
     player_leave_events = db.relationship('PlayerLeaveEvent',back_populates='info')
     player_setup_events = db.relationship('PlayerSetupEvent',back_populates='info')
     target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='info')
+    target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='info')
 
     __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')

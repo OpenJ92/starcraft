@@ -1,3 +1,4 @@
+from sqlalchemy import and_
 from setup.db.raw.config import db 
 
 from setup.db.raw.models.replay.info import INFO
@@ -45,6 +46,8 @@ class OBJECT(db.Model):
 
     __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))
     unit_type = db.relationship('UNIT_TYPE', back_populates='objects')
+
+    target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='target')
 
     ## There's a chance that this information could be back_populated through
     ## a relationship to the UNIT_DIED_EVENT in the events schema.
@@ -121,8 +124,13 @@ class OBJECT(db.Model):
             return {}
 
     @classmethod
-    def select_from_object(cls):
-        pass
+    def select_from_object(cls, obj, replay):
+        return db.session.query(cls).filter(
+                    and_(
+                             cls.__INFO__==INFO.select_from_object(replay).__id__,
+                             cls.id==obj.id
+                        )
+                ).one_or_none()
 
     columns = {
                     "id",

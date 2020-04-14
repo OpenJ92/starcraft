@@ -8,6 +8,7 @@ from setup.db.raw.models.events.PlayerStatsEvent import PlayerStatsEvent
 from setup.db.raw.models.events.PlayerLeaveEvent import PlayerLeaveEvent
 from setup.db.raw.models.events.PlayerSetupEvent import PlayerSetupEvent
 from setup.db.raw.models.events.TargetPointCommandEvent import TargetPointCommandEvent
+from setup.db.raw.models.events.TargetUnitCommandEvent import TargetUnitCommandEvent
 
 class InjectFactory():
 
@@ -21,7 +22,8 @@ class InjectFactory():
                 PlayerStatsEvent.__name__ : PlayerStatsEvent,
                 PlayerLeaveEvent.__name__ : PlayerLeaveEvent,
                 PlayerSetupEvent.__name__ : PlayerSetupEvent,
-                TargetPointCommandEvent.__name__ : TargetPointCommandEvent
+                TargetPointCommandEvent.__name__ : TargetPointCommandEvent,
+                TargetUnitCommandEvent.__name__ : TargetUnitCommandEvent
              }
 
     @classmethod
