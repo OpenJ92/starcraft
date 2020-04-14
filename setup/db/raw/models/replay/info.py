@@ -53,7 +53,7 @@ class INFO(db.Model):
     def process(cls, replay):
         conditions = cls.process_conditions(replay)
         if conditions:
-            data = cls.process_raw_data(replay)
+            data = cls.process_object(replay)
             depend_data = cls.process_dependancies(replay) 
             info = INFO(**data, **depend_data)
             print(replay)
@@ -69,7 +69,7 @@ class INFO(db.Model):
         return condition
 
     @classmethod
-    def process_raw_data(cls, replay):
+    def process_object(cls, replay):
         return {
                         key
                         :

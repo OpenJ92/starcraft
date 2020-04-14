@@ -62,7 +62,7 @@ class PLAYER(db.Model):
         if condition:
             for obj in replay.players:
                 print(obj)
-                data = cls.process_raw_data(obj)
+                data = cls.process_object(obj)
                 data_derived = cls.process_derived(obj)
                 objs.append(cls(**data, **parents, **data_derived))
             db.session.add_all(objs)
@@ -83,7 +83,7 @@ class PLAYER(db.Model):
                }
 
     @classmethod
-    def process_raw_data(cls, obj):
+    def process_object(cls, obj):
         return {
                         key
                         :
