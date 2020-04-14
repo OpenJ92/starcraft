@@ -15,6 +15,7 @@ from setup.db.raw.models.events.SetControlGroupEvent import SetControlGroupEvent
 from setup.db.raw.models.events.PlayerStatsEvent import PlayerStatsEvent
 from setup.db.raw.models.events.PlayerLeaveEvent import PlayerLeaveEvent
 from setup.db.raw.models.events.PlayerSetupEvent import PlayerSetupEvent
+from setup.db.raw.models.events.TargetPointCommandEvent import TargetPointCommandEvent
 
 from setup.db.raw.config import db 
 

@@ -59,6 +59,7 @@ class PLAYER(db.Model):
     set_control_group_events = db.relationship('SetControlGroupEvent',back_populates='player')
     player_stats_events = db.relationship('PlayerStatsEvent',back_populates='player')
     player_leave_events = db.relationship('PlayerLeaveEvent',back_populates='player')
+    target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='player')
 
     @classmethod
     def process(cls, replay):

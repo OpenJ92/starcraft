@@ -24,6 +24,7 @@ class ABILITY(db.Model):
 
 
     basic_command_events = db.relationship('BasicCommandEvent',back_populates='ability')
+    target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='ability')
 
     @classmethod
     def process(cls, replay):
