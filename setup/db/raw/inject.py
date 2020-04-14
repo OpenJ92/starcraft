@@ -5,6 +5,8 @@ from setup.db.raw.models.replay.objects import OBJECT
 from setup.db.raw.models.replay.info import INFO
 from setup.db.raw.models.replay.map import MAP
 
+from setup.db.raw.models.events.InjectFactory import InjectFactory
+
 class INJECT():
     def __init__(self, replay):
         self._replay = replay
@@ -17,3 +19,5 @@ class INJECT():
             INFO.process(self._replay)
             PLAYER.process(self._replay)
             OBJECT.process(self._replay)
+
+            InjectFactory.process(self._replay)
