@@ -29,9 +29,9 @@ class ChatEvent(db.Model):
     def process(cls, obj, replay):
         data = cls.process_object(obj)
         depend_data = cls.process_dependancies(obj, replay)
-        basic_command_event = cls(**data, **depend_data)
+        chat_event = cls(**data, **depend_data)
         print(obj)
-        db.session.add(basic_command_event)
+        db.session.add(chat_event)
         db.session.commit()
 
 

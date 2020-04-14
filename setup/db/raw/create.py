@@ -8,6 +8,8 @@ from setup.db.raw.models.replay.map import MAP
 
 from setup.db.raw.models.events.BasicCommandEvent import BasicCommandEvent
 from setup.db.raw.models.events.ChatEvent import ChatEvent
+from setup.db.raw.models.events.CameraEvent import CameraEvent
+from setup.db.raw.models.events.ControlGroupEvent import ControlGroupEvent
 
 from setup.db.raw.config import db 
 
