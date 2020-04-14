@@ -44,6 +44,7 @@ class INFO(db.Model):
     objects = db.relationship('OBJECT', back_populates='replay')
 
     basic_command_events = db.relationship('BasicCommandEvent',back_populates='info')
+    chat_events = db.relationship('ChatEvent',back_populates='info')
 
     __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')

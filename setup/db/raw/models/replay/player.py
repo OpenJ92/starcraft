@@ -51,7 +51,8 @@ class PLAYER(db.Model):
     __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))
     replay = db.relationship('INFO', back_populates='players')
 
-    basic_command_events = db.relationship('BasicCommandEvent',back_populates='player')
+    basic_command_events=db.relationship('BasicCommandEvent',back_populates='player')
+    chat_events=db.relationship('ChatEvent', back_populates='player')
 
     @classmethod
     def process(cls, replay):
