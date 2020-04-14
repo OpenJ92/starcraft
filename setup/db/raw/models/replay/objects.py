@@ -75,9 +75,8 @@ class OBJECT(db.Model):
 
     @classmethod
     def process_conditions(cls, replay):
-        with open('setup/db/raw/utils/info_CHECK_filehash.sql') as f:
-            query = f"{f.read()}".format(filehash=replay.filehash)
-            condition = db.engine.execute(query).fetchall() == []
+        ## What is the condition that must hold for su to proceed to object
+        ## creation and db injection?
         return True
 
     @classmethod
@@ -99,16 +98,13 @@ class OBJECT(db.Model):
     @classmethod
     def process_derived(cls, obj, replay):
 
+        ## This try except block is bad. Look into a means to fix this. Not all sc2reader.Unit
+        ## types have the 'location' attribute. Notably, those that are associated to observers.
         try:
             unit_type = UNIT_TYPE.select_from_object(obj._type_class, replay),
             killing_player = PLAYER.select_from_object(obj.killing_player, replay)
             killed_by = PLAYER.select_from_object(obj.killed_by, replay)
             owner = PLAYER.select_from_object(obj.owner, replay)
-
-            ## __UNIT_TYPE__ = unit_type[0].__id__ if not unit_type else None
-            ## __KILLED__= killing_player[0].__id__ if killing_player else None
-            ## __KILLEDBY__ = killed_by[0].__id__ if killed_by else None
-            ## __OWNER__ = owner[0].__id__ if owner else None
 
             return {
                         'name' : obj.name,
@@ -118,10 +114,6 @@ class OBJECT(db.Model):
                         'killing_player' : killing_player,
                         'killed_by' : killed_by,
                         'unit_type' : unit_type[0] ## why is this returning a tuple?
-                        ## '__OWNER__' : __OWNER__,
-                        ## '__KILLED__' : __KILLED__,
-                        ## '__KILLEDBY__' : __KILLEDBY__,
-                        ##'__UNIT_TYPE__' : __UNIT_TYPE__ 
                    }
         except Exception as e:
             ## look to perhaps use logging here.

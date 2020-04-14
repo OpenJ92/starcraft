@@ -10,10 +10,10 @@ class INJECT():
         self._replay = replay
 
     def __construct__(self):
-        UNIT_TYPE.process(self._replay)
-        ABILITY.process(self._replay)
-
-        MAP.process(self._replay)
-        INFO.process(self._replay)
-        PLAYER.process(self._replay)
-        OBJECT.process(self._replay)
+        if INFO.process_conditions(self._replay):
+            UNIT_TYPE.process(self._replay)
+            ABILITY.process(self._replay)
+            MAP.process(self._replay)
+            INFO.process(self._replay)
+            PLAYER.process(self._replay)
+            OBJECT.process(self._replay)

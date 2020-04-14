@@ -66,9 +66,8 @@ class PLAYER(db.Model):
 
     @classmethod
     def process_conditions(cls, replay):
-        with open('setup/db/raw/utils/info_CHECK_filehash.sql') as f:
-            query = f"{f.read()}".format(filehash=replay.filehash)
-            condition = db.engine.execute(query).fetchall() == []
+        ## What is the condition that must hold for su to proceed to object
+        ## creation and db injection?
         return True
 
     @classmethod
