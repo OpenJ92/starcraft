@@ -23,5 +23,8 @@ class BasicCommandEvent(db.Model):
     __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
     player = db.relationship('PLAYER', back_populates = 'events')
 
+    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))
+    info = db.relationship('INFO', back_populates = 'basci_command_events')
+
     __ABILITY__ =  db.Column(db.Integer, db.ForeignKey('datapack.ABILITY.__id__'))
-    ability = db.relationship('ABILITY', back_populates = 'events')
+    ability = db.relationship('ABILITY', back_populates = 'basic_command_events')

@@ -20,6 +20,9 @@ class ABILITY(db.Model):
     __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))
     build_unit = db.relationship('UNIT_TYPE', back_populates='abilities')
 
+
+    basic_command_events = db.relationship('BasicCommandEvent',back_populates='ability')
+
     @classmethod
     def process(cls, replay):
         release_string = replay.release_string
