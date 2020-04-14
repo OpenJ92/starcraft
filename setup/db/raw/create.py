@@ -17,6 +17,7 @@ from setup.db.raw.models.events.PlayerLeaveEvent import PlayerLeaveEvent
 from setup.db.raw.models.events.PlayerSetupEvent import PlayerSetupEvent
 from setup.db.raw.models.events.TargetPointCommandEvent import TargetPointCommandEvent
 from setup.db.raw.models.events.TargetUnitCommandEvent import TargetUnitCommandEvent
+from setup.db.raw.models.events.UpgradeCompleteEvent import UpgradeCompleteEvent 
 
 from setup.db.raw.config import db 
 

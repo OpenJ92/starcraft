@@ -61,6 +61,7 @@ class PLAYER(db.Model):
     player_leave_events = db.relationship('PlayerLeaveEvent',back_populates='player')
     target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='player')
     target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='player')
+    upgrade_complete_events = db.relationship('UpgradeCompleteEvent',back_populates='player')
 
     @classmethod
     def process(cls, replay):

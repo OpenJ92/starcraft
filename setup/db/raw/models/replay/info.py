@@ -54,6 +54,7 @@ class INFO(db.Model):
     player_setup_events = db.relationship('PlayerSetupEvent',back_populates='info')
     target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='info')
     target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='info')
+    upgrade_complete_events = db.relationship('UpgradeCompleteEvent',back_populates='info')
 
     __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')
