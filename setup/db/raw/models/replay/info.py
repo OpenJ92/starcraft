@@ -48,6 +48,7 @@ class INFO(db.Model):
     camera_events = db.relationship('CameraEvent',back_populates='info')
     control_group_events = db.relationship('ControlGroupEvent',back_populates='info')
     get_control_group_events = db.relationship('GetControlGroupEvent',back_populates='info')
+    set_control_group_events = db.relationship('SetControlGroupEvent',back_populates='info')
 
     __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))
     map = db.relationship('MAP', back_populates='replays')

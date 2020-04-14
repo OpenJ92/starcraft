@@ -25,7 +25,6 @@ class GetControlGroupEvent(db.Model):
     __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))
     info = db.relationship('INFO', back_populates = 'get_control_group_events')
 
-
     @classmethod
     def process(cls, obj, replay):
         data = cls.process_object(obj)
