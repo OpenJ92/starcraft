@@ -15,6 +15,7 @@ from setup.db.raw.models.events.UnitDoneEvent import UnitDoneEvent
 from setup.db.raw.models.events.UnitInitEvent import UnitInitEvent
 from setup.db.raw.models.events.UnitTypeChangeEvent import UnitTypeChangeEvent
 from setup.db.raw.models.events.UnitPositionsEvent import UnitPositionsEvent
+from setup.db.raw.models.events.SelectionEvent import SelectionEvent
 
 class InjectFactory():
 
@@ -35,7 +36,8 @@ class InjectFactory():
                 UnitDoneEvent.__name__ : UnitDoneEvent,
                 UnitInitEvent.__name__ : UnitInitEvent,
                 UnitTypeChangeEvent.__name__ : UnitTypeChangeEvent,
-                UnitPositionsEvent.__name__ : UnitPositionsEvent 
+                UnitPositionsEvent.__name__ : UnitPositionsEvent,
+                SelectionEvent.__name__ : SelectionEvent
              }
 
     @classmethod

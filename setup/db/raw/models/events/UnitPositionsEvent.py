@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from setup.db.raw.config import db 
 
 from setup.db.raw.models.replay.info import INFO
@@ -13,6 +15,7 @@ class UnitPositionsEvent(db.Model):
     second = db.Column(db.Integer) 
     name = db.Column(db.Text)
 
+    position_id = db.Column(db.Text)
     x = db.Column(db.Integer)
     y = db.Column(db.Integer)
 
@@ -26,9 +29,10 @@ class UnitPositionsEvent(db.Model):
     def process(cls, obj, replay):
         objs = []
         data = cls.process_object(obj)
+        position_id = str(uuid4())
         for unit, (x, y) in obj.units.items():
             depend_data = cls.process_dependancies(unit, replay)
-            objs.append(cls(**data, **depend_data, x=x, y=y))
+            objs.append(cls(**data, **depend_data, x=x, y=y,position_id=position_id))
             print(unit)
         print(obj)
         db.session.add_all(objs)
