@@ -15,7 +15,7 @@ from src.db.raw.models.replay.objects import OBJECT
 from src.db.raw.models.replay.player import PLAYER
 from src.db.raw.inject import INJECT
 
-## from src.app.index import *
+from src.app.index import *
 
 if __name__ == "__main__":
     replay = sc2reader.load_replay("TvP.SC2Replay",load_level=5,load_map=True)

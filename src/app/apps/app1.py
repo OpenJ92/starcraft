@@ -4,12 +4,5 @@ from dash.dependencies import Input, Output
 
 from src.app.app import app
 
-layout = html.Div( 
-                    [
-                        html.H2('Replays')
-                        html.Div(
-                                )
-                    ]
-                        
-                 )
+layout = html.Div()
 
