@@ -57,6 +57,16 @@ class UNIT_TYPE(db.Model):
                       ).one_or_none()
 
     @classmethod
+    def select_from_str_id(cls, str_id, replay):
+        return db.session.query(UNIT_TYPE).\
+                filter(
+                        and_(
+                              cls.name==str_id, 
+                              cls.release_string==replay.release_string
+                            )
+                      ).one_or_none()
+
+    @classmethod
     def get_unique(cls, replay):
         units = {}
         for _, unit in replay.datapack.units.items():

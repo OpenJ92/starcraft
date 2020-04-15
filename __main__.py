@@ -15,7 +15,7 @@ from setup.db.raw.models.replay.player import PLAYER
 from setup.db.raw.inject import INJECT
 
 if __name__ == "__main__":
-    replay = sc2reader.load_replay("examplePvT.SC2Replay",load_level=5,load_map=True)
+    replay = sc2reader.load_replay("TvP.SC2Replay",load_level=5,load_map=True)
     inject = INJECT(replay)
 
     events = {}
