@@ -15,7 +15,7 @@ from setup.db.raw.models.replay.objects import OBJECT
 from setup.db.raw.models.replay.player import PLAYER
 from setup.db.raw.inject import INJECT
 
-from src.app.app import *
+from src.app.index import *
 
 if __name__ == "__main__":
     replay = sc2reader.load_replay("TvP.SC2Replay",load_level=5,load_map=True)
@@ -33,5 +33,4 @@ if __name__ == "__main__":
             if predicate(event):
                 print(vars(event))
 
-    # app.run_server(debug=True)
 
