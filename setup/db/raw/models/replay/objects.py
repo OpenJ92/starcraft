@@ -52,6 +52,7 @@ class OBJECT(db.Model):
     unit_done_events = db.relationship('UnitDoneEvent',back_populates='unit')
     unit_init_events = db.relationship('UnitInitEvent',back_populates='unit')
     unit_type_change_events = db.relationship('UnitTypeChangeEvent',back_populates='unit')
+    unit_positions_events = db.relationship('UnitPositionsEvent',back_populates='unit')
 
     ## There's a chance that this information could be back_populated through
     ## a relationship to the UNIT_DIED_EVENT in the events schema.

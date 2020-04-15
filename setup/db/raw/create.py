@@ -22,6 +22,7 @@ from setup.db.raw.models.events.UnitBornEvent import UnitBornEvent
 from setup.db.raw.models.events.UnitDoneEvent import UnitDoneEvent
 from setup.db.raw.models.events.UnitInitEvent import UnitInitEvent
 from setup.db.raw.models.events.UnitTypeChangeEvent import UnitTypeChangeEvent
+from setup.db.raw.models.events.UnitPositionsEvent import UnitPositionsEvent
 
 from setup.db.raw.config import db 
 
