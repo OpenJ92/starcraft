@@ -6,7 +6,7 @@ sc2reader.engine.register_plugin(APMTracker())
 sc2reader.engine.register_plugin(ContextLoader())
 sc2reader.engine.register_plugin(GameHeartNormalizer())
 
-from setup.db.raw.config import db, app
+from setup.db.raw.config import db
 from setup.db.raw.models.datapack.unit_type import UNIT_TYPE
 from setup.db.raw.models.datapack.ability import ABILITY
 from setup.db.raw.models.replay.info import INFO
@@ -14,6 +14,8 @@ from setup.db.raw.models.replay.map import MAP
 from setup.db.raw.models.replay.objects import OBJECT
 from setup.db.raw.models.replay.player import PLAYER
 from setup.db.raw.inject import INJECT
+
+from src.app.app import *
 
 if __name__ == "__main__":
     replay = sc2reader.load_replay("TvP.SC2Replay",load_level=5,load_map=True)
@@ -30,4 +32,6 @@ if __name__ == "__main__":
         for event in events[event_name]:
             if predicate(event):
                 print(vars(event))
+
+    # app.run_server(debug=True)
 

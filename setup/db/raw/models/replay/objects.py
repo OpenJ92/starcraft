@@ -127,6 +127,8 @@ class OBJECT(db.Model):
                         'location_y' : obj.location[1],
                         '__OWNER__' : owner.__id__,
                         'owner' : owner,
+                        ## 'killing_player' : killing_player,
+                        ## 'killed_by' : killed_by,
                         '__UNIT_TYPE__' : unit_type[0].__id__,
                         'unit_type' : unit_type[0] ## why is this returning a tuple?
                    }
