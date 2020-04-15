@@ -27,25 +27,37 @@ class OBJECT(db.Model):
     owner = db.relationship(
                                 'PLAYER', 
                                 primaryjoin='OBJECT.__OWNER__==PLAYER.__id__', 
-                                back_populates='owned_objects'
+                                back_populates='objects'
                             )
 
-    __KILLED__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
-    killing_player = db.relationship(
-                                'PLAYER', 
-                                primaryjoin='OBJECT.__KILLED__==PLAYER.__id__', 
-                                back_populates='killing_player_objs'
-                                    )
+    ## __KILLED__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
+    ## killing_player = db.relationship(
+    ##                             'PLAYER', 
+    ##                             primaryjoin='OBJECT.__KILLED__==PLAYER.__id__', 
+    ##                             back_populates='killing_player_objs'
+    ##                                 )
 
-    __KILLEDBY__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
-    killed_by = db.relationship(
-                                'PLAYER', 
-                                primaryjoin='OBJECT.__KILLEDBY__==PLAYER.__id__', 
-                                back_populates='killed_by_objs'
-                               )
+    ## __KILLEDBY__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
+    ## killed_by = db.relationship(
+    ##                             'PLAYER', 
+    ##                             primaryjoin='OBJECT.__KILLEDBY__==PLAYER.__id__', 
+    ##                             back_populates='killed_by_objs'
+    ##                            )
 
     __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))
     unit_type = db.relationship('UNIT_TYPE', back_populates='objects')
+
+    death_event = db.relationship(
+            'UnitDiedEvent', 
+            primaryjoin='UnitDiedEvent.__UNIT__==OBJECT.__id__',
+            back_populates='unit'
+                                 )
+    kill_event = db.relationship(
+            'UnitDiedEvent', 
+            primaryjoin='UnitDiedEvent.__KILLING_UNIT__==OBJECT.__id__',
+            back_populates='killing_unit'
+                                 )
+
 
     target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='target')
     unit_born_events = db.relationship('UnitBornEvent',back_populates='unit')
@@ -55,12 +67,6 @@ class OBJECT(db.Model):
     unit_positions_events = db.relationship('UnitPositionsEvent',back_populates='unit')
     selection_events = db.relationship('SelectionEvent',back_populates='unit')
 
-    ## There's a chance that this information could be back_populated through
-    ## a relationship to the UNIT_DIED_EVENT in the events schema.
-    ## 
-    ## https://docs.sqlalchemy.org/en/13/orm/self_referential.html
-    ##      __KU_id__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))
-    ##      killing_unit = db.relationship('OBJECT', remote_side='OBJECT.__KU_id__')
 
     @classmethod
     def process(cls, replay):
@@ -111,17 +117,17 @@ class OBJECT(db.Model):
         ## types have the 'location' attribute. Notably, those that are associated to observers.
         try:
             unit_type = UNIT_TYPE.select_from_object(obj._type_class, replay),
-            killing_player = PLAYER.select_from_object(obj.killing_player, replay)
-            killed_by = PLAYER.select_from_object(obj.killed_by, replay)
+            ## killing_player = PLAYER.select_from_object(obj.killing_player, replay)
+            ## killed_by = PLAYER.select_from_object(obj.killed_by, replay)
             owner = PLAYER.select_from_object(obj.owner, replay)
 
             return {
                         'name' : obj.name,
                         'location_x' : obj.location[0],
                         'location_y' : obj.location[1],
+                        '__OWNER__' : owner.__id__,
                         'owner' : owner,
-                        'killing_player' : killing_player,
-                        'killed_by' : killed_by,
+                        '__UNIT_TYPE__' : unit_type[0].__id__,
                         'unit_type' : unit_type[0] ## why is this returning a tuple?
                    }
         except Exception as e:

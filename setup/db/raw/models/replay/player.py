@@ -30,22 +30,22 @@ class PLAYER(db.Model):
     
     id = db.Column(db.Integer)
 
-    owned_objects = db.relationship(
+    objects = db.relationship(
                         'OBJECT', 
                         primaryjoin='OBJECT.__OWNER__==PLAYER.__id__', 
                         back_populates='owner'
-                                   )
-    killing_player_objs = db.relationship(
-                        'OBJECT', 
-                        primaryjoin='OBJECT.__KILLED__==PLAYER.__id__', 
-                        back_populates='killing_player'
-                                         )
+                             )
+    ## killing_player_objs = db.relationship(
+    ##                     'OBJECT', 
+    ##                     primaryjoin='OBJECT.__KILLED__==PLAYER.__id__', 
+    ##                     back_populates='killing_player'
+    ##                                      )
 
-    killed_by_objs = db.relationship(
-                        'OBJECT', 
-                        primaryjoin='OBJECT.__KILLEDBY__==PLAYER.__id__', 
-                        back_populates='killed_by'
-                                    )
+    ## killed_by_objs = db.relationship(
+    ##                     'OBJECT', 
+    ##                     primaryjoin='OBJECT.__KILLEDBY__==PLAYER.__id__', 
+    ##                     back_populates='killed_by'
+    ##                                 )
 
 
     __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))
@@ -64,6 +64,7 @@ class PLAYER(db.Model):
     upgrade_complete_events = db.relationship('UpgradeCompleteEvent',back_populates='player')
     unit_born_events = db.relationship('UnitBornEvent',back_populates='unit_controller')
     selection_events = db.relationship('SelectionEvent',back_populates='player')
+    unit_died_events = db.relationship('UnitDiedEvent',back_populates='killing_player')
 
     @classmethod
     def process(cls, replay):
