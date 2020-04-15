@@ -1,7 +1,0 @@
-#!/bin/zsh
-
-source ~/.zshrc
-psql -f ~/dev/self/sdm/setup/db/raw/utils/refresh.sql
-conda activate sdm 
-ipython ~/dev/self/sdm/setup/db/raw/create.py
-conda deactivate
