@@ -27,7 +27,6 @@ class UpgradeCompleteEvent(db.Model):
         data = cls.process_object(obj)
         depend_data = cls.process_dependancies(obj, replay)
         get_control_group_event = cls(**data, **depend_data)
-        print(obj)
         db.session.add(get_control_group_event)
         db.session.commit()
 

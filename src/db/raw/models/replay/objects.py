@@ -133,7 +133,7 @@ class OBJECT(db.Model):
                    }
         except Exception as e:
             ## look to perhaps use logging here.
-            print(e)
+            print(e, obj)
             return {}
 
     @classmethod
