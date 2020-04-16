@@ -75,7 +75,6 @@ class OBJECT(db.Model):
         conditions = cls.process_conditions(replay)
         if conditions: 
             for _, obj in replay.objects.items():
-                print(obj, type(obj))
                 data = cls.process_object(obj)
                 derived_data = cls.process_derived(obj, replay)
                 objs.append(

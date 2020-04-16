@@ -40,7 +40,6 @@ class TargetPointCommandEvent(db.Model):
         data = cls.process_object(obj)
         depend_data = cls.process_dependancies(obj, replay)
         basic_command_event = cls(**data, **depend_data)
-        print(obj)
         db.session.add(basic_command_event)
         db.session.commit()
 

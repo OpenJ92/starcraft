@@ -73,7 +73,6 @@ class PLAYER(db.Model):
         condition = cls.process_conditions(replay)
         if condition:
             for obj in replay.players:
-                print(obj)
                 data = cls.process_object(obj)
                 data_derived = cls.process_derived(obj)
                 objs.append(cls(**data, **parents, **data_derived))

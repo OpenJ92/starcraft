@@ -15,18 +15,18 @@ from src.db.raw.models.replay.objects import OBJECT
 from src.db.raw.models.replay.player import PLAYER
 from src.db.raw.inject import INJECT
 
-# from src.app.index import *
+from src.app.index import *
 from os import listdir
 
-if __name__ == "__main__":
-   home = '/Users/jacob/Library/Application Support/Blizzard/StarCraft II/Accounts/91611726/1-S2-1-4635037/Replays/Multiplayer/'
-   sc2Replays = listdir(home)
+## if __name__ == "__main__":
+   ## home = '/Users/jacob/Library/Application Support/Blizzard/StarCraft II/Accounts/91611726/1-S2-1-4635037/Replays/Multiplayer/'
+   ## sc2Replays = listdir(home)
 
-   for r in sc2Replays:
-       if r != '.DS_Store':
-           print(r)
-           replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)
-           inject = INJECT(replay).__construct__()
+   ## for r in sc2Replays:
+   ##     if r != '.DS_Store':
+   ##         print(r)
+   ##         replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)
+   ##         inject = INJECT(replay).__construct__()
 
     ## events = {}
     ## for event in replay.events:

@@ -72,8 +72,6 @@ class INFO(db.Model):
             data = cls.process_object(replay)
             depend_data = cls.process_dependancies(replay) 
             info = INFO(**data, **depend_data)
-            print(replay)
-
             db.session.add(info)
             db.session.commit()
 

@@ -30,7 +30,6 @@ class ControlGroupEvent(db.Model):
         data = cls.process_object(obj)
         depend_data = cls.process_dependancies(obj, replay)
         control_group_event = cls(**data, **depend_data)
-        print(obj)
         db.session.add(control_group_event)
         db.session.commit()
 

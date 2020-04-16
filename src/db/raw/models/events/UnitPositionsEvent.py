@@ -33,8 +33,6 @@ class UnitPositionsEvent(db.Model):
         for unit, (x, y) in obj.units.items():
             depend_data = cls.process_dependancies(unit, replay)
             objs.append(cls(**data, **depend_data, x=x, y=y,position_id=position_id))
-            print(unit)
-        print(obj)
         db.session.add_all(objs)
         db.session.commit()
 

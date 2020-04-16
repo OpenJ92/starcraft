@@ -38,7 +38,6 @@ class SelectionEvent(db.Model):
         for unit in obj.new_units:
             depend_data = cls.process_dependancies(unit, obj, replay)
             objs.append(cls(**data, **depend_data, selection_id=selection_id))
-            print(unit)
         print(obj)
         db.session.add_all(objs)
         db.session.commit()

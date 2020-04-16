@@ -29,7 +29,6 @@ class PlayerLeaveEvent(db.Model):
         depend_data = cls.process_dependancies(obj, replay)
         derived_data = cls.process_derived(obj)
         control_group_event = cls(**data, **depend_data, **derived_data)
-        print(obj)
         db.session.add(control_group_event)
         db.session.commit()
 

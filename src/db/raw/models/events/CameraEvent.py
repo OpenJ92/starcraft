@@ -29,7 +29,6 @@ class CameraEvent(db.Model):
         data = cls.process_object(obj)
         depend_data = cls.process_dependancies(obj, replay)
         camera_event = cls(**data, **depend_data)
-        print(obj)
         db.session.add(camera_event)
         db.session.commit()
 
