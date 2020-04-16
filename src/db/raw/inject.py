@@ -7,6 +7,8 @@ from src.db.raw.models.replay.map import MAP
 
 from src.db.raw.models.events.InjectFactory import InjectFactory
 
+from os import listdir
+
 class INJECT():
     def __init__(self, replay):
         self._replay = replay

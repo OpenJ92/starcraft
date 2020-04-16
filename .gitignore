@@ -1,5 +1,6 @@
 *.SC2Replay
 *.swp
+*.swo
 __pycache__/
 create.sql
 .DS_Store

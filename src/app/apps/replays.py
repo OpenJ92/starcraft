@@ -5,19 +5,28 @@ from dash.dependencies import Input, Output
 from src.app.app import app
 from src.app.utils.replay import construct_replay_table
 
-from src.db.raw.config import db
-from src.db.raw.create import *
-
-query_info = db.session.query(INFO).all()
-
 layout = html.Div( 
                     [
-                        html.H2('Replays'),
-                        html.Div(
-                                    construct_replay_table(query_info)
-                                )
+                        html.H2(
+                            'Replays', 
+                            style = {
+                                        'width': '100%', 
+                                        'display': 'flex', 
+                                        'align-items': 'center', 
+                                        'justify-content': 'center'
+                                     }
+                                ),
+                        html.Div( children = [
+                                                 construct_replay_table()
+                                              ],
+                                  style = {
+                                            'width': '100%', 
+                                            'display': 'flex', 
+                                            'align-items': 'center', 
+                                            'justify-content': 'center'
+                                          }
+                                 )
                     ]
-                        
                  )
 
 

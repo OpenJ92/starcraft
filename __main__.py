@@ -15,22 +15,27 @@ from src.db.raw.models.replay.objects import OBJECT
 from src.db.raw.models.replay.player import PLAYER
 from src.db.raw.inject import INJECT
 
-from src.app.index import *
+# from src.app.index import *
+from os import listdir
 
 if __name__ == "__main__":
-    replay = sc2reader.load_replay("TvP.SC2Replay",load_level=5,load_map=True)
-    inject = INJECT(replay)
+   home = '/Users/jacob/Library/Application Support/Blizzard/StarCraft II/Accounts/91611726/1-S2-1-4635037/Replays/Multiplayer/'
+   sc2Replays = listdir(home)
 
-    events = {}
-    for event in replay.events:
-        if event.name not in events.keys():
-            events[event.name] = [event]
-        else:
-            events[event.name].append(event)
+   for r in sc2Replays:
+       if r != '.DS_Store':
+           print(r)
+           replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)
+           inject = INJECT(replay).__construct__()
 
-    def event_details(event_name, predicate = lambda e: True):
-        for event in events[event_name]:
-            if predicate(event):
-                print(vars(event))
+    ## events = {}
+    ## for event in replay.events:
+    ##     if event.name not in events.keys():
+    ##         events[event.name] = [event]
+    ##     else:
+    ##         events[event.name].append(event)
 
-
+    ## def event_details(event_name, predicate = lambda e: True):
+    ##     for event in events[event_name]:
+    ##         if predicate(event):
+    ##             print(vars(event))

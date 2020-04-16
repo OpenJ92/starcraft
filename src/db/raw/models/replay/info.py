@@ -145,5 +145,5 @@ class INFO(db.Model):
 
     def time_in_minutes(self):
         interval = self.end_time - self.start_time
-        return interval / 60
+        return interval.seconds // 60
 
