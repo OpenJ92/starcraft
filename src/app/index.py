@@ -20,6 +20,7 @@ def display_page(pathname):
     elif pathname == '/apps/app2':
         return app2.layout
     elif pathname == '/apps/replay':
+        print(pathname)
         return replays.layout
     else:
         return '404'

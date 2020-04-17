@@ -15,10 +15,17 @@ from src.db.raw.models.replay.objects import OBJECT
 from src.db.raw.models.replay.player import PLAYER
 from src.db.raw.inject import INJECT
 
-## from src.app.index import *
 from os import listdir
 
-if __name__ == "__main__":
+import argparse
+parser = argparse.ArgumentParser(description='sdm : Starcraft 2 Data Project')
+parser.add_argument('action', metavar='action', type=str, help='db : run database injection \n app : run app')
+
+args = parser.parse_args()
+
+action = args.action
+
+if action == 'db':
    home = '/Users/jacob/Library/Application Support/Blizzard/StarCraft II/Accounts/91611726/1-S2-1-4635037/Replays/Multiplayer/'
    sc2Replays = listdir(home)
 
@@ -31,14 +38,21 @@ if __name__ == "__main__":
                replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)
                inject = INJECT(replay).__construct__()
 
-    ## events = {}
-    ## for event in replay.events:
-    ##     if event.name not in events.keys():
-    ##         events[event.name] = [event]
-    ##     else:
-    ##         events[event.name].append(event)
+elif action == 'app':
+    from src.app.index import *
 
-    ## def event_details(event_name, predicate = lambda e: True):
-    ##     for event in events[event_name]:
-    ##         if predicate(event):
-    ##             print(vars(event))
+elif action == 'explore':
+    events = {}
+    replay = sc2reader.load_replay('example.SC2Replay',load_level=5,load_map=True)
+    for event in replay.events:
+        if event.name not in events.keys():
+            events[event.name] = [event]
+        else:
+            events[event.name].append(event)
+
+    def event_details(event_name, predicate = lambda e: True):
+        for event in events[event_name]:
+            if predicate(event):
+                print(vars(event))
+else:
+    pass
