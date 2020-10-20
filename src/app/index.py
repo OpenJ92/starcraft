@@ -5,13 +5,13 @@ from dash.dependencies import Input, Output
 from src.app.app import app
 from src.app.apps import app1, app2, replays
 
-
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
 ])
 
-
+## match the first elements on here and then 
+## populate a page on the remaining information
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):

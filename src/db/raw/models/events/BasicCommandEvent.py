@@ -19,7 +19,7 @@ class BasicCommandEvent(db.Model):
     ability_link = db.Column(db.Integer)
     command_index = db.Column(db.Integer)
     ability_name = db.Column(db.Text)
-    
+
     __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))
     player = db.relationship('PLAYER', back_populates = 'basic_command_events')
 

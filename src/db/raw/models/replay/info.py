@@ -1,4 +1,4 @@
-from src.db.raw.config import db 
+from src.db.raw.config import db
 from src.db.raw.models.replay.map import MAP
 
 class INFO(db.Model):
@@ -70,7 +70,7 @@ class INFO(db.Model):
         conditions = cls.process_conditions(replay)
         if conditions:
             data = cls.process_object(replay)
-            depend_data = cls.process_dependancies(replay) 
+            depend_data = cls.process_dependancies(replay)
             info = INFO(**data, **depend_data)
             db.session.add(info)
             db.session.commit()
@@ -87,8 +87,8 @@ class INFO(db.Model):
         return {
                         key
                         :
-                        value 
-                        for key,value 
+                        value
+                        for key,value
                         in vars(replay).items()
                         if key in cls.columns
                 }
@@ -97,9 +97,9 @@ class INFO(db.Model):
     def process_dependancies(cls, replay):
         N = replay.map
         UT = None if not N else MAP.select_from_object(N)
-        return { 
+        return {
                     'map'    : UT,
-                    '__MAP__' : None if UT is None else UT.__id__ 
+                    '__MAP__' : None if UT is None else UT.__id__
                }
 
     @classmethod
@@ -143,5 +143,6 @@ class INFO(db.Model):
 
     def time_in_minutes(self):
         interval = self.end_time - self.start_time
-        return interval.seconds // 60
+        return str(interval)
+
 

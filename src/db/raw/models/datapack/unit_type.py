@@ -1,6 +1,6 @@
 from sqlalchemy import and_
 
-from src.db.raw.config import db 
+from src.db.raw.config import db
 
 class UNIT_TYPE(db.Model):
     __tablename__ = "UNIT_TYPE"
@@ -60,7 +60,7 @@ class UNIT_TYPE(db.Model):
         return db.session.query(UNIT_TYPE).\
                 filter(
                         and_(
-                              cls.name==str_id, 
+                              cls.name==str_id,
                               cls.release_string==replay.release_string
                             )
                       ).one_or_none()

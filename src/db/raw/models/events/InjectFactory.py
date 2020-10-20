@@ -9,7 +9,7 @@ from src.db.raw.models.events.PlayerLeaveEvent import PlayerLeaveEvent
 from src.db.raw.models.events.PlayerSetupEvent import PlayerSetupEvent
 from src.db.raw.models.events.TargetPointCommandEvent import TargetPointCommandEvent
 from src.db.raw.models.events.TargetUnitCommandEvent import TargetUnitCommandEvent
-from src.db.raw.models.events.UpgradeCompleteEvent import UpgradeCompleteEvent 
+from src.db.raw.models.events.UpgradeCompleteEvent import UpgradeCompleteEvent
 from src.db.raw.models.events.UnitBornEvent import UnitBornEvent
 from src.db.raw.models.events.UnitDoneEvent import UnitDoneEvent
 from src.db.raw.models.events.UnitInitEvent import UnitInitEvent

@@ -31,12 +31,19 @@ if action == 'db':
 
    for r in sc2Replays:
        if r != '.DS_Store':
-           replay = sc2reader.load_replay(home+r,load_level=1)
-           print(r)
+           try:
+                replay = sc2reader.load_replay(home+r,load_level=1)
+                print(r)
+           except Exception as e:
+               print(e)
+               continue
            if INFO.process_conditions(replay):
                print(r)
-               replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)
-               inject = INJECT(replay).__construct__()
+               try:
+                   replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)
+                   inject = INJECT(replay).__construct__()
+               except Exception as e:
+                   print(e)
 
 elif action == 'app':
     from src.app.index import *

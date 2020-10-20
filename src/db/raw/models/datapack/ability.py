@@ -36,9 +36,9 @@ class ABILITY(db.Model):
             for name, obj in replay.datapack.abilities.items():
                 parents = cls.process_dependancies(obj, replay)
                 data = {
-                            key : value 
-                            for key,value 
-                            in vars(obj).items() 
+                            key : value
+                            for key,value
+                            in vars(obj).items()
                             if key!="build_unit"
                        }
                 objs.append(ABILITY(release_string=release_string,**parents,**data))
@@ -57,9 +57,9 @@ class ABILITY(db.Model):
     def process_dependancies(cls, obj, replay):
         N = obj.build_unit
         UT = None if not N else UNIT_TYPE.select_from_object(N, replay)
-        return { 
+        return {
                     'build_unit'    : UT,
-                    '__UNIT_TYPE__' : None if UT is None else UT.__id__ 
+                    '__UNIT_TYPE__' : None if UT is None else UT.__id__
                 }
 
     @classmethod

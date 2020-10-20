@@ -1,0 +1,711 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/feffe43/
+ABILITY	src/db/raw/models/datapack/ability.py	/^class ABILITY(db.Model):$/;"	c
+BasicCommandEvent	src/db/raw/models/events/BasicCommandEvent.py	/^class BasicCommandEvent(db.Model):$/;"	c
+CameraEvent	src/db/raw/models/events/CameraEvent.py	/^class CameraEvent(db.Model):$/;"	c
+ChatEvent	src/db/raw/models/events/ChatEvent.py	/^class ChatEvent(db.Model):$/;"	c
+ControlGroupEvent	src/db/raw/models/events/ControlGroupEvent.py	/^class ControlGroupEvent(db.Model):$/;"	c
+GetControlGroupEvent	src/db/raw/models/events/GetControlGroupEvent.py	/^class GetControlGroupEvent(db.Model):$/;"	c
+INFO	src/db/raw/models/replay/info.py	/^class INFO(db.Model):$/;"	c
+INJECT	src/db/raw/inject.py	/^class INJECT():$/;"	c
+InjectFactory	src/db/raw/models/events/InjectFactory.py	/^class InjectFactory():$/;"	c
+MAP	src/db/raw/models/replay/map.py	/^class MAP(db.Model):$/;"	c
+OBJECT	src/db/raw/models/replay/objects.py	/^class OBJECT(db.Model):$/;"	c
+PLAYER	src/db/raw/models/replay/player.py	/^class PLAYER(db.Model):$/;"	c
+PlayerLeaveEvent	src/db/raw/models/events/PlayerLeaveEvent.py	/^class PlayerLeaveEvent(db.Model):$/;"	c
+PlayerSetupEvent	src/db/raw/models/events/PlayerSetupEvent.py	/^class PlayerSetupEvent(db.Model):$/;"	c
+PlayerStatsEvent	src/db/raw/models/events/PlayerStatsEvent.py	/^class PlayerStatsEvent(db.Model):$/;"	c
+REPLAY_TABLE	src/app/components/replay_table.py	/^class REPLAY_TABLE():$/;"	c
+SelectionEvent	src/db/raw/models/events/SelectionEvent.py	/^class SelectionEvent(db.Model):$/;"	c
+SetControlGroupEvent	src/db/raw/models/events/SetControlGroupEvent.py	/^class SetControlGroupEvent(db.Model):$/;"	c
+Starcraft Data Model	README.md	/^## Starcraft Data Model$/;"	s
+TargetPointCommandEvent	src/db/raw/models/events/TargetPointCommandEvent.py	/^class TargetPointCommandEvent(db.Model):$/;"	c
+TargetUnitCommandEvent	src/db/raw/models/events/TargetUnitCommandEvent.py	/^class TargetUnitCommandEvent(db.Model):$/;"	c
+UNIT_TYPE	src/db/raw/models/datapack/unit_type.py	/^class UNIT_TYPE(db.Model):$/;"	c
+UnitBornEvent	src/db/raw/models/events/UnitBornEvent.py	/^class UnitBornEvent(db.Model):$/;"	c
+UnitDiedEvent	src/db/raw/models/events/UnitDiedEvent.py	/^class UnitDiedEvent(db.Model):$/;"	c
+UnitDoneEvent	src/db/raw/models/events/UnitDoneEvent.py	/^class UnitDoneEvent(db.Model):$/;"	c
+UnitInitEvent	src/db/raw/models/events/UnitInitEvent.py	/^class UnitInitEvent(db.Model):$/;"	c
+UnitPositionsEvent	src/db/raw/models/events/UnitPositionsEvent.py	/^class UnitPositionsEvent(db.Model):$/;"	c
+UnitTypeChangeEvent	src/db/raw/models/events/UnitTypeChangeEvent.py	/^class UnitTypeChangeEvent(db.Model):$/;"	c
+UpgradeCompleteEvent	src/db/raw/models/events/UpgradeCompleteEvent.py	/^class UpgradeCompleteEvent(db.Model):$/;"	c
+__ABILITY__	src/db/raw/models/events/BasicCommandEvent.py	/^    __ABILITY__ =  db.Column(db.Integer, db.ForeignKey('datapack.ABILITY.__id__'))$/;"	v	class:BasicCommandEvent	file:
+__ABILITY__	src/db/raw/models/events/TargetPointCommandEvent.py	/^    __ABILITY__ =  db.Column(db.Integer, db.ForeignKey('datapack.ABILITY.__id__'))$/;"	v	class:TargetPointCommandEvent	file:
+__ABILITY__	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    __ABILITY__ =  db.Column(db.Integer, db.ForeignKey('datapack.ABILITY.__id__'))$/;"	v	class:TargetUnitCommandEvent	file:
+__INFO__	src/db/raw/models/events/BasicCommandEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:BasicCommandEvent	file:
+__INFO__	src/db/raw/models/events/CameraEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:CameraEvent	file:
+__INFO__	src/db/raw/models/events/ChatEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:ChatEvent	file:
+__INFO__	src/db/raw/models/events/ControlGroupEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:ControlGroupEvent	file:
+__INFO__	src/db/raw/models/events/GetControlGroupEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:GetControlGroupEvent	file:
+__INFO__	src/db/raw/models/events/PlayerLeaveEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:PlayerLeaveEvent	file:
+__INFO__	src/db/raw/models/events/PlayerSetupEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:PlayerSetupEvent	file:
+__INFO__	src/db/raw/models/events/PlayerStatsEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:PlayerStatsEvent	file:
+__INFO__	src/db/raw/models/events/SelectionEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:SelectionEvent	file:
+__INFO__	src/db/raw/models/events/SetControlGroupEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:SetControlGroupEvent	file:
+__INFO__	src/db/raw/models/events/TargetPointCommandEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:TargetPointCommandEvent	file:
+__INFO__	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:TargetUnitCommandEvent	file:
+__INFO__	src/db/raw/models/events/UnitBornEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:UnitBornEvent	file:
+__INFO__	src/db/raw/models/events/UnitDiedEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:UnitDiedEvent	file:
+__INFO__	src/db/raw/models/events/UnitDoneEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:UnitDoneEvent	file:
+__INFO__	src/db/raw/models/events/UnitInitEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:UnitInitEvent	file:
+__INFO__	src/db/raw/models/events/UnitPositionsEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:UnitPositionsEvent	file:
+__INFO__	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:UnitTypeChangeEvent	file:
+__INFO__	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:UpgradeCompleteEvent	file:
+__INFO__	src/db/raw/models/replay/objects.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:OBJECT	file:
+__INFO__	src/db/raw/models/replay/player.py	/^    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))$/;"	v	class:PLAYER	file:
+__KILLING_UNIT__	src/db/raw/models/events/UnitDiedEvent.py	/^    __KILLING_UNIT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:UnitDiedEvent	file:
+__MAP__	src/db/raw/models/replay/info.py	/^    __MAP__ = db.Column(db.Integer, db.ForeignKey('replay.MAP.__id__'))$/;"	v	class:INFO	file:
+__OBJECT__	src/db/raw/models/events/SelectionEvent.py	/^    __OBJECT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:SelectionEvent	file:
+__OBJECT__	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    __OBJECT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:TargetUnitCommandEvent	file:
+__OBJECT__	src/db/raw/models/events/UnitBornEvent.py	/^    __OBJECT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:UnitBornEvent	file:
+__OBJECT__	src/db/raw/models/events/UnitDoneEvent.py	/^    __OBJECT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:UnitDoneEvent	file:
+__OBJECT__	src/db/raw/models/events/UnitInitEvent.py	/^    __OBJECT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:UnitInitEvent	file:
+__OBJECT__	src/db/raw/models/events/UnitPositionsEvent.py	/^    __OBJECT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:UnitPositionsEvent	file:
+__OBJECT__	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    __OBJECT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:UnitTypeChangeEvent	file:
+__OWNER__	src/db/raw/models/replay/objects.py	/^    __OWNER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:OBJECT	file:
+__PLAYER__	src/db/raw/models/events/BasicCommandEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:BasicCommandEvent	file:
+__PLAYER__	src/db/raw/models/events/CameraEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:CameraEvent	file:
+__PLAYER__	src/db/raw/models/events/ChatEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:ChatEvent	file:
+__PLAYER__	src/db/raw/models/events/ControlGroupEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:ControlGroupEvent	file:
+__PLAYER__	src/db/raw/models/events/GetControlGroupEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:GetControlGroupEvent	file:
+__PLAYER__	src/db/raw/models/events/PlayerLeaveEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:PlayerLeaveEvent	file:
+__PLAYER__	src/db/raw/models/events/PlayerStatsEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:PlayerStatsEvent	file:
+__PLAYER__	src/db/raw/models/events/SelectionEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:SelectionEvent	file:
+__PLAYER__	src/db/raw/models/events/SetControlGroupEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:SetControlGroupEvent	file:
+__PLAYER__	src/db/raw/models/events/TargetPointCommandEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:TargetPointCommandEvent	file:
+__PLAYER__	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:TargetUnitCommandEvent	file:
+__PLAYER__	src/db/raw/models/events/UnitBornEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:UnitBornEvent	file:
+__PLAYER__	src/db/raw/models/events/UnitDiedEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:UnitDiedEvent	file:
+__PLAYER__	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    __PLAYER__ = db.Column(db.Integer, db.ForeignKey('replay.PLAYER.__id__'))$/;"	v	class:UpgradeCompleteEvent	file:
+__UNIT_TYPE__	src/db/raw/models/datapack/ability.py	/^    __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))$/;"	v	class:ABILITY	file:
+__UNIT_TYPE__	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))$/;"	v	class:UnitTypeChangeEvent	file:
+__UNIT_TYPE__	src/db/raw/models/replay/objects.py	/^    __UNIT_TYPE__ = db.Column(db.Integer, db.ForeignKey('datapack.UNIT_TYPE.__id__'))$/;"	v	class:OBJECT	file:
+__UNIT__	src/db/raw/models/events/UnitDiedEvent.py	/^    __UNIT__ = db.Column(db.Integer, db.ForeignKey('replay.OBJECT.__id__'))$/;"	v	class:UnitDiedEvent	file:
+__construct__	src/db/raw/inject.py	/^    def __construct__(self):$/;"	m	class:INJECT
+__id__	src/db/raw/models/datapack/ability.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:ABILITY	file:
+__id__	src/db/raw/models/datapack/unit_type.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:UNIT_TYPE	file:
+__id__	src/db/raw/models/events/BasicCommandEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:BasicCommandEvent	file:
+__id__	src/db/raw/models/events/CameraEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:CameraEvent	file:
+__id__	src/db/raw/models/events/ChatEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:ChatEvent	file:
+__id__	src/db/raw/models/events/ControlGroupEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:ControlGroupEvent	file:
+__id__	src/db/raw/models/events/GetControlGroupEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:GetControlGroupEvent	file:
+__id__	src/db/raw/models/events/PlayerLeaveEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:PlayerLeaveEvent	file:
+__id__	src/db/raw/models/events/PlayerSetupEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:PlayerSetupEvent	file:
+__id__	src/db/raw/models/events/PlayerStatsEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:PlayerStatsEvent	file:
+__id__	src/db/raw/models/events/SelectionEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:SelectionEvent	file:
+__id__	src/db/raw/models/events/SetControlGroupEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:SetControlGroupEvent	file:
+__id__	src/db/raw/models/events/TargetPointCommandEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:TargetPointCommandEvent	file:
+__id__	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:TargetUnitCommandEvent	file:
+__id__	src/db/raw/models/events/UnitBornEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:UnitBornEvent	file:
+__id__	src/db/raw/models/events/UnitDiedEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:UnitDiedEvent	file:
+__id__	src/db/raw/models/events/UnitDoneEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:UnitDoneEvent	file:
+__id__	src/db/raw/models/events/UnitInitEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:UnitInitEvent	file:
+__id__	src/db/raw/models/events/UnitPositionsEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:UnitPositionsEvent	file:
+__id__	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:UnitTypeChangeEvent	file:
+__id__	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:UpgradeCompleteEvent	file:
+__id__	src/db/raw/models/replay/info.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:INFO	file:
+__id__	src/db/raw/models/replay/map.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:MAP	file:
+__id__	src/db/raw/models/replay/objects.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:OBJECT	file:
+__id__	src/db/raw/models/replay/player.py	/^    __id__ = db.Column(db.Integer, primary_key = True)$/;"	v	class:PLAYER	file:
+__init__	src/app/components/replay_table.py	/^    def __init__(self, url):$/;"	m	class:REPLAY_TABLE
+__init__	src/db/raw/inject.py	/^    def __init__(self, replay):$/;"	m	class:INJECT
+__table_args__	src/db/raw/models/datapack/ability.py	/^    __table_args__ = {"schema": "datapack"}$/;"	v	class:ABILITY	file:
+__table_args__	src/db/raw/models/datapack/unit_type.py	/^    __table_args__ = {"schema": "datapack"}$/;"	v	class:UNIT_TYPE	file:
+__table_args__	src/db/raw/models/events/BasicCommandEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:BasicCommandEvent	file:
+__table_args__	src/db/raw/models/events/CameraEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:CameraEvent	file:
+__table_args__	src/db/raw/models/events/ChatEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:ChatEvent	file:
+__table_args__	src/db/raw/models/events/ControlGroupEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:ControlGroupEvent	file:
+__table_args__	src/db/raw/models/events/GetControlGroupEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:GetControlGroupEvent	file:
+__table_args__	src/db/raw/models/events/PlayerLeaveEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:PlayerLeaveEvent	file:
+__table_args__	src/db/raw/models/events/PlayerSetupEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:PlayerSetupEvent	file:
+__table_args__	src/db/raw/models/events/PlayerStatsEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:PlayerStatsEvent	file:
+__table_args__	src/db/raw/models/events/SelectionEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:SelectionEvent	file:
+__table_args__	src/db/raw/models/events/SetControlGroupEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:SetControlGroupEvent	file:
+__table_args__	src/db/raw/models/events/TargetPointCommandEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:TargetPointCommandEvent	file:
+__table_args__	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:TargetUnitCommandEvent	file:
+__table_args__	src/db/raw/models/events/UnitBornEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:UnitBornEvent	file:
+__table_args__	src/db/raw/models/events/UnitDiedEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:UnitDiedEvent	file:
+__table_args__	src/db/raw/models/events/UnitDoneEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:UnitDoneEvent	file:
+__table_args__	src/db/raw/models/events/UnitInitEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:UnitInitEvent	file:
+__table_args__	src/db/raw/models/events/UnitPositionsEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:UnitPositionsEvent	file:
+__table_args__	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:UnitTypeChangeEvent	file:
+__table_args__	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    __table_args__ = {"schema": "events"}$/;"	v	class:UpgradeCompleteEvent	file:
+__table_args__	src/db/raw/models/replay/info.py	/^    __table_args__ = {"schema": "replay"}$/;"	v	class:INFO	file:
+__table_args__	src/db/raw/models/replay/map.py	/^    __table_args__ = {"schema": "replay"}$/;"	v	class:MAP	file:
+__table_args__	src/db/raw/models/replay/objects.py	/^    __table_args__ = {"schema": "replay"}$/;"	v	class:OBJECT	file:
+__table_args__	src/db/raw/models/replay/player.py	/^    __table_args__ = {"schema": "replay"}$/;"	v	class:PLAYER	file:
+__tablename__	src/db/raw/models/datapack/ability.py	/^    __tablename__ = "ABILITY"$/;"	v	class:ABILITY	file:
+__tablename__	src/db/raw/models/datapack/unit_type.py	/^    __tablename__ = "UNIT_TYPE"$/;"	v	class:UNIT_TYPE	file:
+__tablename__	src/db/raw/models/events/BasicCommandEvent.py	/^    __tablename__ = " BasicCommandEvent" $/;"	v	class:BasicCommandEvent	file:
+__tablename__	src/db/raw/models/events/CameraEvent.py	/^    __tablename__ = "CameraEvent"$/;"	v	class:CameraEvent	file:
+__tablename__	src/db/raw/models/events/ChatEvent.py	/^    __tablename__ = "ChatEvent"$/;"	v	class:ChatEvent	file:
+__tablename__	src/db/raw/models/events/ControlGroupEvent.py	/^    __tablename__ = "ControlGroupEvent"$/;"	v	class:ControlGroupEvent	file:
+__tablename__	src/db/raw/models/events/GetControlGroupEvent.py	/^    __tablename__ = "GetControlGroupEvent"$/;"	v	class:GetControlGroupEvent	file:
+__tablename__	src/db/raw/models/events/PlayerLeaveEvent.py	/^    __tablename__ = "PlayerLeaveEvent"$/;"	v	class:PlayerLeaveEvent	file:
+__tablename__	src/db/raw/models/events/PlayerSetupEvent.py	/^    __tablename__ = "PlayerSetupEvent"$/;"	v	class:PlayerSetupEvent	file:
+__tablename__	src/db/raw/models/events/PlayerStatsEvent.py	/^    __tablename__ = "PlayerStatsEvent"$/;"	v	class:PlayerStatsEvent	file:
+__tablename__	src/db/raw/models/events/SelectionEvent.py	/^    __tablename__ = "SelectionEvent"$/;"	v	class:SelectionEvent	file:
+__tablename__	src/db/raw/models/events/SetControlGroupEvent.py	/^    __tablename__ = "SetControlGroupEvent"$/;"	v	class:SetControlGroupEvent	file:
+__tablename__	src/db/raw/models/events/TargetPointCommandEvent.py	/^    __tablename__ = "TargetPointCommandEvent"$/;"	v	class:TargetPointCommandEvent	file:
+__tablename__	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    __tablename__ = "TargetUnitCommandEvent" $/;"	v	class:TargetUnitCommandEvent	file:
+__tablename__	src/db/raw/models/events/UnitBornEvent.py	/^    __tablename__ = "UnitBornEvent"$/;"	v	class:UnitBornEvent	file:
+__tablename__	src/db/raw/models/events/UnitDiedEvent.py	/^    __tablename__ = "UnitDiedEvent"$/;"	v	class:UnitDiedEvent	file:
+__tablename__	src/db/raw/models/events/UnitDoneEvent.py	/^    __tablename__ = "UnitDoneEvent"$/;"	v	class:UnitDoneEvent	file:
+__tablename__	src/db/raw/models/events/UnitInitEvent.py	/^    __tablename__ = "UnitInitEvent"$/;"	v	class:UnitInitEvent	file:
+__tablename__	src/db/raw/models/events/UnitPositionsEvent.py	/^    __tablename__ = "UnitPositionsEvent"$/;"	v	class:UnitPositionsEvent	file:
+__tablename__	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    __tablename__ = "UnitTypeChangeEvent"$/;"	v	class:UnitTypeChangeEvent	file:
+__tablename__	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    __tablename__ = "UpgradeCompleteEvent"$/;"	v	class:UpgradeCompleteEvent	file:
+__tablename__	src/db/raw/models/replay/info.py	/^    __tablename__ = "INFO"$/;"	v	class:INFO	file:
+__tablename__	src/db/raw/models/replay/map.py	/^    __tablename__ = "MAP"$/;"	v	class:MAP	file:
+__tablename__	src/db/raw/models/replay/objects.py	/^    __tablename__ = "OBJECT"$/;"	v	class:OBJECT	file:
+__tablename__	src/db/raw/models/replay/player.py	/^    __tablename__ = "PLAYER"$/;"	v	class:PLAYER	file:
+abilities	src/db/raw/models/datapack/unit_type.py	/^    abilities = db.relationship('ABILITY', back_populates='build_unit')$/;"	v	class:UNIT_TYPE
+ability	src/db/raw/models/events/BasicCommandEvent.py	/^    ability = db.relationship('ABILITY', back_populates = 'basic_command_events')$/;"	v	class:BasicCommandEvent
+ability	src/db/raw/models/events/TargetPointCommandEvent.py	/^    ability = db.relationship('ABILITY', back_populates = 'target_point_command_events')$/;"	v	class:TargetPointCommandEvent
+ability	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    ability = db.relationship('ABILITY', back_populates = 'target_unit_command_events')$/;"	v	class:TargetUnitCommandEvent
+ability_link	src/db/raw/models/events/BasicCommandEvent.py	/^    ability_link = db.Column(db.Integer)$/;"	v	class:BasicCommandEvent
+ability_link	src/db/raw/models/events/TargetPointCommandEvent.py	/^    ability_link = db.Column(db.Integer)$/;"	v	class:TargetPointCommandEvent
+ability_link	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    ability_link = db.Column(db.Integer)$/;"	v	class:TargetUnitCommandEvent
+ability_name	src/db/raw/models/events/BasicCommandEvent.py	/^    ability_name = db.Column(db.Text)$/;"	v	class:BasicCommandEvent
+ability_name	src/db/raw/models/events/TargetPointCommandEvent.py	/^    ability_name = db.Column(db.Text)$/;"	v	class:TargetPointCommandEvent
+ability_name	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    ability_name = db.Column(db.Text)$/;"	v	class:TargetUnitCommandEvent
+ability_type	src/db/raw/models/events/TargetPointCommandEvent.py	/^    ability_type = db.Column(db.Text)$/;"	v	class:TargetPointCommandEvent
+ability_type	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    ability_type = db.Column(db.Text)$/;"	v	class:TargetUnitCommandEvent
+action	__main__.py	/^action = args.action$/;"	v
+amm	src/db/raw/models/replay/info.py	/^    amm = db.Column(db.Integer)$/;"	v	class:INFO
+app	src/app/app.py	/^app = dash.Dash($/;"	v
+args	__main__.py	/^args = parser.parse_args()$/;"	v
+author	src/db/raw/models/replay/map.py	/^    author = db.Column(db.Text)$/;"	v	class:MAP
+bank	src/db/raw/models/events/ControlGroupEvent.py	/^    bank = db.Column(db.Integer)$/;"	v	class:ControlGroupEvent
+bank	src/db/raw/models/events/GetControlGroupEvent.py	/^    bank = db.Column(db.Integer)$/;"	v	class:GetControlGroupEvent
+bank	src/db/raw/models/events/SetControlGroupEvent.py	/^    bank = db.Column(db.Integer)$/;"	v	class:SetControlGroupEvent
+base_build	src/db/raw/models/replay/info.py	/^    base_build = db.Column(db.Integer)$/;"	v	class:INFO
+basic_command_events	src/db/raw/models/datapack/ability.py	/^    basic_command_events = db.relationship('BasicCommandEvent',back_populates='ability')$/;"	v	class:ABILITY
+basic_command_events	src/db/raw/models/replay/info.py	/^    basic_command_events = db.relationship('BasicCommandEvent',back_populates='info')$/;"	v	class:INFO
+basic_command_events	src/db/raw/models/replay/player.py	/^    basic_command_events=db.relationship('BasicCommandEvent',back_populates='player')$/;"	v	class:PLAYER
+battle_net	src/db/raw/models/replay/info.py	/^    battle_net = db.Column(db.Integer)$/;"	v	class:INFO
+build	src/db/raw/models/replay/info.py	/^    build = db.Column(db.Integer)$/;"	v	class:INFO
+build_time	src/db/raw/models/datapack/ability.py	/^    build_time = db.Column(db.Integer)$/;"	v	class:ABILITY
+build_unit	src/db/raw/models/datapack/ability.py	/^    build_unit = db.relationship('UNIT_TYPE', back_populates='abilities')$/;"	v	class:ABILITY
+camera_events	src/db/raw/models/replay/info.py	/^    camera_events = db.relationship('CameraEvent',back_populates='info')$/;"	v	class:INFO
+camera_events	src/db/raw/models/replay/player.py	/^    camera_events = db.relationship('CameraEvent',back_populates='player')$/;"	v	class:PLAYER
+category	src/db/raw/models/replay/info.py	/^    category = db.Column(db.Text)$/;"	v	class:INFO
+chat_events	src/db/raw/models/replay/info.py	/^    chat_events = db.relationship('ChatEvent',back_populates='info')$/;"	v	class:INFO
+chat_events	src/db/raw/models/replay/player.py	/^    chat_events=db.relationship('ChatEvent', back_populates='player')$/;"	v	class:PLAYER
+clan_tag	src/db/raw/models/replay/player.py	/^    clan_tag = db.Column(db.Text)$/;"	v	class:PLAYER
+columns	src/db/raw/models/events/BasicCommandEvent.py	/^    columns = {$/;"	v	class:BasicCommandEvent
+columns	src/db/raw/models/events/CameraEvent.py	/^    columns = {$/;"	v	class:CameraEvent
+columns	src/db/raw/models/events/ChatEvent.py	/^    columns = {$/;"	v	class:ChatEvent
+columns	src/db/raw/models/events/ControlGroupEvent.py	/^    columns = {$/;"	v	class:ControlGroupEvent
+columns	src/db/raw/models/events/GetControlGroupEvent.py	/^    columns = {$/;"	v	class:GetControlGroupEvent
+columns	src/db/raw/models/events/PlayerLeaveEvent.py	/^    columns = {$/;"	v	class:PlayerLeaveEvent
+columns	src/db/raw/models/events/PlayerSetupEvent.py	/^    columns = {$/;"	v	class:PlayerSetupEvent
+columns	src/db/raw/models/events/PlayerStatsEvent.py	/^    columns = {$/;"	v	class:PlayerStatsEvent
+columns	src/db/raw/models/events/SelectionEvent.py	/^    columns = {$/;"	v	class:SelectionEvent
+columns	src/db/raw/models/events/SetControlGroupEvent.py	/^    columns = {$/;"	v	class:SetControlGroupEvent
+columns	src/db/raw/models/events/TargetPointCommandEvent.py	/^    columns = {$/;"	v	class:TargetPointCommandEvent
+columns	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    columns = {$/;"	v	class:TargetUnitCommandEvent
+columns	src/db/raw/models/events/UnitBornEvent.py	/^    columns = {$/;"	v	class:UnitBornEvent
+columns	src/db/raw/models/events/UnitDiedEvent.py	/^    columns = {$/;"	v	class:UnitDiedEvent
+columns	src/db/raw/models/events/UnitDoneEvent.py	/^    columns = {$/;"	v	class:UnitDoneEvent
+columns	src/db/raw/models/events/UnitInitEvent.py	/^    columns = {$/;"	v	class:UnitInitEvent
+columns	src/db/raw/models/events/UnitPositionsEvent.py	/^    columns = {$/;"	v	class:UnitPositionsEvent
+columns	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    columns = {$/;"	v	class:UnitTypeChangeEvent
+columns	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    columns = {$/;"	v	class:UpgradeCompleteEvent
+columns	src/db/raw/models/replay/info.py	/^    columns = [$/;"	v	class:INFO
+columns	src/db/raw/models/replay/map.py	/^    columns = {$/;"	v	class:MAP
+columns	src/db/raw/models/replay/objects.py	/^    columns = {$/;"	v	class:OBJECT
+columns	src/db/raw/models/replay/player.py	/^    columns = {$/;"	v	class:PLAYER
+combined_race_levels	src/db/raw/models/replay/player.py	/^    combined_race_levels = db.Column(db.BigInteger)$/;"	v	class:PLAYER
+command_index	src/db/raw/models/events/BasicCommandEvent.py	/^    command_index = db.Column(db.Integer)$/;"	v	class:BasicCommandEvent
+command_index	src/db/raw/models/events/TargetPointCommandEvent.py	/^    command_index = db.Column(db.Integer)$/;"	v	class:TargetPointCommandEvent
+command_index	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    command_index = db.Column(db.Integer)$/;"	v	class:TargetUnitCommandEvent
+competitive	src/db/raw/models/replay/info.py	/^    competitive = db.Column(db.Integer)$/;"	v	class:INFO
+construct_replay_table	src/app/utils/replay.py	/^def construct_replay_table():$/;"	f
+construct_table_body	src/app/utils/replay.py	/^def construct_table_body(query_info):$/;"	f
+construct_table_head	src/app/utils/replay.py	/^def construct_table_head():$/;"	f
+construct_table_row	src/app/utils/replay.py	/^def construct_table_row(info):$/;"	f
+control_group	src/db/raw/models/events/ControlGroupEvent.py	/^    control_group = db.Column(db.Integer)$/;"	v	class:ControlGroupEvent
+control_group	src/db/raw/models/events/GetControlGroupEvent.py	/^    control_group = db.Column(db.Integer)$/;"	v	class:GetControlGroupEvent
+control_group	src/db/raw/models/events/SelectionEvent.py	/^    control_group = db.Column(db.Integer)$/;"	v	class:SelectionEvent
+control_group	src/db/raw/models/events/SetControlGroupEvent.py	/^    control_group = db.Column(db.Integer)$/;"	v	class:SetControlGroupEvent
+control_group_events	src/db/raw/models/replay/info.py	/^    control_group_events = db.relationship('ControlGroupEvent',back_populates='info')$/;"	v	class:INFO
+control_group_events	src/db/raw/models/replay/player.py	/^    control_group_events = db.relationship('ControlGroupEvent',back_populates='player')$/;"	v	class:PLAYER
+control_pid	src/db/raw/models/events/UnitBornEvent.py	/^    control_pid = db.Column(db.Integer)$/;"	v	class:UnitBornEvent
+cooperative	src/db/raw/models/replay/info.py	/^    cooperative = db.Column(db.Integer)$/;"	v	class:INFO
+count	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    count = db.Column(db.Integer) $/;"	v	class:UpgradeCompleteEvent
+date	src/db/raw/models/replay/info.py	/^    date = db.Column(db.DateTime)$/;"	v	class:INFO
+db	src/db/raw/config.py	/^db = SQLAlchemy(server)$/;"	v
+dcc	src/app/app.py	/^import dash_core_components as dcc$/;"	I
+dcc	src/app/apps/app1.py	/^import dash_core_components as dcc$/;"	I
+dcc	src/app/apps/app2.py	/^import dash_core_components as dcc$/;"	I
+dcc	src/app/apps/replays.py	/^import dash_core_components as dcc$/;"	I
+dcc	src/app/components/replay_table.py	/^import dash_core_components as dcc$/;"	I
+dcc	src/app/index.py	/^import dash_core_components as dcc$/;"	I
+dcc	src/app/utils/replay.py	/^import dash_core_components as dcc$/;"	I
+death_event	src/db/raw/models/replay/objects.py	/^    death_event = db.relationship($/;"	v	class:OBJECT
+description	src/db/raw/models/replay/map.py	/^    description = db.Column(db.Text)$/;"	v	class:MAP
+died_at	src/db/raw/models/replay/objects.py	/^    died_at = db.Column(db.Integer)$/;"	v	class:OBJECT
+display_page	src/app/index.py	/^def display_page(pathname):$/;"	f
+display_value	src/app/apps/app2.py	/^def display_value(value):$/;"	f
+end_time	src/db/raw/models/replay/info.py	/^    end_time = db.Column(db.DateTime)$/;"	v	class:INFO
+event_details	__main__.py	/^    def event_details(event_name, predicate = lambda e: True):$/;"	f
+events	__main__.py	/^    events = {}$/;"	v
+events	src/db/raw/models/events/InjectFactory.py	/^    events = {$/;"	v	class:InjectFactory
+expansion	src/db/raw/models/replay/info.py	/^    expansion = db.Column(db.Text)$/;"	v	class:INFO
+external_stylesheets	src/app/app.py	/^external_stylesheets = ['https:\/\/codepen.io\/chriddyp\/pen\/bWLwgP.css']$/;"	v
+ff_minerals_lost_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    ff_minerals_lost_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+ff_minerals_lost_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    ff_minerals_lost_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+ff_minerals_lost_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    ff_minerals_lost_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+ff_vespene_lost_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    ff_vespene_lost_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+ff_vespene_lost_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    ff_vespene_lost_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+ff_vespene_lost_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    ff_vespene_lost_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+filehash	src/db/raw/models/replay/info.py	/^    filehash = db.Column(db.Text)$/;"	v	class:INFO
+filehash	src/db/raw/models/replay/map.py	/^    filehash = db.Column(db.Text)$/;"	v	class:MAP
+filename	src/db/raw/models/replay/info.py	/^    filename = db.Column(db.Text)$/;"	v	class:INFO
+filename	src/db/raw/models/replay/map.py	/^    filename = db.Column(db.Text)$/;"	v	class:MAP
+finished_at	src/db/raw/models/replay/objects.py	/^    finished_at = db.Column(db.Integer)$/;"	v	class:OBJECT
+flags	src/db/raw/models/events/TargetPointCommandEvent.py	/^    flags = db.Column(db.Integer)$/;"	v	class:TargetPointCommandEvent
+flags	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    flags = db.Column(db.Integer)$/;"	v	class:TargetUnitCommandEvent
+food_made	src/db/raw/models/events/PlayerStatsEvent.py	/^    food_made = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+food_used	src/db/raw/models/events/PlayerStatsEvent.py	/^    food_used = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+frame	src/db/raw/models/events/BasicCommandEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:BasicCommandEvent
+frame	src/db/raw/models/events/CameraEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:CameraEvent
+frame	src/db/raw/models/events/ChatEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:ChatEvent
+frame	src/db/raw/models/events/ControlGroupEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:ControlGroupEvent
+frame	src/db/raw/models/events/GetControlGroupEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:GetControlGroupEvent
+frame	src/db/raw/models/events/PlayerLeaveEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:PlayerLeaveEvent
+frame	src/db/raw/models/events/PlayerSetupEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:PlayerSetupEvent
+frame	src/db/raw/models/events/SelectionEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:SelectionEvent
+frame	src/db/raw/models/events/SetControlGroupEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:SetControlGroupEvent
+frame	src/db/raw/models/events/TargetPointCommandEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:TargetPointCommandEvent
+frame	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:TargetUnitCommandEvent
+frame	src/db/raw/models/events/UnitBornEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:UnitBornEvent
+frame	src/db/raw/models/events/UnitDiedEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:UnitDiedEvent
+frame	src/db/raw/models/events/UnitDoneEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:UnitDoneEvent
+frame	src/db/raw/models/events/UnitInitEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:UnitInitEvent
+frame	src/db/raw/models/events/UnitPositionsEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:UnitPositionsEvent
+frame	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:UnitTypeChangeEvent
+frame	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    frame = db.Column(db.Integer)$/;"	v	class:UpgradeCompleteEvent
+frames	src/db/raw/models/replay/info.py	/^    frames = db.Column(db.Integer)$/;"	v	class:INFO
+game_fps	src/db/raw/models/replay/info.py	/^    game_fps = db.Column(db.Float)$/;"	v	class:INFO
+game_type	src/db/raw/models/replay/info.py	/^    game_type = db.Column(db.Text)$/;"	v	class:INFO
+get_control_group_events	src/db/raw/models/replay/info.py	/^    get_control_group_events = db.relationship('GetControlGroupEvent',back_populates='info')$/;"	v	class:INFO
+get_control_group_events	src/db/raw/models/replay/player.py	/^    get_control_group_events = db.relationship('GetControlGroupEvent',back_populates='player')$/;"	v	class:PLAYER
+get_dependancies	src/db/raw/models/datapack/unit_type.py	/^    def get_dependancies(cls):$/;"	m	class:UNIT_TYPE
+get_unique	src/db/raw/models/datapack/unit_type.py	/^    def get_unique(cls, replay):$/;"	m	class:UNIT_TYPE
+has_ability	src/db/raw/models/events/BasicCommandEvent.py	/^    has_ability = db.Column(db.Boolean)$/;"	v	class:BasicCommandEvent
+has_ability	src/db/raw/models/events/TargetPointCommandEvent.py	/^    has_ability = db.Column(db.Boolean)$/;"	v	class:TargetPointCommandEvent
+has_ability	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    has_ability = db.Column(db.Boolean)$/;"	v	class:TargetUnitCommandEvent
+hero_duplicates_allowed	src/db/raw/models/replay/info.py	/^    hero_duplicates_allowed = db.Column(db.Integer)$/;"	v	class:INFO
+highest_league	src/db/raw/models/replay/player.py	/^    highest_league = db.Column(db.Integer)$/;"	v	class:PLAYER
+home	__main__.py	/^   home = '\/Users\/jacob\/Library\/Application Support\/Blizzard\/StarCraft II\/Accounts\/91611/;"	v
+hotkey	src/db/raw/models/events/ControlGroupEvent.py	/^    hotkey = db.Column(db.Integer)$/;"	v	class:ControlGroupEvent
+hotkey	src/db/raw/models/events/GetControlGroupEvent.py	/^    hotkey = db.Column(db.Integer)$/;"	v	class:GetControlGroupEvent
+hotkey	src/db/raw/models/events/SetControlGroupEvent.py	/^    hotkey = db.Column(db.Integer)$/;"	v	class:SetControlGroupEvent
+html	src/app/app.py	/^import dash_html_components as html$/;"	I
+html	src/app/apps/app1.py	/^import dash_html_components as html$/;"	I
+html	src/app/apps/app2.py	/^import dash_html_components as html$/;"	I
+html	src/app/apps/replays.py	/^import dash_html_components as html$/;"	I
+html	src/app/components/replay_table.py	/^import dash_html_components as html$/;"	I
+html	src/app/index.py	/^import dash_html_components as html$/;"	I
+html	src/app/utils/replay.py	/^import dash_html_components as html$/;"	I
+id	src/db/raw/models/datapack/ability.py	/^    id = db.Column(db.Integer)$/;"	v	class:ABILITY
+id	src/db/raw/models/datapack/unit_type.py	/^    id = db.Column(db.Integer)$/;"	v	class:UNIT_TYPE
+id	src/db/raw/models/replay/objects.py	/^    id = db.Column(db.Integer)$/;"	v	class:OBJECT
+id	src/db/raw/models/replay/player.py	/^    id = db.Column(db.Integer)$/;"	v	class:PLAYER
+info	src/db/raw/models/events/BasicCommandEvent.py	/^    info = db.relationship('INFO', back_populates = 'basic_command_events')$/;"	v	class:BasicCommandEvent
+info	src/db/raw/models/events/CameraEvent.py	/^    info = db.relationship('INFO', back_populates = 'camera_events')$/;"	v	class:CameraEvent
+info	src/db/raw/models/events/ChatEvent.py	/^    info = db.relationship('INFO', back_populates = 'chat_events')$/;"	v	class:ChatEvent
+info	src/db/raw/models/events/ControlGroupEvent.py	/^    info = db.relationship('INFO', back_populates = 'control_group_events')$/;"	v	class:ControlGroupEvent
+info	src/db/raw/models/events/GetControlGroupEvent.py	/^    info = db.relationship('INFO', back_populates = 'get_control_group_events')$/;"	v	class:GetControlGroupEvent
+info	src/db/raw/models/events/PlayerLeaveEvent.py	/^    info = db.relationship('INFO', back_populates = 'player_leave_events')$/;"	v	class:PlayerLeaveEvent
+info	src/db/raw/models/events/PlayerSetupEvent.py	/^    info = db.relationship('INFO', back_populates = 'player_setup_events')$/;"	v	class:PlayerSetupEvent
+info	src/db/raw/models/events/PlayerStatsEvent.py	/^    info = db.relationship('INFO', back_populates = 'player_stats_events')$/;"	v	class:PlayerStatsEvent
+info	src/db/raw/models/events/SelectionEvent.py	/^    info = db.relationship('INFO', back_populates = 'selection_events')$/;"	v	class:SelectionEvent
+info	src/db/raw/models/events/SetControlGroupEvent.py	/^    info = db.relationship('INFO', back_populates = 'set_control_group_events')$/;"	v	class:SetControlGroupEvent
+info	src/db/raw/models/events/TargetPointCommandEvent.py	/^    info = db.relationship('INFO', back_populates = 'target_point_command_events')$/;"	v	class:TargetPointCommandEvent
+info	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    info = db.relationship('INFO', back_populates = 'target_unit_command_events')$/;"	v	class:TargetUnitCommandEvent
+info	src/db/raw/models/events/UnitBornEvent.py	/^    info = db.relationship('INFO', back_populates = 'unit_born_events')$/;"	v	class:UnitBornEvent
+info	src/db/raw/models/events/UnitDiedEvent.py	/^    info = db.relationship('INFO', back_populates = 'unit_died_events')$/;"	v	class:UnitDiedEvent
+info	src/db/raw/models/events/UnitDoneEvent.py	/^    info = db.relationship('INFO', back_populates = 'unit_done_events')$/;"	v	class:UnitDoneEvent
+info	src/db/raw/models/events/UnitInitEvent.py	/^    info = db.relationship('INFO', back_populates = 'unit_init_events')$/;"	v	class:UnitInitEvent
+info	src/db/raw/models/events/UnitPositionsEvent.py	/^    info = db.relationship('INFO', back_populates = 'unit_positions_events')$/;"	v	class:UnitPositionsEvent
+info	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    info = db.relationship('INFO', back_populates = 'unit_type_change_events')$/;"	v	class:UnitTypeChangeEvent
+info	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    info = db.relationship('INFO', back_populates = 'upgrade_complete_events')$/;"	v	class:UpgradeCompleteEvent
+inject	__main__.py	/^               inject = INJECT(replay).__construct__()$/;"	v
+is_army	src/db/raw/models/datapack/unit_type.py	/^    is_army = db.Column(db.Boolean)$/;"	v	class:UNIT_TYPE
+is_build	src/db/raw/models/datapack/ability.py	/^    is_build = db.Column(db.Boolean)$/;"	v	class:ABILITY
+is_building	src/db/raw/models/datapack/unit_type.py	/^    is_building = db.Column(db.Boolean)$/;"	v	class:UNIT_TYPE
+is_human	src/db/raw/models/replay/player.py	/^    is_human = db.Column(db.Boolean)$/;"	v	class:PLAYER
+is_ladder	src/db/raw/models/replay/info.py	/^    is_ladder = db.Column(db.Boolean)$/;"	v	class:INFO
+is_local	src/db/raw/models/events/BasicCommandEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:BasicCommandEvent
+is_local	src/db/raw/models/events/CameraEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:CameraEvent
+is_local	src/db/raw/models/events/ControlGroupEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:ControlGroupEvent
+is_local	src/db/raw/models/events/GetControlGroupEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:GetControlGroupEvent
+is_local	src/db/raw/models/events/PlayerLeaveEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:PlayerLeaveEvent
+is_local	src/db/raw/models/events/SelectionEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:SelectionEvent
+is_local	src/db/raw/models/events/SetControlGroupEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:SetControlGroupEvent
+is_local	src/db/raw/models/events/TargetPointCommandEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:TargetPointCommandEvent
+is_local	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    is_local = db.Column(db.Boolean)$/;"	v	class:TargetUnitCommandEvent
+is_observer	src/db/raw/models/replay/player.py	/^    is_observer = db.Column(db.Boolean)$/;"	v	class:PLAYER
+is_private	src/db/raw/models/replay/info.py	/^    is_private = db.Column(db.Boolean)$/;"	v	class:INFO
+is_referee	src/db/raw/models/replay/player.py	/^    is_referee = db.Column(db.Boolean)$/;"	v	class:PLAYER
+is_worker	src/db/raw/models/datapack/unit_type.py	/^    is_worker = db.Column(db.Boolean)$/;"	v	class:UNIT_TYPE
+kill_event	src/db/raw/models/replay/objects.py	/^    kill_event = db.relationship($/;"	v	class:OBJECT
+killer_pid	src/db/raw/models/events/UnitDiedEvent.py	/^    killer_pid = db.Column(db.Integer)$/;"	v	class:UnitDiedEvent
+killing_player	src/db/raw/models/events/UnitDiedEvent.py	/^    killing_player = db.relationship('PLAYER', back_populates = 'unit_died_events')$/;"	v	class:UnitDiedEvent
+killing_unit	src/db/raw/models/events/UnitDiedEvent.py	/^    killing_unit = db.relationship($/;"	v	class:UnitDiedEvent
+layout	src/app/apps/app1.py	/^layout = html.Div()$/;"	v
+layout	src/app/apps/app2.py	/^layout = html.Div([$/;"	v
+layout	src/app/apps/replays.py	/^layout = html.Div( $/;"	v
+leave_reason	src/db/raw/models/events/PlayerLeaveEvent.py	/^    leave_reason = db.Column(db.Integer)$/;"	v	class:PlayerLeaveEvent
+load_level	src/db/raw/models/replay/info.py	/^    load_level = db.Column(db.Integer)$/;"	v	class:INFO
+location_x	src/db/raw/models/replay/objects.py	/^    location_x = db.Column(db.Integer)$/;"	v	class:OBJECT
+location_y	src/db/raw/models/replay/objects.py	/^    location_y = db.Column(db.Integer)$/;"	v	class:OBJECT
+map	src/db/raw/models/replay/info.py	/^    map = db.relationship('MAP', back_populates='replays')$/;"	v	class:INFO
+map_hash	src/db/raw/models/replay/info.py	/^    map_hash = db.Column(db.Text)$/;"	v	class:INFO
+map_name	src/db/raw/models/replay/info.py	/^    map_name = db.Column(db.Text)$/;"	v	class:INFO
+minerals	src/db/raw/models/datapack/unit_type.py	/^    minerals = db.Column(db.Integer)$/;"	v	class:UNIT_TYPE
+minerals_collection_rate	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_collection_rate = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_current	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_current = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_killed	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_killed = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_killed_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_killed_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_killed_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_killed_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_killed_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_killed_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_lost	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_lost = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_lost_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_lost_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_lost_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_lost_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_lost_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_lost_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_active_forces	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_active_forces = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_current	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_current = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_current_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_current_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_current_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_current_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_current_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_current_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_in_progress	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_in_progress = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_in_progress_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_in_progress_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_in_progress_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_in_progress_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minerals_used_in_progress_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    minerals_used_in_progress_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+minimap	src/db/raw/models/replay/map.py	/^    minimap = db.Column(db.LargeBinary)$/;"	v	class:MAP
+name	src/db/raw/models/datapack/ability.py	/^    name = db.Column(db.Text)$/;"	v	class:ABILITY
+name	src/db/raw/models/datapack/unit_type.py	/^    name = db.Column(db.Text)$/;"	v	class:UNIT_TYPE
+name	src/db/raw/models/events/BasicCommandEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:BasicCommandEvent
+name	src/db/raw/models/events/CameraEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:CameraEvent
+name	src/db/raw/models/events/ChatEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:ChatEvent
+name	src/db/raw/models/events/ControlGroupEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:ControlGroupEvent
+name	src/db/raw/models/events/GetControlGroupEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:GetControlGroupEvent
+name	src/db/raw/models/events/PlayerLeaveEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:PlayerLeaveEvent
+name	src/db/raw/models/events/PlayerSetupEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:PlayerSetupEvent
+name	src/db/raw/models/events/PlayerStatsEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:PlayerStatsEvent
+name	src/db/raw/models/events/SelectionEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:SelectionEvent
+name	src/db/raw/models/events/SetControlGroupEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:SetControlGroupEvent
+name	src/db/raw/models/events/TargetPointCommandEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:TargetPointCommandEvent
+name	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:TargetUnitCommandEvent
+name	src/db/raw/models/events/UnitBornEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:UnitBornEvent
+name	src/db/raw/models/events/UnitDiedEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:UnitDiedEvent
+name	src/db/raw/models/events/UnitDoneEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:UnitDoneEvent
+name	src/db/raw/models/events/UnitInitEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:UnitInitEvent
+name	src/db/raw/models/events/UnitPositionsEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:UnitPositionsEvent
+name	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:UnitTypeChangeEvent
+name	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    name = db.Column(db.Text)$/;"	v	class:UpgradeCompleteEvent
+name	src/db/raw/models/replay/map.py	/^    name = db.Column(db.Text)$/;"	v	class:MAP
+name	src/db/raw/models/replay/objects.py	/^    name = db.Column(db.Text)$/;"	v	class:OBJECT
+name	src/db/raw/models/replay/player.py	/^    name = db.Column(db.Text)$/;"	v	class:PLAYER
+objects	src/db/raw/models/datapack/unit_type.py	/^    objects = db.relationship('OBJECT', back_populates='unit_type')$/;"	v	class:UNIT_TYPE
+objects	src/db/raw/models/replay/info.py	/^    objects = db.relationship('OBJECT', back_populates='replay')$/;"	v	class:INFO
+objects	src/db/raw/models/replay/player.py	/^    objects = db.relationship($/;"	v	class:PLAYER
+owner	src/db/raw/models/replay/objects.py	/^    owner = db.relationship($/;"	v	class:OBJECT
+parse_url	src/app/components/replay_table.py	/^    def parse_url(self):$/;"	m	class:REPLAY_TABLE
+parser	__main__.py	/^parser = argparse.ArgumentParser(description='sdm : Starcraft 2 Data Project')$/;"	v
+pick_race	src/db/raw/models/replay/player.py	/^    pick_race = db.Column(db.Text)$/;"	v	class:PLAYER
+pid	src/db/raw/models/events/BasicCommandEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:BasicCommandEvent
+pid	src/db/raw/models/events/CameraEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:CameraEvent
+pid	src/db/raw/models/events/ChatEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:ChatEvent
+pid	src/db/raw/models/events/ControlGroupEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:ControlGroupEvent
+pid	src/db/raw/models/events/GetControlGroupEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:GetControlGroupEvent
+pid	src/db/raw/models/events/PlayerLeaveEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:PlayerLeaveEvent
+pid	src/db/raw/models/events/PlayerSetupEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:PlayerSetupEvent
+pid	src/db/raw/models/events/SelectionEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:SelectionEvent
+pid	src/db/raw/models/events/SetControlGroupEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:SetControlGroupEvent
+pid	src/db/raw/models/events/TargetPointCommandEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:TargetPointCommandEvent
+pid	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:TargetUnitCommandEvent
+pid	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    pid = db.Column(db.Integer)$/;"	v	class:UpgradeCompleteEvent
+pid	src/db/raw/models/replay/player.py	/^    pid = db.Column(db.Integer)$/;"	v	class:PLAYER
+play_race	src/db/raw/models/replay/player.py	/^    play_race = db.Column(db.Text)$/;"	v	class:PLAYER
+player	src/db/raw/models/events/BasicCommandEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'basic_command_events')$/;"	v	class:BasicCommandEvent
+player	src/db/raw/models/events/CameraEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'camera_events')$/;"	v	class:CameraEvent
+player	src/db/raw/models/events/ChatEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'chat_events')$/;"	v	class:ChatEvent
+player	src/db/raw/models/events/ControlGroupEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'control_group_events')$/;"	v	class:ControlGroupEvent
+player	src/db/raw/models/events/GetControlGroupEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'get_control_group_events')$/;"	v	class:GetControlGroupEvent
+player	src/db/raw/models/events/PlayerLeaveEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'player_leave_events')$/;"	v	class:PlayerLeaveEvent
+player	src/db/raw/models/events/PlayerStatsEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'player_stats_events')$/;"	v	class:PlayerStatsEvent
+player	src/db/raw/models/events/SelectionEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'selection_events')$/;"	v	class:SelectionEvent
+player	src/db/raw/models/events/SetControlGroupEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'set_control_group_events')$/;"	v	class:SetControlGroupEvent
+player	src/db/raw/models/events/TargetPointCommandEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'target_point_command_events')$/;"	v	class:TargetPointCommandEvent
+player	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'target_unit_command_events')$/;"	v	class:TargetUnitCommandEvent
+player	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    player = db.relationship('PLAYER', back_populates = 'upgrade_complete_events')$/;"	v	class:UpgradeCompleteEvent
+player_leave_events	src/db/raw/models/replay/info.py	/^    player_leave_events = db.relationship('PlayerLeaveEvent',back_populates='info')$/;"	v	class:INFO
+player_leave_events	src/db/raw/models/replay/player.py	/^    player_leave_events = db.relationship('PlayerLeaveEvent',back_populates='player')$/;"	v	class:PLAYER
+player_setup_events	src/db/raw/models/replay/info.py	/^    player_setup_events = db.relationship('PlayerSetupEvent',back_populates='info')$/;"	v	class:INFO
+player_stats_events	src/db/raw/models/replay/info.py	/^    player_stats_events = db.relationship('PlayerStatsEvent',back_populates='info')$/;"	v	class:INFO
+player_stats_events	src/db/raw/models/replay/player.py	/^    player_stats_events = db.relationship('PlayerStatsEvent',back_populates='player')$/;"	v	class:PLAYER
+players	src/db/raw/models/replay/info.py	/^    players = db.relationship('PLAYER', back_populates='replay')$/;"	v	class:INFO
+position_id	src/db/raw/models/events/UnitPositionsEvent.py	/^    position_id = db.Column(db.Text)$/;"	v	class:UnitPositionsEvent
+practice	src/db/raw/models/replay/info.py	/^    practice = db.Column(db.Integer)$/;"	v	class:INFO
+process	src/db/raw/models/datapack/ability.py	/^    def process(cls, replay):$/;"	m	class:ABILITY
+process	src/db/raw/models/datapack/unit_type.py	/^    def process(cls, replay):$/;"	m	class:UNIT_TYPE
+process	src/db/raw/models/events/BasicCommandEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:BasicCommandEvent
+process	src/db/raw/models/events/CameraEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:CameraEvent
+process	src/db/raw/models/events/ChatEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:ChatEvent
+process	src/db/raw/models/events/ControlGroupEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:ControlGroupEvent
+process	src/db/raw/models/events/GetControlGroupEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:GetControlGroupEvent
+process	src/db/raw/models/events/InjectFactory.py	/^    def process(cls, replay):$/;"	m	class:InjectFactory
+process	src/db/raw/models/events/PlayerLeaveEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:PlayerLeaveEvent
+process	src/db/raw/models/events/PlayerSetupEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:PlayerSetupEvent
+process	src/db/raw/models/events/PlayerStatsEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:PlayerStatsEvent
+process	src/db/raw/models/events/SelectionEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:SelectionEvent
+process	src/db/raw/models/events/SetControlGroupEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:SetControlGroupEvent
+process	src/db/raw/models/events/TargetPointCommandEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:TargetPointCommandEvent
+process	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:TargetUnitCommandEvent
+process	src/db/raw/models/events/UnitBornEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:UnitBornEvent
+process	src/db/raw/models/events/UnitDiedEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:UnitDiedEvent
+process	src/db/raw/models/events/UnitDoneEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:UnitDoneEvent
+process	src/db/raw/models/events/UnitInitEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:UnitInitEvent
+process	src/db/raw/models/events/UnitPositionsEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:UnitPositionsEvent
+process	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:UnitTypeChangeEvent
+process	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:UpgradeCompleteEvent
+process	src/db/raw/models/replay/info.py	/^    def process(cls, replay):$/;"	m	class:INFO
+process	src/db/raw/models/replay/map.py	/^    def process(cls, replay):$/;"	m	class:MAP
+process	src/db/raw/models/replay/objects.py	/^    def process(cls, replay):$/;"	m	class:OBJECT
+process	src/db/raw/models/replay/player.py	/^    def process(cls, replay):$/;"	m	class:PLAYER
+process_conditions	src/db/raw/models/datapack/ability.py	/^    def process_conditions(cls, replay):$/;"	m	class:ABILITY
+process_conditions	src/db/raw/models/datapack/unit_type.py	/^    def process_conditions(cls, replay):$/;"	m	class:UNIT_TYPE
+process_conditions	src/db/raw/models/replay/info.py	/^    def process_conditions(cls, replay):$/;"	m	class:INFO
+process_conditions	src/db/raw/models/replay/map.py	/^    def process_conditions(cls, replay):$/;"	m	class:MAP
+process_conditions	src/db/raw/models/replay/objects.py	/^    def process_conditions(cls, replay):$/;"	m	class:OBJECT
+process_conditions	src/db/raw/models/replay/player.py	/^    def process_conditions(cls, replay):$/;"	m	class:PLAYER
+process_dependancies	src/db/raw/models/datapack/ability.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:ABILITY
+process_dependancies	src/db/raw/models/events/BasicCommandEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:BasicCommandEvent
+process_dependancies	src/db/raw/models/events/CameraEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:CameraEvent
+process_dependancies	src/db/raw/models/events/ChatEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:ChatEvent
+process_dependancies	src/db/raw/models/events/ControlGroupEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:ControlGroupEvent
+process_dependancies	src/db/raw/models/events/GetControlGroupEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:GetControlGroupEvent
+process_dependancies	src/db/raw/models/events/PlayerLeaveEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:PlayerLeaveEvent
+process_dependancies	src/db/raw/models/events/PlayerSetupEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:PlayerSetupEvent
+process_dependancies	src/db/raw/models/events/PlayerStatsEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:PlayerStatsEvent
+process_dependancies	src/db/raw/models/events/SelectionEvent.py	/^    def process_dependancies(cls, _unit, obj, replay):$/;"	m	class:SelectionEvent
+process_dependancies	src/db/raw/models/events/SetControlGroupEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:SetControlGroupEvent
+process_dependancies	src/db/raw/models/events/TargetPointCommandEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:TargetPointCommandEvent
+process_dependancies	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:TargetUnitCommandEvent
+process_dependancies	src/db/raw/models/events/UnitBornEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:UnitBornEvent
+process_dependancies	src/db/raw/models/events/UnitDiedEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:UnitDiedEvent
+process_dependancies	src/db/raw/models/events/UnitDoneEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:UnitDoneEvent
+process_dependancies	src/db/raw/models/events/UnitInitEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:UnitInitEvent
+process_dependancies	src/db/raw/models/events/UnitPositionsEvent.py	/^    def process_dependancies(cls, _unit, replay):$/;"	m	class:UnitPositionsEvent
+process_dependancies	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:UnitTypeChangeEvent
+process_dependancies	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    def process_dependancies(cls, obj, replay):$/;"	m	class:UpgradeCompleteEvent
+process_dependancies	src/db/raw/models/replay/info.py	/^    def process_dependancies(cls, replay):$/;"	m	class:INFO
+process_dependancies	src/db/raw/models/replay/objects.py	/^    def process_dependancies(cls, replay):$/;"	m	class:OBJECT
+process_dependancies	src/db/raw/models/replay/player.py	/^    def process_dependancies(cls, replay):$/;"	m	class:PLAYER
+process_derived	src/db/raw/models/events/PlayerLeaveEvent.py	/^    def process_derived(cls, obj):$/;"	m	class:PlayerLeaveEvent
+process_derived	src/db/raw/models/replay/objects.py	/^    def process_derived(cls, obj, replay):$/;"	m	class:OBJECT
+process_derived	src/db/raw/models/replay/player.py	/^    def process_derived(cls, obj):$/;"	m	class:PLAYER
+process_object	src/db/raw/models/events/BasicCommandEvent.py	/^    def process_object(cls, obj):$/;"	m	class:BasicCommandEvent
+process_object	src/db/raw/models/events/CameraEvent.py	/^    def process_object(cls, obj):$/;"	m	class:CameraEvent
+process_object	src/db/raw/models/events/ChatEvent.py	/^    def process_object(cls, obj):$/;"	m	class:ChatEvent
+process_object	src/db/raw/models/events/ControlGroupEvent.py	/^    def process_object(cls, obj):$/;"	m	class:ControlGroupEvent
+process_object	src/db/raw/models/events/GetControlGroupEvent.py	/^    def process_object(cls, obj):$/;"	m	class:GetControlGroupEvent
+process_object	src/db/raw/models/events/PlayerLeaveEvent.py	/^    def process_object(cls, obj):$/;"	m	class:PlayerLeaveEvent
+process_object	src/db/raw/models/events/PlayerSetupEvent.py	/^    def process_object(cls, obj):$/;"	m	class:PlayerSetupEvent
+process_object	src/db/raw/models/events/PlayerStatsEvent.py	/^    def process_object(cls, obj):$/;"	m	class:PlayerStatsEvent
+process_object	src/db/raw/models/events/SelectionEvent.py	/^    def process_object(cls, obj):$/;"	m	class:SelectionEvent
+process_object	src/db/raw/models/events/SetControlGroupEvent.py	/^    def process_object(cls, obj):$/;"	m	class:SetControlGroupEvent
+process_object	src/db/raw/models/events/TargetPointCommandEvent.py	/^    def process_object(cls, obj):$/;"	m	class:TargetPointCommandEvent
+process_object	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    def process_object(cls, obj):$/;"	m	class:TargetUnitCommandEvent
+process_object	src/db/raw/models/events/UnitBornEvent.py	/^    def process_object(cls, obj):$/;"	m	class:UnitBornEvent
+process_object	src/db/raw/models/events/UnitDiedEvent.py	/^    def process_object(cls, obj):$/;"	m	class:UnitDiedEvent
+process_object	src/db/raw/models/events/UnitDoneEvent.py	/^    def process_object(cls, obj):$/;"	m	class:UnitDoneEvent
+process_object	src/db/raw/models/events/UnitInitEvent.py	/^    def process_object(cls, obj):$/;"	m	class:UnitInitEvent
+process_object	src/db/raw/models/events/UnitPositionsEvent.py	/^    def process_object(cls, obj):$/;"	m	class:UnitPositionsEvent
+process_object	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    def process_object(cls, obj):$/;"	m	class:UnitTypeChangeEvent
+process_object	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    def process_object(cls, obj):$/;"	m	class:UpgradeCompleteEvent
+process_object	src/db/raw/models/replay/info.py	/^    def process_object(cls, replay):$/;"	m	class:INFO
+process_object	src/db/raw/models/replay/objects.py	/^    def process_object(cls, obj):$/;"	m	class:OBJECT
+process_object	src/db/raw/models/replay/player.py	/^    def process_object(cls, obj):$/;"	m	class:PLAYER
+process_raw_data	src/db/raw/models/replay/map.py	/^    def process_raw_data(cls, obj):$/;"	m	class:MAP
+query	src/app/components/replay_table.py	/^    def query(self):$/;"	m	class:REPLAY_TABLE
+race	src/db/raw/models/datapack/unit_type.py	/^    race = db.Column(db.Text)$/;"	v	class:UNIT_TYPE
+real_type	src/db/raw/models/replay/info.py	/^    real_type = db.Column(db.Text)$/;"	v	class:INFO
+region	src/db/raw/models/replay/info.py	/^    region = db.Column(db.Text)$/;"	v	class:INFO
+region	src/db/raw/models/replay/player.py	/^    region = db.Column(db.Text)$/;"	v	class:PLAYER
+release_string	src/db/raw/models/datapack/ability.py	/^    release_string = db.Column(db.Text)$/;"	v	class:ABILITY
+release_string	src/db/raw/models/datapack/unit_type.py	/^    release_string = db.Column(db.Text)$/;"	v	class:UNIT_TYPE
+release_string	src/db/raw/models/replay/info.py	/^    release_string = db.Column(db.Text)$/;"	v	class:INFO
+replay	__main__.py	/^               replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)$/;"	v
+replay	__main__.py	/^           replay = sc2reader.load_replay(home+r,load_level=1)$/;"	v
+replay	__main__.py	/^    replay = sc2reader.load_replay('example.SC2Replay',load_level=5,load_map=True)$/;"	v
+replay	src/db/raw/models/replay/objects.py	/^    replay = db.relationship('INFO', back_populates='objects')$/;"	v	class:OBJECT
+replay	src/db/raw/models/replay/player.py	/^    replay = db.relationship('INFO', back_populates='players')$/;"	v	class:PLAYER
+replays	src/db/raw/models/replay/map.py	/^    replays = db.relationship('INFO', back_populates='map')$/;"	v	class:MAP
+resources_killed	src/db/raw/models/events/PlayerStatsEvent.py	/^    resources_killed = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+resources_lost	src/db/raw/models/events/PlayerStatsEvent.py	/^    resources_lost = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+resources_used_current	src/db/raw/models/events/PlayerStatsEvent.py	/^    resources_used_current = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+resources_used_in_progress	src/db/raw/models/events/PlayerStatsEvent.py	/^    resources_used_in_progress = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+result	src/db/raw/models/replay/player.py	/^    result = db.Column(db.Text)$/;"	v	class:PLAYER
+return_layout	src/app/components/replay_table.py	/^    def return_layout(self):$/;"	m	class:REPLAY_TABLE
+sc2Replays	__main__.py	/^   sc2Replays = listdir(home)$/;"	v
+second	src/db/raw/models/events/BasicCommandEvent.py	/^    second = db.Column(db.Integer)$/;"	v	class:BasicCommandEvent
+second	src/db/raw/models/events/CameraEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:CameraEvent
+second	src/db/raw/models/events/ChatEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:ChatEvent
+second	src/db/raw/models/events/ControlGroupEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:ControlGroupEvent
+second	src/db/raw/models/events/GetControlGroupEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:GetControlGroupEvent
+second	src/db/raw/models/events/PlayerLeaveEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:PlayerLeaveEvent
+second	src/db/raw/models/events/PlayerSetupEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:PlayerSetupEvent
+second	src/db/raw/models/events/PlayerStatsEvent.py	/^    second = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+second	src/db/raw/models/events/SelectionEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:SelectionEvent
+second	src/db/raw/models/events/SetControlGroupEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:SetControlGroupEvent
+second	src/db/raw/models/events/TargetPointCommandEvent.py	/^    second = db.Column(db.Integer)$/;"	v	class:TargetPointCommandEvent
+second	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    second = db.Column(db.Integer)$/;"	v	class:TargetUnitCommandEvent
+second	src/db/raw/models/events/UnitBornEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:UnitBornEvent
+second	src/db/raw/models/events/UnitDiedEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:UnitDiedEvent
+second	src/db/raw/models/events/UnitDoneEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:UnitDoneEvent
+second	src/db/raw/models/events/UnitInitEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:UnitInitEvent
+second	src/db/raw/models/events/UnitPositionsEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:UnitPositionsEvent
+second	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:UnitTypeChangeEvent
+second	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    second = db.Column(db.Integer) $/;"	v	class:UpgradeCompleteEvent
+select_from_object	src/db/raw/models/datapack/ability.py	/^    def select_from_object(cls, obj, replay):$/;"	m	class:ABILITY
+select_from_object	src/db/raw/models/datapack/unit_type.py	/^    def select_from_object(cls, obj, replay):$/;"	m	class:UNIT_TYPE
+select_from_object	src/db/raw/models/replay/info.py	/^    def select_from_object(cls, obj):$/;"	m	class:INFO
+select_from_object	src/db/raw/models/replay/map.py	/^    def select_from_object(cls, obj):$/;"	m	class:MAP
+select_from_object	src/db/raw/models/replay/objects.py	/^    def select_from_object(cls, obj, replay):$/;"	m	class:OBJECT
+select_from_object	src/db/raw/models/replay/player.py	/^    def select_from_object(cls, obj, replay):$/;"	m	class:PLAYER
+select_from_str_id	src/db/raw/models/datapack/unit_type.py	/^    def select_from_str_id(cls, str_id, replay):$/;"	m	class:UNIT_TYPE
+selection_events	src/db/raw/models/replay/info.py	/^    selection_events = db.relationship('SelectionEvent',back_populates='info')$/;"	v	class:INFO
+selection_events	src/db/raw/models/replay/objects.py	/^    selection_events = db.relationship('SelectionEvent',back_populates='unit')$/;"	v	class:OBJECT
+selection_events	src/db/raw/models/replay/player.py	/^    selection_events = db.relationship('SelectionEvent',back_populates='player')$/;"	v	class:PLAYER
+selection_id	src/db/raw/models/events/SelectionEvent.py	/^    selection_id = db.Column(db.Text)$/;"	v	class:SelectionEvent
+server	src/db/raw/config.py	/^server = Flask(__name__)$/;"	v
+set_control_group_events	src/db/raw/models/replay/info.py	/^    set_control_group_events = db.relationship('SetControlGroupEvent',back_populates='info')$/;"	v	class:INFO
+set_control_group_events	src/db/raw/models/replay/player.py	/^    set_control_group_events = db.relationship('SetControlGroupEvent',back_populates='player')$/;"	v	class:PLAYER
+sid	src/db/raw/models/events/PlayerSetupEvent.py	/^    sid = db.Column(db.Integer)$/;"	v	class:PlayerSetupEvent
+sid	src/db/raw/models/replay/player.py	/^    sid = db.Column(db.Integer)$/;"	v	class:PLAYER
+speed	src/db/raw/models/replay/info.py	/^    speed = db.Column(db.Text)$/;"	v	class:INFO
+start_time	src/db/raw/models/replay/info.py	/^    start_time = db.Column(db.DateTime)$/;"	v	class:INFO
+started_at	src/db/raw/models/replay/objects.py	/^    started_at = db.Column(db.Integer)$/;"	v	class:OBJECT
+str_id	src/db/raw/models/datapack/unit_type.py	/^    str_id = db.Column(db.Text)$/;"	v	class:UNIT_TYPE
+subregion	src/db/raw/models/replay/player.py	/^    subregion = db.Column(db.Integer)$/;"	v	class:PLAYER
+supply	src/db/raw/models/datapack/unit_type.py	/^    supply = db.Column(db.Integer)$/;"	v	class:UNIT_TYPE
+target	src/db/raw/models/events/ChatEvent.py	/^    target = db.Column(db.Integer)  $/;"	v	class:ChatEvent
+target	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    target = db.relationship('OBJECT', back_populates = 'target_unit_command_events')$/;"	v	class:TargetUnitCommandEvent
+target_point_command_events	src/db/raw/models/datapack/ability.py	/^    target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='abil/;"	v	class:ABILITY
+target_point_command_events	src/db/raw/models/replay/info.py	/^    target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='info/;"	v	class:INFO
+target_point_command_events	src/db/raw/models/replay/player.py	/^    target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='play/;"	v	class:PLAYER
+target_unit_command_events	src/db/raw/models/datapack/ability.py	/^    target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='abilit/;"	v	class:ABILITY
+target_unit_command_events	src/db/raw/models/replay/info.py	/^    target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='info')$/;"	v	class:INFO
+target_unit_command_events	src/db/raw/models/replay/objects.py	/^    target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='target/;"	v	class:OBJECT
+target_unit_command_events	src/db/raw/models/replay/player.py	/^    target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='player/;"	v	class:PLAYER
+team_id	src/db/raw/models/replay/player.py	/^    team_id = db.Column(db.Integer)$/;"	v	class:PLAYER
+text	src/db/raw/models/events/ChatEvent.py	/^    text = db.Column(db.Text)$/;"	v	class:ChatEvent
+time_in_minutes	src/db/raw/models/replay/info.py	/^    def time_in_minutes(self):$/;"	m	class:INFO
+time_zone	src/db/raw/models/replay/info.py	/^    time_zone = db.Column(db.Float)$/;"	v	class:INFO
+title	src/db/raw/models/datapack/ability.py	/^    title = db.Column(db.Text)$/;"	v	class:ABILITY
+title	src/db/raw/models/datapack/unit_type.py	/^    title = db.Column(db.Text)$/;"	v	class:UNIT_TYPE
+to_all	src/db/raw/models/events/ChatEvent.py	/^    to_all = db.Column(db.Boolean)$/;"	v	class:ChatEvent
+to_allies	src/db/raw/models/events/ChatEvent.py	/^    to_allies = db.Column(db.Boolean)$/;"	v	class:ChatEvent
+to_observers	src/db/raw/models/events/ChatEvent.py	/^    to_observers = db.Column(db.Boolean)$/;"	v	class:ChatEvent
+toon_id	src/db/raw/models/replay/player.py	/^    toon_id = db.Column(db.BigInteger)$/;"	v	class:PLAYER
+type	src/db/raw/models/events/PlayerSetupEvent.py	/^    type = db.Column(db.Integer)$/;"	v	class:PlayerSetupEvent
+type	src/db/raw/models/replay/info.py	/^    type = db.Column(db.Text)$/;"	v	class:INFO
+uid	src/db/raw/models/events/PlayerSetupEvent.py	/^    uid = db.Column(db.Integer) $/;"	v	class:PlayerSetupEvent
+uid	src/db/raw/models/replay/player.py	/^    uid = db.Column(db.Integer)$/;"	v	class:PLAYER
+unit	src/db/raw/models/events/SelectionEvent.py	/^    unit = db.relationship('OBJECT', back_populates = 'selection_events')$/;"	v	class:SelectionEvent
+unit	src/db/raw/models/events/UnitBornEvent.py	/^    unit = db.relationship('OBJECT', back_populates = 'unit_born_events')$/;"	v	class:UnitBornEvent
+unit	src/db/raw/models/events/UnitDiedEvent.py	/^    unit = db.relationship($/;"	v	class:UnitDiedEvent
+unit	src/db/raw/models/events/UnitDoneEvent.py	/^    unit = db.relationship('OBJECT', back_populates = 'unit_done_events')$/;"	v	class:UnitDoneEvent
+unit	src/db/raw/models/events/UnitInitEvent.py	/^    unit = db.relationship('OBJECT', back_populates = 'unit_init_events')$/;"	v	class:UnitInitEvent
+unit	src/db/raw/models/events/UnitPositionsEvent.py	/^    unit = db.relationship('OBJECT', back_populates = 'unit_positions_events')$/;"	v	class:UnitPositionsEvent
+unit	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    unit = db.relationship('OBJECT', back_populates = 'unit_type_change_events')$/;"	v	class:UnitTypeChangeEvent
+unit_born_events	src/db/raw/models/replay/info.py	/^    unit_born_events = db.relationship('UnitBornEvent',back_populates='info')$/;"	v	class:INFO
+unit_born_events	src/db/raw/models/replay/objects.py	/^    unit_born_events = db.relationship('UnitBornEvent',back_populates='unit')$/;"	v	class:OBJECT
+unit_born_events	src/db/raw/models/replay/player.py	/^    unit_born_events = db.relationship('UnitBornEvent',back_populates='unit_controller')$/;"	v	class:PLAYER
+unit_controller	src/db/raw/models/events/UnitBornEvent.py	/^    unit_controller = db.relationship('PLAYER', back_populates = 'unit_born_events')$/;"	v	class:UnitBornEvent
+unit_died_events	src/db/raw/models/replay/info.py	/^    unit_died_events = db.relationship('UnitDiedEvent',back_populates='info')$/;"	v	class:INFO
+unit_died_events	src/db/raw/models/replay/player.py	/^    unit_died_events = db.relationship('UnitDiedEvent',back_populates='killing_player')$/;"	v	class:PLAYER
+unit_done_events	src/db/raw/models/replay/info.py	/^    unit_done_events = db.relationship('UnitDoneEvent',back_populates='info')$/;"	v	class:INFO
+unit_done_events	src/db/raw/models/replay/objects.py	/^    unit_done_events = db.relationship('UnitDoneEvent',back_populates='unit')$/;"	v	class:OBJECT
+unit_id	src/db/raw/models/events/UnitBornEvent.py	/^    unit_id = db.Column(db.Integer)$/;"	v	class:UnitBornEvent
+unit_id	src/db/raw/models/events/UnitDiedEvent.py	/^    unit_id = db.Column(db.Integer)$/;"	v	class:UnitDiedEvent
+unit_id	src/db/raw/models/events/UnitDoneEvent.py	/^    unit_id = db.Column(db.Integer)$/;"	v	class:UnitDoneEvent
+unit_id	src/db/raw/models/events/UnitInitEvent.py	/^    unit_id = db.Column(db.Integer)$/;"	v	class:UnitInitEvent
+unit_id	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    unit_id = db.Column(db.Integer)$/;"	v	class:UnitTypeChangeEvent
+unit_id_index	src/db/raw/models/events/UnitBornEvent.py	/^    unit_id_index = db.Column(db.Integer)$/;"	v	class:UnitBornEvent
+unit_id_index	src/db/raw/models/events/UnitDiedEvent.py	/^    unit_id_index = db.Column(db.Integer)$/;"	v	class:UnitDiedEvent
+unit_id_index	src/db/raw/models/events/UnitDoneEvent.py	/^    unit_id_index = db.Column(db.Integer)$/;"	v	class:UnitDoneEvent
+unit_id_index	src/db/raw/models/events/UnitInitEvent.py	/^    unit_id_index = db.Column(db.Integer)$/;"	v	class:UnitInitEvent
+unit_id_index	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    unit_id_index = db.Column(db.Integer)$/;"	v	class:UnitTypeChangeEvent
+unit_id_recycle	src/db/raw/models/events/UnitBornEvent.py	/^    unit_id_recycle = db.Column(db.Integer)$/;"	v	class:UnitBornEvent
+unit_id_recycle	src/db/raw/models/events/UnitDiedEvent.py	/^    unit_id_recycle = db.Column(db.Integer)$/;"	v	class:UnitDiedEvent
+unit_id_recycle	src/db/raw/models/events/UnitDoneEvent.py	/^    unit_id_recycle = db.Column(db.Integer)$/;"	v	class:UnitDoneEvent
+unit_id_recycle	src/db/raw/models/events/UnitInitEvent.py	/^    unit_id_recycle = db.Column(db.Integer)$/;"	v	class:UnitInitEvent
+unit_id_recycle	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    unit_id_recycle = db.Column(db.Integer)$/;"	v	class:UnitTypeChangeEvent
+unit_init_events	src/db/raw/models/replay/info.py	/^    unit_init_events = db.relationship('UnitInitEvent',back_populates='info')$/;"	v	class:INFO
+unit_init_events	src/db/raw/models/replay/objects.py	/^    unit_init_events = db.relationship('UnitInitEvent',back_populates='unit')$/;"	v	class:OBJECT
+unit_positions_events	src/db/raw/models/replay/info.py	/^    unit_positions_events = db.relationship('UnitPositionsEvent',back_populates='info')$/;"	v	class:INFO
+unit_positions_events	src/db/raw/models/replay/objects.py	/^    unit_positions_events = db.relationship('UnitPositionsEvent',back_populates='unit')$/;"	v	class:OBJECT
+unit_type	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    unit_type = db.relationship('UNIT_TYPE')$/;"	v	class:UnitTypeChangeEvent
+unit_type	src/db/raw/models/replay/objects.py	/^    unit_type = db.relationship('UNIT_TYPE', back_populates='objects')$/;"	v	class:OBJECT
+unit_type_change_events	src/db/raw/models/replay/info.py	/^    unit_type_change_events = db.relationship('UnitTypeChangeEvent',back_populates='info')$/;"	v	class:INFO
+unit_type_change_events	src/db/raw/models/replay/objects.py	/^    unit_type_change_events = db.relationship('UnitTypeChangeEvent',back_populates='unit')$/;"	v	class:OBJECT
+unit_type_name	src/db/raw/models/events/UnitBornEvent.py	/^    unit_type_name = db.Column(db.Text)$/;"	v	class:UnitBornEvent
+unix_timestamp	src/db/raw/models/replay/info.py	/^    unix_timestamp = db.Column(db.BigInteger)$/;"	v	class:INFO
+update_type	src/db/raw/models/events/ControlGroupEvent.py	/^    update_type = db.Column(db.Integer)$/;"	v	class:ControlGroupEvent
+update_type	src/db/raw/models/events/GetControlGroupEvent.py	/^    update_type = db.Column(db.Integer)$/;"	v	class:GetControlGroupEvent
+update_type	src/db/raw/models/events/SetControlGroupEvent.py	/^    update_type = db.Column(db.Integer)$/;"	v	class:SetControlGroupEvent
+upgrade_complete_events	src/db/raw/models/replay/info.py	/^    upgrade_complete_events = db.relationship('UpgradeCompleteEvent',back_populates='info')$/;"	v	class:INFO
+upgrade_complete_events	src/db/raw/models/replay/player.py	/^    upgrade_complete_events = db.relationship('UpgradeCompleteEvent',back_populates='player')$/;"	v	class:PLAYER
+upgrade_type_name	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    upgrade_type_name = db.Column(db.Text)$/;"	v	class:UpgradeCompleteEvent
+upkeep_pid	src/db/raw/models/events/UnitBornEvent.py	/^    upkeep_pid = db.Column(db.Integer)$/;"	v	class:UnitBornEvent
+version	src/db/raw/models/datapack/ability.py	/^    version = db.Column(db.Text)$/;"	v	class:ABILITY
+vespene	src/db/raw/models/datapack/unit_type.py	/^    vespene = db.Column(db.Integer)$/;"	v	class:UNIT_TYPE
+vespene_collection_rate	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_collection_rate = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_current	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_current = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_killed	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_killed = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_killed_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_killed_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_killed_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_killed_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_killed_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_killed_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_lost	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_lost = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_lost_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_lost_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_lost_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_lost_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_lost_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_lost_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_active_forces	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_active_forces = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_current	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_current = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_current_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_current_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_current_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_current_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_current_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_current_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_in_progress	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_in_progress = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_in_progress_army	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_in_progress_army = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_in_progress_economy	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_in_progress_economy = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+vespene_used_in_progress_technology	src/db/raw/models/events/PlayerStatsEvent.py	/^    vespene_used_in_progress_technology = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+website	src/db/raw/models/replay/map.py	/^    website = db.Column(db.Text)$/;"	v	class:MAP
+windows_timestamp	src/db/raw/models/replay/info.py	/^    windows_timestamp = db.Column(db.BigInteger)$/;"	v	class:INFO
+workers_active_count	src/db/raw/models/events/PlayerStatsEvent.py	/^    workers_active_count = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
+x	src/db/raw/models/events/CameraEvent.py	/^    x = db.Column(db.Float)$/;"	v	class:CameraEvent
+x	src/db/raw/models/events/TargetPointCommandEvent.py	/^    x = db.Column(db.Float)$/;"	v	class:TargetPointCommandEvent
+x	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    x = db.Column(db.Float)$/;"	v	class:TargetUnitCommandEvent
+x	src/db/raw/models/events/UnitBornEvent.py	/^    x = db.Column(db.Float)$/;"	v	class:UnitBornEvent
+x	src/db/raw/models/events/UnitDiedEvent.py	/^    x = db.Column(db.Integer)$/;"	v	class:UnitDiedEvent
+x	src/db/raw/models/events/UnitPositionsEvent.py	/^    x = db.Column(db.Integer)$/;"	v	class:UnitPositionsEvent
+y	src/db/raw/models/events/CameraEvent.py	/^    y = db.Column(db.Float)$/;"	v	class:CameraEvent
+y	src/db/raw/models/events/TargetPointCommandEvent.py	/^    y = db.Column(db.Float)$/;"	v	class:TargetPointCommandEvent
+y	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    y = db.Column(db.Float)$/;"	v	class:TargetUnitCommandEvent
+y	src/db/raw/models/events/UnitBornEvent.py	/^    y = db.Column(db.Float)$/;"	v	class:UnitBornEvent
+y	src/db/raw/models/events/UnitDiedEvent.py	/^    y = db.Column(db.Integer)$/;"	v	class:UnitDiedEvent
+y	src/db/raw/models/events/UnitPositionsEvent.py	/^    y = db.Column(db.Integer)$/;"	v	class:UnitPositionsEvent
+z	src/db/raw/models/events/TargetPointCommandEvent.py	/^    z = db.Column(db.Integer)$/;"	v	class:TargetPointCommandEvent
+z	src/db/raw/models/events/TargetUnitCommandEvent.py	/^    z = db.Column(db.Integer)$/;"	v	class:TargetUnitCommandEvent
