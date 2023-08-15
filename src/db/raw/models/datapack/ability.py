@@ -1,6 +1,6 @@
 from sqlalchemy import and_
 
-from src.db.raw.config import db 
+from src.db.raw.config import db
 from src.db.raw.models.datapack.unit_type import UNIT_TYPE
 
 

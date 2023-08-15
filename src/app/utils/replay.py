@@ -28,7 +28,7 @@ def construct_table_row(info):
                 for team, players in teams.items()
               ]
 
-    return html.Tr( 
+    return html.Tr(
             children = [
                             html.Td(info.release_string),
                             html.Td(info.type),
