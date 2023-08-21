@@ -8,7 +8,7 @@ class replayInjectFactory():
 
     @classmethod
     def process(cls, replay):
-        MAP.process(replay)
+        if replay.map: MAP.process(replay)
         INFO.process(replay)
         PLAYER.process(replay)
         OBJECT.process(replay)

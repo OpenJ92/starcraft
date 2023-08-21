@@ -16,6 +16,7 @@ from src.db.raw.models.replay.player import PLAYER
 from src.db.raw.inject import INJECT
 
 from os import listdir
+import traceback
 
 import argparse
 parser = argparse.ArgumentParser(description='sdm : Starcraft 2 Data Project')
@@ -33,24 +34,21 @@ if action == 'db':
        if r != '.DS_Store':
            try:
                 replay = sc2reader.load_replay(home+r,load_level=1)
-                print(r)
            except Exception as e:
-               print(e)
+               traceback.print_exc()
                continue
+
            if INFO.process_conditions(replay):
                print(r)
-               try:
-                   replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)
-                   inject = INJECT(replay).__construct__()
-               except Exception as e:
-                   print(e)
+               replay = sc2reader.load_replay(home+r,load_level=5)
+               inject = INJECT(replay).__construct__()
 
 elif action == 'app':
     from src.app.index import *
 
 elif action == 'explore':
     events = {}
-    replay = sc2reader.load_replay('example.SC2Replay',load_level=5,load_map=True)
+    replay = sc2reader.load_replay('example.SC2Replay',load_level=5)
     for event in replay.events:
         if event.name not in events.keys():
             events[event.name] = [event]
