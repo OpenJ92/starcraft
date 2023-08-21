@@ -103,7 +103,7 @@ class PLAYER(db.Model):
                         in vars(obj).items()
                         if key in cls.columns
                 }
-    
+
     @classmethod
     def process_derived(cls, obj):
         return {
@@ -120,7 +120,7 @@ class PLAYER(db.Model):
                                           cls.__INFO__==INFO.select_from_object(replay).__id__
                                          )
                                     ).one_or_none()
-                                          
+
         pass
 
     columns = {
