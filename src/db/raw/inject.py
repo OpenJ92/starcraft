@@ -2,7 +2,8 @@ from src.db.raw.models.events.InjectFactory import InjectFactory
 from src.db.raw.models.replay.replayInjectFactory import replayInjectFactory
 from src.db.raw.models.datapack.datapackInjectFactory import datapackInjectFactory
 
-class INJECT():
+
+class INJECT:
     def __init__(self, replay):
         self._replay = replay
 

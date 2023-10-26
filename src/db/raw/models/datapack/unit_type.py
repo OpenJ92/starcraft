@@ -2,11 +2,12 @@ from sqlalchemy import and_
 
 from src.db.raw.config import db
 
+
 class UNIT_TYPE(db.Model):
     __tablename__ = "UNIT_TYPE"
     __table_args__ = {"schema": "datapack"}
 
-    __id__ = db.Column(db.Integer, primary_key = True)
+    __id__ = db.Column(db.Integer, primary_key=True)
     release_string = db.Column(db.Text)
     id = db.Column(db.Integer)
     str_id = db.Column(db.Text)
@@ -20,8 +21,8 @@ class UNIT_TYPE(db.Model):
     is_army = db.Column(db.Boolean)
     is_worker = db.Column(db.Boolean)
 
-    abilities = db.relationship('ABILITY', back_populates='build_unit')
-    objects = db.relationship('OBJECT', back_populates='unit_type')
+    abilities = db.relationship("ABILITY", back_populates="build_unit")
+    objects = db.relationship("OBJECT", back_populates="unit_type")
 
     @classmethod
     def process(cls, replay):
@@ -30,13 +31,13 @@ class UNIT_TYPE(db.Model):
         if conditions:
             objs = []
             for _, obj in UNIT_TYPE.get_unique(replay).items():
-                objs.append(UNIT_TYPE(release_string = release_string, **vars(obj)))
+                objs.append(UNIT_TYPE(release_string=release_string, **vars(obj)))
             db.session.add_all(objs)
             db.session.commit()
 
     @classmethod
     def process_conditions(cls, replay):
-        with open('src/db/raw/utils/unit_type_CHECK_release_string.sql') as f:
+        with open("src/db/raw/utils/unit_type_CHECK_release_string.sql") as f:
             query = f"{f.read()}".format(release_string=replay.release_string)
             condition = db.engine.execute(query).fetchall() == []
         return condition
@@ -47,23 +48,21 @@ class UNIT_TYPE(db.Model):
 
     @classmethod
     def select_from_object(cls, obj, replay):
-        return db.session.query(cls).\
-                filter(
-                        and_(
-                              cls.id == obj.id,
-                              cls.release_string == replay.release_string
-                            )
-                      ).one_or_none()
+        return (
+            db.session.query(cls)
+            .filter(and_(cls.id == obj.id, cls.release_string == replay.release_string))
+            .one_or_none()
+        )
 
     @classmethod
     def select_from_str_id(cls, str_id, replay):
-        return db.session.query(UNIT_TYPE).\
-                filter(
-                        and_(
-                              cls.name==str_id,
-                              cls.release_string==replay.release_string
-                            )
-                      ).one_or_none()
+        return (
+            db.session.query(UNIT_TYPE)
+            .filter(
+                and_(cls.name == str_id, cls.release_string == replay.release_string)
+            )
+            .one_or_none()
+        )
 
     @classmethod
     def get_unique(cls, replay):

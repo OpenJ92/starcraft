@@ -240,6 +240,7 @@ control_group_events	src/db/raw/models/replay/player.py	/^    control_group_even
 control_pid	src/db/raw/models/events/UnitBornEvent.py	/^    control_pid = db.Column(db.Integer)$/;"	v	class:UnitBornEvent
 cooperative	src/db/raw/models/replay/info.py	/^    cooperative = db.Column(db.Integer)$/;"	v	class:INFO
 count	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    count = db.Column(db.Integer) $/;"	v	class:UpgradeCompleteEvent
+datapackInjectFactory	src/db/raw/models/datapack/datapackInjectFactory.py	/^class datapackInjectFactory():$/;"	c
 date	src/db/raw/models/replay/info.py	/^    date = db.Column(db.DateTime)$/;"	v	class:INFO
 db	src/db/raw/config.py	/^db = SQLAlchemy(server)$/;"	v
 dcc	src/app/app.py	/^import dash_core_components as dcc$/;"	I
@@ -339,7 +340,7 @@ info	src/db/raw/models/events/UnitInitEvent.py	/^    info = db.relationship('INF
 info	src/db/raw/models/events/UnitPositionsEvent.py	/^    info = db.relationship('INFO', back_populates = 'unit_positions_events')$/;"	v	class:UnitPositionsEvent
 info	src/db/raw/models/events/UnitTypeChangeEvent.py	/^    info = db.relationship('INFO', back_populates = 'unit_type_change_events')$/;"	v	class:UnitTypeChangeEvent
 info	src/db/raw/models/events/UpgradeCompleteEvent.py	/^    info = db.relationship('INFO', back_populates = 'upgrade_complete_events')$/;"	v	class:UpgradeCompleteEvent
-inject	__main__.py	/^               inject = INJECT(replay).__construct__()$/;"	v
+inject	__main__.py	/^                   inject = INJECT(replay).__construct__()$/;"	v
 is_army	src/db/raw/models/datapack/unit_type.py	/^    is_army = db.Column(db.Boolean)$/;"	v	class:UNIT_TYPE
 is_build	src/db/raw/models/datapack/ability.py	/^    is_build = db.Column(db.Boolean)$/;"	v	class:ABILITY
 is_building	src/db/raw/models/datapack/unit_type.py	/^    is_building = db.Column(db.Boolean)$/;"	v	class:UNIT_TYPE
@@ -458,7 +459,9 @@ player_stats_events	src/db/raw/models/replay/player.py	/^    player_stats_events
 players	src/db/raw/models/replay/info.py	/^    players = db.relationship('PLAYER', back_populates='replay')$/;"	v	class:INFO
 position_id	src/db/raw/models/events/UnitPositionsEvent.py	/^    position_id = db.Column(db.Text)$/;"	v	class:UnitPositionsEvent
 practice	src/db/raw/models/replay/info.py	/^    practice = db.Column(db.Integer)$/;"	v	class:INFO
+predicate	src/db/raw/models/replay/replayInjectFactory.py	/^    predicate = INFO$/;"	v	class:replayInjectFactory
 process	src/db/raw/models/datapack/ability.py	/^    def process(cls, replay):$/;"	m	class:ABILITY
+process	src/db/raw/models/datapack/datapackInjectFactory.py	/^    def process(cls, replay):$/;"	m	class:datapackInjectFactory
 process	src/db/raw/models/datapack/unit_type.py	/^    def process(cls, replay):$/;"	m	class:UNIT_TYPE
 process	src/db/raw/models/events/BasicCommandEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:BasicCommandEvent
 process	src/db/raw/models/events/CameraEvent.py	/^    def process(cls, obj, replay):$/;"	m	class:CameraEvent
@@ -484,6 +487,7 @@ process	src/db/raw/models/replay/info.py	/^    def process(cls, replay):$/;"	m	c
 process	src/db/raw/models/replay/map.py	/^    def process(cls, replay):$/;"	m	class:MAP
 process	src/db/raw/models/replay/objects.py	/^    def process(cls, replay):$/;"	m	class:OBJECT
 process	src/db/raw/models/replay/player.py	/^    def process(cls, replay):$/;"	m	class:PLAYER
+process	src/db/raw/models/replay/replayInjectFactory.py	/^    def process(cls, replay):$/;"	m	class:replayInjectFactory
 process_conditions	src/db/raw/models/datapack/ability.py	/^    def process_conditions(cls, replay):$/;"	m	class:ABILITY
 process_conditions	src/db/raw/models/datapack/unit_type.py	/^    def process_conditions(cls, replay):$/;"	m	class:UNIT_TYPE
 process_conditions	src/db/raw/models/replay/info.py	/^    def process_conditions(cls, replay):$/;"	m	class:INFO
@@ -547,11 +551,10 @@ region	src/db/raw/models/replay/player.py	/^    region = db.Column(db.Text)$/;"	
 release_string	src/db/raw/models/datapack/ability.py	/^    release_string = db.Column(db.Text)$/;"	v	class:ABILITY
 release_string	src/db/raw/models/datapack/unit_type.py	/^    release_string = db.Column(db.Text)$/;"	v	class:UNIT_TYPE
 release_string	src/db/raw/models/replay/info.py	/^    release_string = db.Column(db.Text)$/;"	v	class:INFO
-replay	__main__.py	/^               replay = sc2reader.load_replay(home+r,load_level=5,load_map=True)$/;"	v
-replay	__main__.py	/^           replay = sc2reader.load_replay(home+r,load_level=1)$/;"	v
 replay	__main__.py	/^    replay = sc2reader.load_replay('example.SC2Replay',load_level=5,load_map=True)$/;"	v
 replay	src/db/raw/models/replay/objects.py	/^    replay = db.relationship('INFO', back_populates='objects')$/;"	v	class:OBJECT
 replay	src/db/raw/models/replay/player.py	/^    replay = db.relationship('INFO', back_populates='players')$/;"	v	class:PLAYER
+replayInjectFactory	src/db/raw/models/replay/replayInjectFactory.py	/^class replayInjectFactory():$/;"	c
 replays	src/db/raw/models/replay/map.py	/^    replays = db.relationship('INFO', back_populates='map')$/;"	v	class:MAP
 resources_killed	src/db/raw/models/events/PlayerStatsEvent.py	/^    resources_killed = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
 resources_lost	src/db/raw/models/events/PlayerStatsEvent.py	/^    resources_lost = db.Column(db.Float)$/;"	v	class:PlayerStatsEvent
