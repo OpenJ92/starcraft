@@ -18,29 +18,29 @@ from src.db.raw.models.events.UnitPositionsEvent import UnitPositionsEvent
 from src.db.raw.models.events.SelectionEvent import SelectionEvent
 from src.db.raw.models.events.UnitDiedEvent import UnitDiedEvent
 
-class InjectFactory():
 
+class InjectFactory:
     events = {
-                BasicCommandEvent.__name__ : BasicCommandEvent,
-                ChatEvent.__name__ : ChatEvent,
-                CameraEvent.__name__ : CameraEvent,
-                ControlGroupEvent.__name__ : ControlGroupEvent,
-                GetControlGroupEvent.__name__ : GetControlGroupEvent,
-                SetControlGroupEvent.__name__ : SetControlGroupEvent,
-                PlayerStatsEvent.__name__ : PlayerStatsEvent,
-                PlayerLeaveEvent.__name__ : PlayerLeaveEvent,
-                PlayerSetupEvent.__name__ : PlayerSetupEvent,
-                TargetPointCommandEvent.__name__ : TargetPointCommandEvent,
-                TargetUnitCommandEvent.__name__ : TargetUnitCommandEvent,
-                UpgradeCompleteEvent .__name__ : UpgradeCompleteEvent,
-                UnitBornEvent.__name__ : UnitBornEvent,
-                UnitDoneEvent.__name__ : UnitDoneEvent,
-                UnitInitEvent.__name__ : UnitInitEvent,
-                UnitTypeChangeEvent.__name__ : UnitTypeChangeEvent,
-                UnitPositionsEvent.__name__ : UnitPositionsEvent,
-                SelectionEvent.__name__ : SelectionEvent,
-                UnitDiedEvent.__name__ : UnitDiedEvent
-             }
+        BasicCommandEvent.__name__: BasicCommandEvent,
+        ChatEvent.__name__: ChatEvent,
+        CameraEvent.__name__: CameraEvent,
+        ControlGroupEvent.__name__: ControlGroupEvent,
+        GetControlGroupEvent.__name__: GetControlGroupEvent,
+        SetControlGroupEvent.__name__: SetControlGroupEvent,
+        PlayerStatsEvent.__name__: PlayerStatsEvent,
+        PlayerLeaveEvent.__name__: PlayerLeaveEvent,
+        PlayerSetupEvent.__name__: PlayerSetupEvent,
+        TargetPointCommandEvent.__name__: TargetPointCommandEvent,
+        TargetUnitCommandEvent.__name__: TargetUnitCommandEvent,
+        UpgradeCompleteEvent.__name__: UpgradeCompleteEvent,
+        UnitBornEvent.__name__: UnitBornEvent,
+        UnitDoneEvent.__name__: UnitDoneEvent,
+        UnitInitEvent.__name__: UnitInitEvent,
+        UnitTypeChangeEvent.__name__: UnitTypeChangeEvent,
+        UnitPositionsEvent.__name__: UnitPositionsEvent,
+        SelectionEvent.__name__: SelectionEvent,
+        UnitDiedEvent.__name__: UnitDiedEvent,
+    }
 
     @classmethod
     def process(cls, replay):

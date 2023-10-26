@@ -4,7 +4,8 @@ import dash_html_components as html
 from src.db.raw.create import *
 from src.db.raw.config import db
 
-class REPLAY_TABLE():
+
+class REPLAY_TABLE:
     def __init__(self, url):
         self._url = url
 
@@ -16,4 +17,3 @@ class REPLAY_TABLE():
 
     def return_layout(self):
         pass
-

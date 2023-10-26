@@ -1,14 +1,15 @@
 from collections import namedtuple
 from sqlalchemy import and_
 
-from src.db.raw.config import db 
+from src.db.raw.config import db
 from src.db.raw.models.replay.info import INFO
+
 
 class PLAYER(db.Model):
     __tablename__ = "PLAYER"
     __table_args__ = {"schema": "replay"}
 
-    __id__ = db.Column(db.Integer, primary_key = True)
+    __id__ = db.Column(db.Integer, primary_key=True)
 
     sid = db.Column(db.Integer)
     team_id = db.Column(db.Integer)
@@ -27,44 +28,53 @@ class PLAYER(db.Model):
     result = db.Column(db.Text)
     pick_race = db.Column(db.Text)
     play_race = db.Column(db.Text)
-    
+
     id = db.Column(db.Integer)
 
     objects = db.relationship(
-                        'OBJECT', 
-                        primaryjoin='OBJECT.__OWNER__==PLAYER.__id__', 
-                        back_populates='owner'
-                             )
+        "OBJECT", primaryjoin="OBJECT.__OWNER__==PLAYER.__id__", back_populates="owner"
+    )
     ## killing_player_objs = db.relationship(
-    ##                     'OBJECT', 
-    ##                     primaryjoin='OBJECT.__KILLED__==PLAYER.__id__', 
+    ##                     'OBJECT',
+    ##                     primaryjoin='OBJECT.__KILLED__==PLAYER.__id__',
     ##                     back_populates='killing_player'
     ##                                      )
 
     ## killed_by_objs = db.relationship(
-    ##                     'OBJECT', 
-    ##                     primaryjoin='OBJECT.__KILLEDBY__==PLAYER.__id__', 
+    ##                     'OBJECT',
+    ##                     primaryjoin='OBJECT.__KILLEDBY__==PLAYER.__id__',
     ##                     back_populates='killed_by'
     ##                                 )
 
+    __INFO__ = db.Column(db.Integer, db.ForeignKey("replay.INFO.__id__"))
+    replay = db.relationship("INFO", back_populates="players")
 
-    __INFO__ = db.Column(db.Integer, db.ForeignKey('replay.INFO.__id__'))
-    replay = db.relationship('INFO', back_populates='players')
-
-    basic_command_events=db.relationship('BasicCommandEvent',back_populates='player')
-    chat_events=db.relationship('ChatEvent', back_populates='player')
-    camera_events = db.relationship('CameraEvent',back_populates='player')
-    control_group_events = db.relationship('ControlGroupEvent',back_populates='player')
-    get_control_group_events = db.relationship('GetControlGroupEvent',back_populates='player')
-    set_control_group_events = db.relationship('SetControlGroupEvent',back_populates='player')
-    player_stats_events = db.relationship('PlayerStatsEvent',back_populates='player')
-    player_leave_events = db.relationship('PlayerLeaveEvent',back_populates='player')
-    target_point_command_events = db.relationship('TargetPointCommandEvent',back_populates='player')
-    target_unit_command_events = db.relationship('TargetUnitCommandEvent',back_populates='player')
-    upgrade_complete_events = db.relationship('UpgradeCompleteEvent',back_populates='player')
-    unit_born_events = db.relationship('UnitBornEvent',back_populates='unit_controller')
-    selection_events = db.relationship('SelectionEvent',back_populates='player')
-    unit_died_events = db.relationship('UnitDiedEvent',back_populates='killing_player')
+    basic_command_events = db.relationship("BasicCommandEvent", back_populates="player")
+    chat_events = db.relationship("ChatEvent", back_populates="player")
+    camera_events = db.relationship("CameraEvent", back_populates="player")
+    control_group_events = db.relationship("ControlGroupEvent", back_populates="player")
+    get_control_group_events = db.relationship(
+        "GetControlGroupEvent", back_populates="player"
+    )
+    set_control_group_events = db.relationship(
+        "SetControlGroupEvent", back_populates="player"
+    )
+    player_stats_events = db.relationship("PlayerStatsEvent", back_populates="player")
+    player_leave_events = db.relationship("PlayerLeaveEvent", back_populates="player")
+    target_point_command_events = db.relationship(
+        "TargetPointCommandEvent", back_populates="player"
+    )
+    target_unit_command_events = db.relationship(
+        "TargetUnitCommandEvent", back_populates="player"
+    )
+    upgrade_complete_events = db.relationship(
+        "UpgradeCompleteEvent", back_populates="player"
+    )
+    unit_born_events = db.relationship(
+        "UnitBornEvent", back_populates="unit_controller"
+    )
+    selection_events = db.relationship("SelectionEvent", back_populates="player")
+    unit_died_events = db.relationship("UnitDiedEvent", back_populates="killing_player")
 
     @classmethod
     def process(cls, replay):
@@ -88,57 +98,49 @@ class PLAYER(db.Model):
     @classmethod
     def process_dependancies(cls, replay):
         UT = None if not replay else INFO.select_from_object(replay)
-        return {
-                    'replay' : UT,
-                    '__INFO__' : None if UT else UT.__id__
-               }
+        return {"replay": UT, "__INFO__": None if UT else UT.__id__}
 
     @classmethod
     def process_object(cls, obj):
-        return {
-                        key
-                        :
-                        value 
-                        for key,value 
-                        in vars(obj).items()
-                        if key in cls.columns
-                }
+        return {key: value for key, value in vars(obj).items() if key in cls.columns}
 
     @classmethod
     def process_derived(cls, obj):
-        return {
-                        'id' : obj.detail_data['bnet']['uid']
-               }
+        return {"id": obj.detail_data["bnet"]["uid"]}
 
     @classmethod
     def select_from_object(cls, obj, replay):
-        NULLPLAYER = namedtuple('NULLPLAYER', ('detail_data',))
-        obj = obj if obj else NULLPLAYER({'bnet':{'uid':-1}})
-        return db.session.query(cls).filter(
-                                    and_(
-                                          cls.id==obj.detail_data['bnet']['uid'],
-                                          cls.__INFO__==INFO.select_from_object(replay).__id__
-                                         )
-                                    ).one_or_none()
+        NULLPLAYER = namedtuple("NULLPLAYER", ("detail_data",))
+        obj = obj if obj else NULLPLAYER({"bnet": {"uid": -1}})
+        return (
+            db.session.query(cls)
+            .filter(
+                and_(
+                    cls.id == obj.detail_data["bnet"]["uid"],
+                    cls.__INFO__ == INFO.select_from_object(replay).__id__,
+                )
+            )
+            .one_or_none()
+        )
 
         pass
 
     columns = {
-                    "sid",
-                    "team_id",
-                    "is_human",
-                    "is_observer",
-                    "is_referee",
-                    "region",
-                    "subregion",
-                    "toon_id",
-                    "uid",
-                    "clan_tag",
-                    "name",
-                    "combined_race_levels",
-                    "highest_league",
-                    "pid",
-                    "result",
-                    "pick_race",
-                    "play_race"
-            }
+        "sid",
+        "team_id",
+        "is_human",
+        "is_observer",
+        "is_referee",
+        "region",
+        "subregion",
+        "toon_id",
+        "uid",
+        "clan_tag",
+        "name",
+        "combined_race_levels",
+        "highest_league",
+        "pid",
+        "result",
+        "pick_race",
+        "play_race",
+    }
